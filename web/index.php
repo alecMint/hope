@@ -98,7 +98,7 @@ color: #0000ff;
 <body>
 
 <div id="cont">
-	<div class="header"><img src="http://hopechapellongbeach.com/images/hc_logo.gif" alt="Hope Chapel Long Beach" /></div>
+	<div class="header"><img src="/assets/ologo.gif" alt="Hope Chapel Long Beach" /></div>
 	<div class="suc">
 		<h1>Site Under Construction</h1>
 		<p>We are currently working on a fresh design! Visit us later to check it out.</p>
