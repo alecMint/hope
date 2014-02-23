@@ -1,0 +1,561 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ecclesia/functions/mw-framework/classes/mw-contact-form.php:53
+msgid "Message from contact form"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-contact-form.php:84
+msgid "Detected hacking attempt."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-contact-form.php:94
+msgid "This field is required."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-contact-form.php:97
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-contact-form.php:153
+msgid "<span class=\"req-mark\">*</span> Required field"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:96
+msgid "Widget display options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:97
+msgid "Show widget title"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:99
+msgid "Boxed"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:101
+msgid "Un-boxed"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:103
+msgid "Set individual colors (<em>boxed</em> widget only)"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:105
+msgid "Show colour options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:109
+msgid "Colour options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:110
+msgid "Background colour:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:113
+msgid "Border colour:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/classes/mw-widget.php:116
+msgid "1) Click inside a field above<br/>2) Select colour using the wheel on the right."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-shortcodes.php:237
+msgid "Top"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:74
+msgid "MW - Flickr"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:75
+msgid "Your latest photos from Flickr"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:83
+msgid "Photos on Flickr"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:127
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:203
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:275
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:412
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:523
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:712
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:833
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:967
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1072
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1175
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1306
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1425
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1498
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1565
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1668
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1760
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1838
+msgid "Title:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:130
+msgid "Flickr ID (<a href=\"http://www.idgettr.com\">idGettr</a>):"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:133
+msgid "Number of photos:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:155
+msgid "MW - WordPress Page Content"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:156
+msgid "Display content from any WordPress page"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:206
+msgid "Select your page:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:229
+msgid "MW - Custom Content"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:230
+msgid "Display any content (text, HTML, JavaScript, etc.)"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:278
+msgid "Content:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:303
+msgid "MW - Latest Blog Posts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:304
+msgid "Display most recent blog posts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:310
+msgid "Recent blog posts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:399
+msgid "-- All categories --"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:415
+msgid "Select category:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:418
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:421
+msgid "Show thumbnails"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:445
+msgid "MW - Follow Us"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:446
+msgid "Social media buttons"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:454
+msgid "Follow us"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:527
+msgid "Facebook URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:531
+msgid "Buzz URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:535
+msgid "Twitter URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:539
+msgid "Flickr URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:543
+msgid "Vimeo URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:547
+msgid "YouTube URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:551
+msgid "RSS feed URL:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:580
+msgid "MW - Twitter Feed"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:581
+msgid "Display your recent tweets"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:587
+msgid "Recent tweets"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:612
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:725
+msgid "This widget requires SimpleXML PHP extension. It is enabled by default in PHP5. Please check your server configuration."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:614
+msgid "Please configure this widget in the WordPress admin panel."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:715
+msgid "Twitter username, e.g. wordpress:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:718
+msgid "Number of tweets to show:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:721
+msgid "Please note that the Twitter feed is cached on your server for 60 seconds. Therefore it can take up to 1 minute until the change in the number of tweets is visible on your site."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:749
+msgid "MW - Pages"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:750
+msgid "Your site's WordPress pages"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:756
+msgid "Pages"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:821
+msgid "Page title"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:822
+msgid "Page order"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:823
+msgid "Page ID"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:824
+msgid "Date published"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:836
+msgid "Sort by:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:839
+msgid "Exclude:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:841
+msgid "Page IDs, separated by commas."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:844
+msgid "How would you like the pages displayed?"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:845
+msgid "All pages hierarchically"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:847
+msgid "All pages as a flat list"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:849
+msgid "Top-level pages only"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:851
+msgid "Pages up to level"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:879
+msgid "MW - Links"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:880
+msgid "Your blogroll"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:886
+msgid "Blogroll"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:960
+msgid "All Links"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:970
+msgid "Select link category:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:973
+msgid "Show link image"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:975
+msgid "Show link name"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:977
+msgid "Show link description"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1002
+msgid "MW - Archives"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1003
+msgid "A monthly archive of your posts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1009
+msgid "Archives"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1075
+msgid "Show post counts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1100
+msgid "MW - Categories"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1101
+msgid "A list of categories"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1107
+msgid "Categories"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1178
+msgid "Show post counts:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1180
+msgid "Show hierarchy:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1205
+msgid "MW - Comments"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1206
+msgid "Recent blog comments"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1212
+msgid "Recent comments"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1309
+msgid "Number of comments:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1312
+msgid "Comment words:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1315
+msgid "Show gravatars"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1340
+msgid "MW - Tag Cloud"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1341
+msgid "Your most used tags in cloud format"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1347
+msgid "Tag cloud"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1428
+msgid "Taxonomy:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1451
+msgid "MW - Search"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1452
+msgid "A search form for your site"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1458
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1473
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1475
+msgid "Search"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1520
+msgid "MW - Calendar"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1521
+msgid "A calendar of your site's posts"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1527
+msgid "Calendar"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1587
+msgid "MW - Custom Menu"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1588
+msgid "Use this widget to add one of your custom menus as a widget"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1594
+msgid "Navigation menu"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1662
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1671
+msgid "Select menu:"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1675
+msgid "How would you like the menu displayed?"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1676
+msgid "All links hierarchically"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1678
+msgid "Top-level links only"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1680
+msgid "Links up to level"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1704
+msgid "MW - Meta"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1705
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1711
+msgid "Meta"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1732
+msgid "Entries RSS"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1732
+msgid "Syndicate this site using RSS 2.0"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1733
+msgid "Comments RSS"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1733
+msgid "Latest comments in RSS"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1734
+msgid "Powered by WordPress"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1785
+msgid "MW - Contact Form"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1786
+msgid "Display contact form"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1792
+msgid "Contact us"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/lib/mw-widgets.php:1841
+msgid "Contact form options are located in the Theme Options panel."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-docs.php:6
+msgid "Theme Documentation"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-admin.php:6
+msgid "Theme Options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-admin.php:15
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-admin.php:61
+msgid "Save All Changes"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-admin.php:60
+msgid "Reset Options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:6
+msgid "Import / Export Theme Options"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:22
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:27
+msgid "Export"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:23
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:42
+msgid "Import"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:29
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:45
+msgid "Theme Options Data"
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:35
+msgid "Export your saved Theme Options data by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later.<br/><br/>To import the data back into WordPress just paste it into the \"Theme Options Data\" field in the \"Import tab\"."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:51
+msgid "<p>To import the values of your theme options copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the \"Import Data\" button below."
+msgstr ""
+
+#: ecclesia/functions/mw-framework/templates/mw-theme-options-migrate.php:54
+msgid "Import Data"
+msgstr ""
+

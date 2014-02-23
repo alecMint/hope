@@ -1,0 +1,11 @@
+/**
+ *  A few CSS fixes for IE7
+ */
+
+table { border-collapse: collapse; border: 5px solid #fff; padding: 0; }
+
+input.submit, input.reset { padding-bottom: 3px; }
+
+.main-nav-list.root > .main-nav-list-item > a.has-subnav { background-position: 100% 11px; }
+.main-nav-list.root > .main-nav-list-item > a { border-top-width: 2px; }
+.main-nav-subnav { border-top: 0; }

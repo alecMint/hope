@@ -1,0 +1,6 @@
+
+/* Data columns */
+
+th#mw_col_event_start_date,
+th#mw_col_event_end_date
+{ width: 200px }

@@ -1,0 +1,12 @@
+/**
+ * Widget control panel styles
+ */
+.mw-widget-display-options { background: #f1f1f1; border: 1px solid #dfdfdf; padding: 10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.mw-widget-display-options h4 { margin-top: 0; }
+.mw-widget-color-options { background: #555; height: 195px; padding: 5px; display: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.mw-widget-color-options h4 { color: #fff; }
+.mw-widget-color-options input { width: 150px; }
+.mw-widget-color-options label { color: #fff;  }
+.mw-widget-colour-picker { width: 195px; height: 195px; float: right; }
+.mw-widget-colour-comment { color: #aaa; font-size: 11px; }
+div.no-custom-colors p.mw-widget-show-color-options-link-container { display: none; }

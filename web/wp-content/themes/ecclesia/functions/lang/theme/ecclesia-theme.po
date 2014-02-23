@@ -1,0 +1,1182 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ecclesia/404.php:16
+msgid "Error 404 &ndash; Page not found!"
+msgstr ""
+
+#: ecclesia/archive-mw_events.php:20
+msgid "Upcoming events"
+msgstr ""
+
+#: ecclesia/archive-mw_events.php:33
+#: ecclesia/single-mw_events.php:26
+msgid "Starts"
+msgstr ""
+
+#: ecclesia/archive-mw_events.php:34
+#: ecclesia/single-mw_events.php:27
+msgid "Ends"
+msgstr ""
+
+#: ecclesia/archive-mw_events.php:35
+#: ecclesia/search.php:23
+msgid "Read more &rarr;"
+msgstr ""
+
+#: ecclesia/archive-mw_events.php:42
+msgid "We don't have any events scheduled at the moment. Please check again soon."
+msgstr ""
+
+#: ecclesia/archive.php:21
+msgid "Tag:"
+msgstr ""
+
+#: ecclesia/archive.php:23
+msgid "Date:"
+msgstr ""
+
+#: ecclesia/archive.php:25
+msgid "Month:"
+msgstr ""
+
+#: ecclesia/archive.php:27
+msgid "Year:"
+msgstr ""
+
+#: ecclesia/archive.php:36
+msgid "Posts by"
+msgstr ""
+
+#: ecclesia/archive.php:38
+msgid "Archives"
+msgstr ""
+
+#: ecclesia/comments.php:4
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ecclesia/comments.php:10
+#: ecclesia/comments.php:16
+#: ecclesia/single.php:26
+msgid "No comments yet"
+msgstr ""
+
+#: ecclesia/comments.php:12
+#: ecclesia/comments.php:73
+msgid "Comments are closed"
+msgstr ""
+
+#: ecclesia/comments.php:16
+msgid "1 Comment"
+msgstr ""
+
+#: ecclesia/comments.php:16
+msgid "% Comments"
+msgstr ""
+
+#: ecclesia/comments.php:23
+msgid "&lsaquo; Older comments"
+msgstr ""
+
+#: ecclesia/comments.php:24
+msgid "Newer comments &rsaquo;"
+msgstr ""
+
+#: ecclesia/comments.php:32
+msgid "Add comment"
+msgstr ""
+
+#: ecclesia/comments.php:37
+#, php-format
+msgid "You must be %s to post a comment."
+msgstr ""
+
+#: ecclesia/comments.php:38
+msgid "logged in"
+msgstr ""
+
+#: ecclesia/comments.php:44
+msgid "Logged in as"
+msgstr ""
+
+#: ecclesia/comments.php:47
+msgid "Your name"
+msgstr ""
+
+#: ecclesia/comments.php:51
+msgid "Your email address"
+msgstr ""
+
+#: ecclesia/comments.php:51
+msgid "(will not be published)"
+msgstr ""
+
+#: ecclesia/comments.php:55
+msgid "Your website"
+msgstr ""
+
+#: ecclesia/comments.php:60
+msgid "Your comment"
+msgstr ""
+
+#: ecclesia/comments.php:63
+msgid "Submit comment"
+msgstr ""
+
+#: ecclesia/footer.php:13
+msgid "This is widgetised area:<br/>Footer &rsaquo; Column 1"
+msgstr ""
+
+#: ecclesia/footer.php:17
+msgid "This is widgetised area:<br/>Footer &rsaquo; Column 2"
+msgstr ""
+
+#: ecclesia/footer.php:21
+msgid "This is widgetised area:<br/>Footer &rsaquo; Column 3"
+msgstr ""
+
+#: ecclesia/frontpage.php:54
+#: ecclesia/frontpage.php:83
+msgid "This is widgetised area:<br/>Frontpage &rsaquo; Panel 1 &rsaquo; Sidebar"
+msgstr ""
+
+#: ecclesia/frontpage.php:76
+msgid "This is widgetised area:<br/>Frontpage &rsaquo; Panel 1 &rsaquo; Featured"
+msgstr ""
+
+#: ecclesia/frontpage.php:130
+msgid "This is widgetised area:<br/>Frontpage &rsaquo; Panel 2 &rsaquo; Column 1"
+msgstr ""
+
+#: ecclesia/frontpage.php:135
+msgid "This is widgetised area:<br/>Frontpage &rsaquo; Panel 2 &rsaquo; Column 2"
+msgstr ""
+
+#: ecclesia/frontpage.php:141
+msgid "This is widgetised area:<br/>Frontpage &rsaquo; Panel 2 &rsaquo; Column 3"
+msgstr ""
+
+#: ecclesia/index.php:16
+msgid "Blog"
+msgstr ""
+
+#: ecclesia/search.php:16
+msgid "Search results for: "
+msgstr ""
+
+#: ecclesia/search.php:29
+msgid "We haven't found any content matching your search criteria."
+msgstr ""
+
+#: ecclesia/sidebar.php:3
+msgid "This is widgetised area:<br>Global Sidebar"
+msgstr ""
+
+#: ecclesia/single-mw_events.php:26
+#: ecclesia/single-mw_events.php:27
+msgid "at"
+msgstr ""
+
+#: ecclesia/single.php:24
+msgid "by"
+msgstr ""
+
+#: ecclesia/single.php:25
+msgid "in"
+msgstr ""
+
+#: ecclesia/single.php:26
+msgid "1 comment"
+msgstr ""
+
+#: ecclesia/single.php:26
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: ecclesia/functions/theme/comment-template.php:21
+msgid "Your comment is awaiting moderation"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:27
+msgid "General Settings"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:32
+msgid "Custom logo"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:33
+msgid "Upload your own logo image or enter image URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:39
+msgid "Adjust logo vertical position"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:40
+msgid "Logo is positioned absolutely above the bottom edge of the site header<br/><br/>Positive number = move up<br/>Negative number = move down"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:46
+msgid "Use site title instead of logo image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:47
+msgid "With this option selected the theme will display site title in place of the logo. Edit the site title in \"Settings &rsaquo; General\""
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:54
+#: ecclesia/functions/theme/config-theme-options.php:70
+msgid "Show author info at the end of blog posts?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:55
+#: ecclesia/functions/theme/config-theme-options.php:71
+msgid "By default this theme will show information about post author at the and of the blog post"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:62
+msgid "Show secondary navigation?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:63
+msgid "Unchecking this box you can disable the secondary navigation displayed in the top right corner of the page"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:78
+msgid "Sidebar position on Posts and Pages"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:79
+msgid "Select whether the sidebar on Posts and Pages should be displayed on right or left side of the page"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:82
+msgid "Sidebar on the right"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:83
+msgid "Sidebar on the left"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:89
+msgid "Footnotes"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:90
+msgid "Enter content (text or HTML) to display below the site content area. This can be used to show copyright information, privacy policy, etc."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:97
+msgid "Tracking code"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:98
+msgid "Paste here your Google Analytics (or other) tracking code. Please include the <code>&lt; script &gt;</code> tags. This will be added into the footer of your site"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:105
+msgid "Custom CSS"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:106
+msgid "Here you can quickly add some custom CSS. It will be added at the end of the &lt; head &gt; section"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:118
+msgid "Frontpage Layout"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:125
+msgid "<p>The frontpage consists of 2 widgetised panels, plus global header and footer. Use the settings below to control the layout of <strong>Panel 1</strong> and <strong>Panel 2</strong>.</p>"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:132
+msgid "Panel 1"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:142
+msgid "Show Panel 1"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:149
+msgid "Select Panel 1 layout"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:150
+msgid "<strong>Sidebar</strong> and <strong>Featured</strong> are widgetised areas. To add widgets go to <em>Appearance &rsaquo; Widgets</em>.<br/> <strong>Slider</strong> content is managed via this options panel, just switch to the <em>Frontpage Slider</em> tab."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:153
+msgid "Sidebar on right + Slider + Featured"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:154
+msgid "Sidebar on right + Slider"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:155
+msgid "Sidebar on right + Featured"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:156
+msgid "Sidebar on left + Slider + Featured"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:157
+msgid "Sidebar on left + Slider"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:158
+msgid "Sidebar on left + Featured"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:159
+msgid "Only Featured (no Sidebar, no Slider)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:167
+msgid "Panel 2"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:177
+msgid "Show Panel 2"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:184
+msgid "Select Panel 2 layout"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:185
+msgid "All columns in Panel 2 are widgetised areas. Add widgets in <em>Appearance &rsaquo; Widgets</em>"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:188
+msgid "3 equal columns"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:189
+msgid "2 equal columns"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:190
+msgid "Column + sidebar on right"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:191
+msgid "Column + sidebar on left"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:192
+msgid "Full width column"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:203
+msgid "Frontpage Slider"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:210
+msgid "Slide 1"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:215
+msgid "Slide 1 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:216
+#: ecclesia/functions/theme/config-theme-options.php:245
+#: ecclesia/functions/theme/config-theme-options.php:274
+#: ecclesia/functions/theme/config-theme-options.php:303
+#: ecclesia/functions/theme/config-theme-options.php:332
+#: ecclesia/functions/theme/config-theme-options.php:361
+msgid "Image size: 612 x 290 px"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:221
+msgid "Slide 1 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:226
+msgid "Slide 1 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:232
+msgid "Slide 1 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:239
+msgid "Slide 2"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:244
+msgid "Slide 2 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:250
+msgid "Slide 2 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:255
+msgid "Slide 2 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:261
+msgid "Slide 2 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:268
+msgid "Slide 3"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:273
+msgid "Slide 3 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:279
+msgid "Slide 3 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:284
+msgid "Slide 3 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:290
+msgid "Slide 3 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:297
+msgid "Slide 4"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:302
+msgid "Slide 4 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:308
+msgid "Slide 4 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:313
+msgid "Slide 4 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:319
+msgid "Slide 4 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:326
+msgid "Slide 5"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:331
+msgid "Slide 5 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:337
+msgid "Slide 5 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:342
+msgid "Slide 5 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:348
+msgid "Slide 5 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:355
+msgid "Slide 6"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:360
+msgid "Slide 6 - image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:366
+msgid "Slide 6 - heading"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:371
+msgid "Slide 6 - text"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:377
+msgid "Slide 6 - link URL"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:388
+msgid "Contact forms"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:395
+msgid "Contact form settings"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:400
+msgid "Contact email address"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:401
+msgid "Enter email address where you want the contact forms sent to"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:406
+msgid "Message subject prefix"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:407
+msgid "Subject line prefix helps identifying in your inbox messages from the contact form"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:413
+msgid "Use AJAX posting?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:414
+msgid "Check this box if you want the contact forms posted via AJAX (without page reload)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:421
+msgid "\"Thank you\" message"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:422
+msgid "Message displayed to the user when the form is sent"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:424
+msgid "Your message has been sent. Thank you."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:429
+msgid "Error message"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:430
+msgid "This error message will be displayed to the user if there are any problems with form submission"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:432
+msgid "There was an error while sending your message."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:439
+msgid "Contact form fields"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:445
+msgid "Show \"Name\" field?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:452
+msgid "Is \"Name\" field required?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:459
+msgid "\"Name\" field label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:460
+msgid "Name"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:466
+msgid "Show \"Email\" field?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:473
+msgid "Is \"Email\" field required?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:480
+msgid "\"Email\" field label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:481
+msgid "Email"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:487
+msgid "Show \"Telephone\" field?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:494
+msgid "Is \"Telephone\" field required?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:501
+msgid "\"Telephone\" field label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:502
+msgid "Telephone"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:508
+msgid "Show \"Subject\" field?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:515
+msgid "Is \"Subject\" field required?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:522
+msgid "\"Subject\" field label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:523
+msgid "Subject"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:529
+msgid "\"Message\" field label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:530
+msgid "Message field is always displayed and always required"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:531
+msgid "Message"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:537
+msgid "Submit button label"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:538
+msgid "Send message"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:549
+msgid "Color Options"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:554
+msgid "Select color scheme"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:555
+msgid "Select a color scheme. You can modify individual color settings below."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:562
+msgid "<strong>WARNING!</strong> Selecting a different color scheme will reset your color modifications below to the color scheme's default colors."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:570
+msgid "Site background options"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:575
+msgid "Use custom site background settings?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:576
+#: ecclesia/functions/theme/config-theme-options.php:621
+msgid "Check this box if you want to override the theme&rsquo;s default background settings and set your own below"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:583
+msgid "Site background color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:584
+#, php-format
+msgid "Pick a custom site background color (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:590
+msgid "Site background image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:591
+#: ecclesia/functions/theme/config-theme-options.php:643
+msgid "Upload your own background image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:597
+msgid "Site background image repeat"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:598
+#: ecclesia/functions/theme/config-theme-options.php:650
+msgid "Select how you want to repeat the background image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:605
+msgid "Site background image position"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:606
+#: ecclesia/functions/theme/config-theme-options.php:658
+msgid "Select how you want to position the background image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:615
+msgid "Content area background options"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:620
+msgid "Use custom content area background settings?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:628
+msgid "Content area background color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:629
+#, php-format
+msgid "Pick a custom content background color (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:635
+msgid "Content area border color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:636
+#, php-format
+msgid "Pick a custom content area border color (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:642
+msgid "Content area background image"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:649
+msgid "Content area background image repeat"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:657
+msgid "Content area background image position"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:667
+msgid "Content colors"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:672
+msgid "Use custom content color settings?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:673
+msgid "Check this box if you want to override the theme&rsquo;s default text color settings and set your own below"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:680
+msgid "Body text color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:681
+#, php-format
+msgid "Pick a color for all normal body text (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:687
+msgid "Headings color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:688
+#, php-format
+msgid "Pick a color for headings (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:694
+msgid "Link color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:695
+#, php-format
+msgid "Pick a color for the links (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:701
+msgid "Link hover color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:702
+#, php-format
+msgid "Pick a color for links hover state (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:708
+msgid "Top navigation link color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:709
+#, php-format
+msgid "Pick a color for the navigation links (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:715
+msgid "Top navigation link hover color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:716
+#, php-format
+msgid "Pick a color for navigation links hover state (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:722
+msgid "Top navigation drop-down link hover color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:723
+#, php-format
+msgid "Pick a color for links hover state in the main navigation drop-down (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:729
+msgid "Button color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:730
+#, php-format
+msgid "Pick a color for buttons (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:738
+msgid "Widget color options"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:743
+msgid "Widget color settings apply to <em>boxed</em> widgets only. You can override them for individual widgets in the wideget&rsquo;s own settings."
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:748
+msgid "Use custom widget color settings?"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:749
+msgid "Check this box if you want to override the theme&rsquo;s default widget color settings and set your own below"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:756
+msgid "Widget background color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:757
+#, php-format
+msgid "Pick a background color (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:763
+msgid "Widget border color"
+msgstr ""
+
+#: ecclesia/functions/theme/config-theme-options.php:764
+#, php-format
+msgid "Pick a border color (color&nbsp;scheme:&nbsp;%s)"
+msgstr ""
+
+#: ecclesia/functions/theme/functions.php:62
+msgid "First"
+msgstr ""
+
+#: ecclesia/functions/theme/functions.php:65
+msgid "Previous"
+msgstr ""
+
+#: ecclesia/functions/theme/functions.php:78
+msgid "Next"
+msgstr ""
+
+#: ecclesia/functions/theme/functions.php:81
+msgid "Last"
+msgstr ""
+
+#: ecclesia/functions/theme/init.php:67
+msgid "Primary Navigation"
+msgstr ""
+
+#: ecclesia/functions/theme/init.php:68
+msgid "Secondary Navigation"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:13
+msgid "Global Sidebar"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:26
+msgid "Frontpage &rsaquo; Panel 1 &rsaquo; Featured"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:36
+msgid "Frontpage &rsaquo; Panel 1 &rsaquo; Sidebar"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:49
+msgid "Frontpage &rsaquo; Panel 2 &rsaquo; Column 1"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:59
+msgid "Frontpage &rsaquo; Panel 2 &rsaquo; Column 2"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:69
+msgid "Frontpage &rsaquo; Panel 2 &rsaquo; Column 3"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:82
+msgid "Footer &rsaquo; Column 1"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:92
+msgid "Footer &rsaquo; Column 2"
+msgstr ""
+
+#: ecclesia/functions/theme/sidebar-init.php:102
+msgid "Footer &rsaquo; Column 3"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:19
+msgid "MW - Upcoming Events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:20
+msgid "Display upcoming events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:65
+msgid "Time"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:76
+msgid "View all events &rsaquo;"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:80
+msgid "We don't have any events scheduled at the moment."
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:114
+msgid "Title:"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events-widget.php:117
+msgid "Number of events to show:"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:109
+#: ecclesia/functions/theme/events-manager/mw-events.php:122
+msgid "Events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:110
+msgid "Event"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:111
+msgid "Add New"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:112
+msgid "Add New Event"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:113
+msgid "Edit Event"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:114
+msgid "New Event"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:115
+msgid "View Event"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:116
+msgid "Search Events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:117
+msgid "No events found"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:118
+msgid "No events found in Trash"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:148
+#: ecclesia/functions/theme/events-manager/mw-events.php:266
+msgid "Event Categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:149
+#: ecclesia/functions/theme/events-manager/mw-events.php:164
+msgid "Event Category"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:150
+msgid "Search Categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:151
+msgid "Popular Categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:152
+msgid "All Categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:155
+msgid "Edit Category"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:156
+msgid "Update Category"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:157
+msgid "Add New Category"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:158
+msgid "New Category Name"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:159
+msgid "Separate categories with commas"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:160
+msgid "Add or remove categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:161
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:189
+msgid "Event date and time"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:231
+msgid "Start date"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:233
+msgid "Start time"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:237
+#: ecclesia/functions/theme/events-manager/mw-events.php:245
+msgid "(24h format)"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:239
+msgid "End date"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:241
+msgid "End time"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:262
+msgid "<input type='checkbox' />"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:263
+msgid "Event Title"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:264
+msgid "Start Date"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:265
+msgid "End Date"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:267
+msgid "Date Published"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:301
+msgid "None"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:366
+#, php-format
+msgid "Event updated. <a href=\"%s\">View item</a>"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:367
+msgid "Custom field updated."
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:368
+msgid "Custom field deleted."
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:369
+msgid "Event updated."
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:370
+#, php-format
+msgid "Event restored to revision from %s"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:371
+#, php-format
+msgid "Event published. <a href=\"%s\">View event</a>"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:372
+msgid "Event saved."
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:373
+#, php-format
+msgid "Event submitted. <a target=\"_blank\" href=\"%s\">Preview event</a>"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:374
+#, php-format
+msgid "Event scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview event</a>"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:375
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:376
+#, php-format
+msgid "Event draft updated. <a target=\"_blank\" href=\"%s\">Preview event</a>"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:401
+msgid "Show all categories"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:414
+msgid "Show all events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:415
+msgid "Show past events"
+msgstr ""
+
+#: ecclesia/functions/theme/events-manager/mw-events.php:416
+msgid "Current &amp; future events"
+msgstr ""
+
+#: ecclesia/template-parts/mod-document-head.php:26
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ecclesia/template-parts/mod-not-found.php:4
+msgid "Page Not Found"
+msgstr ""
+
+#: ecclesia/template-parts/mod-not-found.php:5
+msgid "Looks like we don't have any content matching your criteria.<br/>Try browsing the categories or using the search box at the top of this page."
+msgstr ""
+

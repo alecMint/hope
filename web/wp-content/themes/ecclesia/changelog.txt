@@ -1,0 +1,13 @@
+*** Ecclesia Changelog ***
+	
+2011.03.25 - version 1.0
+ * First release!
+ 
+2011.04.09 - version 2.0
+ * Added events manager
+ * Added color scheme selection option to the Options Panel
+ * Added 5 color schemes and changed the default colors
+ * Removed redundant color settings from the Options Panel
+ 
+2012.03.19 - version 2.1
+ * Fixed various internationalisation issues

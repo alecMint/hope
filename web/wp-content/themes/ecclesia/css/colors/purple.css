@@ -1,0 +1,28 @@
+/* Site background color */
+html { background-color: #734b5d; }
+
+/* Content area colors */
+#content-wrap { background-color: #fffce0; border-color: #d4c174; }
+
+/* Text */
+h1, h2, h3, h4, h5, h6 { color: #803355; }
+a { color: #c23a4e; }
+a:hover, a:active { color: #f23d8e; }
+
+/* Navigation */
+#top-nav a, #main-nav a { color: #b33e50; }
+#top-nav a:hover , #main-nav a:hover { color: #e55093; }
+.subnav-list a:hover, .subnav-list a:active, .subnav-list > .item-hover a { background: #b36b8b; }
+
+/* Buttons */
+input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
+    background-color: #995473; 
+}
+
+/* Horizontal dividers */
+.divider-top a:hover { color: #f23d8e; }
+
+/* Elements using Headings color */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #803355; }
+#header .text-logo { color: #803355; }
+.pagination .current { background: #803355; border-color: #803355; }

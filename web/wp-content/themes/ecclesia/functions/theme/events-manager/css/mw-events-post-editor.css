@@ -1,0 +1,23 @@
+/** Event date and time metabox */
+
+#mw-event-start-date-label,
+#mw-event-end-date-label,
+#mw-event-start-time-label,
+#mw-event-end-time-label
+{ display: inline-block; width: 70px; text-align: right; }
+
+#mw-event-start-date,
+#mw-event-end-date
+{ width: 100px; }
+
+#mw-event-start-time-hour,
+#mw-event-start-time-minute,
+#mw-event-end-time-hour,
+#mw-event-end-time-minute
+{ width: 40px; }
+
+
+/** date picker */
+#ui-datepicker-div { display: none; }
+#ui-datepicker-div  { font-size: 11px; line-height: 14px; }
+#ui-datepicker-div  td { font-size: 10px; }
