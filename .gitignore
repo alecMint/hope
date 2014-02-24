@@ -4,4 +4,4 @@ node_modules
 workspace
 hooky.json
 npm-debug.log
-xweb/wp-content/uploads*
+web/wp-content/uploads*
