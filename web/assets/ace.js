@@ -294,7 +294,6 @@ ace.ui.register('instagram',{
       client_id: z.opts.clientId
       ,count: z.opts.num
     },function(data){
-      alert(data);
       console.log(data);
     });
   }
