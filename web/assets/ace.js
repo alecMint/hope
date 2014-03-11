@@ -287,7 +287,6 @@ ace.ui.register('instagram',{
     ,url: 'https://api.instagram.com/v1/'
     ,type: 'squares med'
     ,num: 12
-    ,width: 125
   }
   ,init: function(){
     var z = this;
@@ -316,9 +315,11 @@ ace.ui.register('instagram',{
       z.$.cont.addClass(x+'-type-'+t);
     });
     $.each(z.media,function(i,m){
-      z.$.cont.append('<div class="'+x+'-img">'
-        + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" alt="'+m.caption.text+'" />'
+      var jImg = $('<div class="'+x+'-img">'
+        + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" />'
       + '</div>');
+      jImg.attr('alt',m.caption.text);
+      z.$.cont.append(jImg);
     });
   }
   ,functionalize: function(){
