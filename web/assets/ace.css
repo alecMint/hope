@@ -9,13 +9,15 @@ div.clear {
 
 .ace-instagram {
 }
-.ace-instagram.type-squares {
-  float: left;
-}
-.ace-instagram.type-med .ace-instagram-img {
-  float: left;
+.ace-instagram-img
+,.ace-instagram-img-img {
+  display: block;
   margin: 0;
   padding: 0;
+}
+
+.ace-instagram.type-squares .ace-instagram-img {
+  float: left;
 }
 .ace-instagram.type-med .ace-instagram-img
 ,.ace-instagram.type-med .ace-instagram-img-img {
