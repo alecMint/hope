@@ -321,6 +321,7 @@ ace.ui.register('instagram',{
       jImg.attr('alt',m.caption.text);
       z.$.cont.append(jImg);
     });
+    z.$.cont.append('<div class="clear">&nbsp;</div>');
   }
   ,functionalize: function(){
     var z = this
