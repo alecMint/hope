@@ -1,5 +1,7 @@
 /*
-  
+  1078488011
+  $('body').html('<script type="text/ace-instagram">{num:9,query:'users/227962011/media/recent'}</script>');
+  $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 */
 
 
@@ -23,7 +25,7 @@ ace = {
       console.log('ace ready');
       z._ready = true;
       $.each(z._readyCbs,function(i,cb){
-        if (typeof cb == 'function')
+        if (cb instanceof Function)
           cb();
       });
       delete z._readyCbs;
@@ -38,19 +40,23 @@ ace = {
       this._readyCbs.push(cb);
   }
 
-  ui: {
+  ,ui: {
     _modules: {}
 
-    ,register: function(key,opts,proto){
+    ,register: function(key,proto){
       var z = this
       ,module;
       if (z.getModule(key))
         return console.log(key+' already registered');
-      module = z._modules[key] = new z.Module();
-      module.prototype.key = key;
-      module.prototype.cssKey = 'ace-'+key;
-      module.prototype.instances = [];
-      module.prototype.opts = $.extend({},opts);
+      module = z._modules[key] = new Function();
+      $.extend(true,module.prototype,{
+        init: function(){}
+        ,opts: {}
+      },proto,{
+        key: key
+        ,cssKey: 'ace-'+key
+      });
+      module.instances = [];
       ace.evt.trigger(key+':registered');
     }
 
@@ -83,7 +89,7 @@ ace = {
 
     ,checkForWidgets: function(jCont){
       var z = this;
-      z.ready(function(){
+      ace.ready(function(){
         $(function(){
           (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
             var $script = $(this)
@@ -101,18 +107,23 @@ ace = {
       });
     }
 
-    ,widgetize: function(key,$cont,$opts){
+    ,widgetize: function(key,$cont,opts,cb){
       var z = this;
       z.moduleReady(key,function(){
         var $elm = $('<div class="ace-'+key+'"></div>')
         ,module = z.getModule(key)
+        ,instance = new module();
         ;
         $cont.replaceWith($elm);
-        module.createInstance($elm,opts).init();
+        instance.opts = $.extend(true,{},module.prototype.opts,opts);
+        instance.$ = {
+          cont: $elm
+        };
+        module.instances.push(instance);
+        instance.init();
+        if (cb)
+          cb.call(instance);
       });
-    }
-
-    ,Module: function(key,proto){
     }
 
   }
@@ -222,7 +233,7 @@ ace = {
       else if (lastChar == 3) suffix = 'rd';
       else suffix = 'th';
       return num+suffix;
-    },
+    }
 
     ,formatInteger: function(num){
       var pieces = (num+'').match(/^(\-?)([0-9]+)(.*)/)
@@ -273,37 +284,21 @@ ace = {
 
 };
 
-ace.ui.Module.prototype.createInstance = function($elm,opts){
-  var z = this
-  ,instance = new z();
-  instance.opts = $.extend(true,{},this.opts,opts);
-  instance.$ = {
-    cont: $elm
-  };
-  this.instances.push(instance);
-  return instance;
-};
-ace.ui.Module.prototype.init = function(){
-};
-
-ace.ui.register('instag',{
-  clientId: 'a26e3cd4b7b24a50857f54f78f051b63'
-},{
-  init: function(){
+ace.ui.register('instagram',{
+  opts: {
+    clientId: 'a26e3cd4b7b24a50857f54f78f051b63'
+    ,url: 'https://api.instagram.com/v1/'
+    ,num: 12
+  }
+  ,init: function(){
     var z = this;
-    z.alertMe('inited!');
-  }
-  ,alertMe: function(str){
-    alert('instag alert: '+str);
-  }
-});
-ace.ui.register('test',{},{
-  init: function(){
-    var z = this;
-    z.alertMe('inited!');
-  }
-  ,alertMe: function(str){
-    alert('test alert: '+str);
+    $.getJSON(z.opts.url+z.opts.query,{
+      callback: '?'
+      ,count: z.opts.num
+    },function(data){
+      alert(data);
+      console.log(data);
+    });
   }
 });
 
