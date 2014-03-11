@@ -325,11 +325,24 @@ ace.ui.register('instagram',{
       z.$.cont.append(jImg);
     });
     z.$.cont.append('<div class="clear">&nbsp;</div>');
+
+    z.$.imgs = z.$.cont.find('div.'+x+'-img');
   }
   ,functionalize: function(){
     var z = this
     ,x = z.cssKey
     ;
+
+    if (z.opts.hoverFadeIn) {
+      z.$.imgs.fadeTo(0,.8);
+      z.$.imgs.bind('mouseover mouseout',function(e){
+        var t = $(this);
+        if (e.type == 'mouseover')
+          t.stop().fadeTo(100,1);
+        else
+          t.stop().fadeTo(100,.8);
+      });
+    }
   }
 });
 
