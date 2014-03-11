@@ -71,8 +71,8 @@ wp_head();
 </style>
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="/assets/ace.css" />
-<script src="/assets/ace.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php vres('/assets/ace.css'); ?>" />
+<script src="<?php vres('/assets/ace.js'); ?>"></script>
 
 </head>
 <?php flush(); ?>

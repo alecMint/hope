@@ -1,5 +1,9 @@
 <?php if (!defined('MW_THEME')) die('No direct script access allowed');
 
+function vres($path){
+    echo $path . (strpos($path,'?') === false ? '?' : '&') . filemtime($_SERVER['DOCUMENT_ROOT'].$path);
+}
+
 /**
  * Get all theme options
  */
