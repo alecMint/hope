@@ -47,16 +47,18 @@ ace = {
       ,module;
       if (z.getModule(key))
         return console.log(key+' already registered');
-      module = z._modules[key] = new Function();
-      $.extend(true,module.prototype,{
-        init: function(){}
-        ,opts: {}
-      },proto,{
-        key: key
-        ,cssKey: 'ace-'+key
+      amint.ready(function(){
+        module = z._modules[key] = new Function();
+        $.extend(true,module.prototype,{
+          init: function(){}
+          ,opts: {}
+        },proto,{
+          key: key
+          ,cssKey: 'ace-'+key
+        });
+        module.instances = [];
+        ace.evt.trigger(key+':registered');
       });
-      module.instances = [];
-      ace.evt.trigger(key+':registered');
     }
 
     ,getModule: function(key){
