@@ -309,7 +309,7 @@ ace.ui.register('instagram',{
     var z = this
     ,x = z.cssKey
     ;
-
+    console.log(z.media,z.$.cont);
     $.each(z.media,function(i,m){
       z.$.cont.append('<div class="'+x+'-img">'
         + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" alt="'+m.caption.text+'" />'
