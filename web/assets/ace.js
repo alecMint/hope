@@ -291,7 +291,8 @@ ace.ui.register('instagram',{
   ,init: function(){
     var z = this;
     $.getJSON(z.opts.url+z.opts.query+'?callback=?',{
-      count: z.opts.num
+      client_id: z.opts.clientId
+      ,count: z.opts.num
     },function(data){
       alert(data);
       console.log(data);
