@@ -91,6 +91,7 @@ ace = {
       var z = this;
       console.log('checkForWidgets',(jCont || $('body')).find('script[type^="text/ace-"]'));
       $(function(){
+        console.log('suuup');
         (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
           console.log('found 1');
           var $script = $(this)
