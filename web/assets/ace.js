@@ -89,6 +89,7 @@ ace = {
     ,checkForWidgets: function(jCont){
       var z = this;
       $(function(){
+        console.log('found',(jCont || $('body')).find('script[type^="text/ace-"]'));
         (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
           var $script = $(this)
           ,key = $script.attr('type').replace('text/ace-','')
