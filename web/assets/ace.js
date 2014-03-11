@@ -92,6 +92,7 @@ ace = {
       console.log('checkForWidgets',(jCont || $('body')).find('script[type^="text/ace-"]'));
       $(function(){
         (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
+          console.log('found 1');
           var $script = $(this)
           ,key = $script.attr('type').replace('text/ace-','')
           ,opts
