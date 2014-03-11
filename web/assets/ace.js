@@ -1,7 +1,6 @@
 /*
   1078488011
-  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent"}</script>');
-  $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent"}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 */
 
 
@@ -290,12 +289,37 @@ ace.ui.register('instagram',{
   }
   ,init: function(){
     var z = this;
+    z.getData(function(){
+      z.build();
+      z.functionalize();
+    });
+  }
+  ,getData: function(cb){
+    var z = this;
     $.getJSON(z.opts.url+z.opts.query+'?callback=?',{
       client_id: z.opts.clientId
       ,count: z.opts.num
     },function(data){
-      console.log(data);
+      if (!(data && data.data))
+        return console.log('instagram api error');
+      z.media = data.data;
     });
+  }
+  ,build: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+
+    $.each(z.media,function(i,m){
+      z.$.cont.append('<div class="'+x+'-img">'
+        + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" alt="'+m.caption.text+'" />'
+      + '</div>');
+    });
+  }
+  ,functionalize: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
   }
 });
 
