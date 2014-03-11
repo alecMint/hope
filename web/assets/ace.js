@@ -1,6 +1,6 @@
 /*
   1078488011
-  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent"}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 */
 
 
@@ -285,7 +285,9 @@ ace.ui.register('instagram',{
   opts: {
     clientId: 'a26e3cd4b7b24a50857f54f78f051b63'
     ,url: 'https://api.instagram.com/v1/'
+    ,type: 'squares med'
     ,num: 12
+    ,width: 125
   }
   ,init: function(){
     var z = this;
@@ -310,7 +312,9 @@ ace.ui.register('instagram',{
     var z = this
     ,x = z.cssKey
     ;
-    console.log(z.media,z.$.cont);
+    $.each(z.opts.type.split(' '),function(i,t){
+      z.$.cont.addClass(x+'-type-'+t);
+    });
     $.each(z.media,function(i,m){
       z.$.cont.append('<div class="'+x+'-img">'
         + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" alt="'+m.caption.text+'" />'
