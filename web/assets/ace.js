@@ -47,7 +47,7 @@ ace = {
       ,module;
       if (z.getModule(key))
         return console.log(key+' already registered');
-      amint.ready(function(){
+      ace.ready(function(){
         module = z._modules[key] = new Function();
         $.extend(true,module.prototype,{
           init: function(){}
