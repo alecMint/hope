@@ -303,6 +303,7 @@ ace.ui.register('instagram',{
       if (!(data && data.data))
         return console.log('instagram api error');
       z.media = data.data;
+      cb();
     });
   }
   ,build: function(){
