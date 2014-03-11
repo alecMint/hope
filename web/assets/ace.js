@@ -1,6 +1,6 @@
 /*
   1078488011
-  $('body').html('<script type="text/ace-instagram">{num:9,query:'users/227962011/media/recent'}</script>');
+  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent"}</script>');
   $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 */
 
@@ -89,20 +89,18 @@ ace = {
 
     ,checkForWidgets: function(jCont){
       var z = this;
-      ace.ready(function(){
-        $(function(){
-          (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
-            var $script = $(this)
-            ,key = jScript.attr('type').replace('text/ace-','')
-            ,opts
-            ;
-            try {
-              opts = eval('('+$.trim($script[0].innerHTML)+')');
-            } catch (e) {}
-            if (typeof opts != 'object')
-              opts = {};
-            z.widgetize(key,$script,opts);
-          });
+      $(function(){
+        (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
+          var $script = $(this)
+          ,key = $script.attr('type').replace('text/ace-','')
+          ,opts
+          ;
+          try {
+            opts = eval('('+$.trim($script[0].innerHTML)+')');
+          } catch (e) {}
+          if (typeof opts != 'object')
+            opts = {};
+          z.widgetize(key,$script,opts);
         });
       });
     }
