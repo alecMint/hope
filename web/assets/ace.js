@@ -315,7 +315,7 @@ ace.ui.register('instagram',{
     ,x = z.cssKey
     ;
     $.each(z.opts.type.split(' '),function(i,t){
-      z.$.cont.addClass(x+'-type-'+t);
+      z.$.cont.addClass('type-'+t);
     });
     $.each(z.media,function(i,m){
       var jImg = $('<div class="'+x+'-img">'
