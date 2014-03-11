@@ -89,16 +89,12 @@ ace = {
 
     ,checkForWidgets: function(jCont){
       var z = this;
-      console.log('checkForWidgets',(jCont || $('body')).find('script[type^="text/ace-"]'));
       $(function(){
-        console.log('suuup');
         (jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
-          console.log('found 1');
           var $script = $(this)
           ,key = $script.attr('type').replace('text/ace-','')
           ,opts
           ;
-          console.log('found '+key);
           try {
             opts = eval('('+$.trim($script[0].innerHTML)+')');
           } catch (e) {}
@@ -294,9 +290,8 @@ ace.ui.register('instagram',{
   }
   ,init: function(){
     var z = this;
-    $.getJSON(z.opts.url+z.opts.query,{
-      callback: '?'
-      ,count: z.opts.num
+    $.getJSON(z.opts.url+z.opts.query+'?callback=?',{
+      count: z.opts.num
     },function(data){
       alert(data);
       console.log(data);
