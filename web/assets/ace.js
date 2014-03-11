@@ -334,13 +334,13 @@ ace.ui.register('instagram',{
     ;
 
     if (z.opts.hoverFadeIn) {
-      z.$.imgs.fadeTo(0,.8);
+      z.$.imgs.fadeTo(0,.5);
       z.$.imgs.bind('mouseover mouseout',function(e){
         var t = $(this);
         if (e.type == 'mouseover')
-          t.stop().fadeTo(100,1);
+          t.stop().fadeTo(200,1);
         else
-          t.stop().fadeTo(100,.8);
+          t.stop().fadeTo(200,.5);
       });
     }
   }
