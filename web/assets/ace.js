@@ -95,6 +95,7 @@ ace = {
           ,key = $script.attr('type').replace('text/ace-','')
           ,opts
           ;
+          console.log('found '+key);
           try {
             opts = eval('('+$.trim($script[0].innerHTML)+')');
           } catch (e) {}
