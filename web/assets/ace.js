@@ -163,7 +163,7 @@ ace = {
           if (!sub || sub.cb == cb)
             evt.subs[i] = null;
         });
-        amint.util.arrayFilter(evt.subs,function(sub){
+        ace.util.arrayFilter(evt.subs,function(sub){
           return sub !== null;
         });
       }
@@ -195,7 +195,7 @@ ace = {
         if (sub.type_ready)
           evt.subs[i] = null;
       });
-      amint.util.arrayFilter(evt.subs,function(sub){
+      ace.util.arrayFilter(evt.subs,function(sub){
         return sub !== null;
       });
     }
