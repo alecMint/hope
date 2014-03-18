@@ -16,12 +16,40 @@ div.clear {
   padding: 4px;
   float: left;
 }
-.sidebysideimgs img:nth-child(1) {
-  margin-right: 10px;
+.grid-2 .sidebysideimgs img {
+  /* 300 */
+  width: 136px;
+}
+.grid-2 .sidebysideimgs img:nth-child(1) {
+  margin-right: 8px;
+}
+.grid-3 .sidebysideimgs img {
+  /* 461 */
+  width: 212px;
+}
+.grid-3 .sidebysideimgs img:nth-child(1) {
+  margin-right: 16px;
 }
 .grid-4 .sidebysideimgs img {
-  /* grid-4: 622px */
+  /* 622 */
   width: 290px;
+}
+.grid-4 .sidebysideimgs img:nth-child(1) {
+  margin-right: 22px;
+}
+.grid-5 .sidebysideimgs img {
+  /* 783 */
+  width: 370px;
+}
+.grid-5 .sidebysideimgs img:nth-child(1) {
+  margin-right: 22px;
+}
+.grid-6 .sidebysideimgs img {
+  /* 944 */
+  width: 451px;
+}
+.grid-6 .sidebysideimgs img:nth-child(1) {
+  margin-right: 22px;
 }
 
 .ace-instagram {
