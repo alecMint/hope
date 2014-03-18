@@ -16,13 +16,12 @@ div.clear {
   padding: 4px;
   float: left;
 }
-.sidebysideimgs img:nth-child(0) {
-}
 .sidebysideimgs img:nth-child(1) {
+  margin-right: 10px;
 }
 .grid-4 .sidebysideimgs img {
   /* grid-4: 622px */
-  width: 300px;
+  width: 290px;
 }
 
 .ace-instagram {
