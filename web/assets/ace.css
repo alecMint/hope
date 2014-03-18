@@ -14,12 +14,11 @@ div.clear {
   background: #fff;
   border: 1px solid #d6d6d6;
   padding: 4px;
-}
-.sidebysideimgs img:nth-child(0) {
   float: left;
 }
+.sidebysideimgs img:nth-child(0) {
+}
 .sidebysideimgs img:nth-child(1) {
-  float: right;
 }
 .grid-4 .sidebysideimgs img {
   /* grid-4: 622px */
