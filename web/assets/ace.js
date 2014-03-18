@@ -220,6 +220,13 @@ ace = {
       return words.join(' ');
     }
 
+    escapeHtml: function(str,nl2br){
+      str = $('<div>').text(str).html();
+      if (nl2br)
+        str = str.replace(/\n/g,'<br />')
+      return str;
+    },
+
     ,formatPlace: function(num){
       var numPos = Math.abs(num)
         ,lastChar = (num+'').split('').pop()
