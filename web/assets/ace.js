@@ -507,8 +507,8 @@ ace.ui.register('carousel',{
       +'<div class="'+x+'-arr '+x+'-arr-right" xdata-dir="1" style="display:none;"></div>'
     );
     z.$.mask = z.$.cont.find('div.'+x+'-mask');
-    z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden');
-    z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none');
+    z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden').data('w',0);
+    z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none').data('w',1);
     z.$.slides = z.$.slide0.add(z.$.slide1);
     z.$.arrows = z.$.cont.find('div.'+x+'-arr');
     $.each(z.opts.imgs,function(k,v){
@@ -566,7 +566,6 @@ ace.ui.register('carousel',{
   }
   ,slide: function(dir){
     var z = this
-    ,limit = -1*z.slideWidth
     ,moveX
     ;
 
@@ -580,20 +579,20 @@ ace.ui.register('carousel',{
 
     z.$.slide0.animate({
       left: (z.$.slide0.position().left-moveX)+'px'
-    },{step:checkForSwap});
+    },{complete:checkForSwap});
     z.$.slide1.animate({
       left: (z.$.slide1.position().left-moveX)+'px'
-    },{step:checkForSwap});
+    },{complete:checkForSwap});
 
     function checkForSwap(now,fx){
       var jSlide = $(this)
-      //,x = jSlide.position().left
-      ;
-      //console.log(now,fx);
-      if (now < limit) {
-        fx.end = now+2*z.slideWidth;
-        jSlide.css('left',(now+2*z.slideWidth)+'px');
-        z.log('swapping',fx.end);
+      ,x = jSlide.position().left
+      ,jBro = z.$.slides[(jSlide.data('w')+1)%2]
+      if (x < -1*z.slideWidth) {
+        console.log('swapping');
+        jSlide.css('left',
+          jBro.position().left + z.slideWidth
+          +'px');
       }
     }
 
