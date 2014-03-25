@@ -95,9 +95,9 @@ div.clear {
 .ace-carousel-arr {
   position: absolute;
   top: 0;
-  width: 20px;
+  width: 54px;
   height: 100%;
-  background: url(/assets/car_arrows.png) no-repeat 0 40px;
+  background: url(/assets/car_arrows.png) no-repeat -1px center;
   cursor: pointer;
 }
 .ace-carousel-arr-left {
