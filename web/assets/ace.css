@@ -100,14 +100,16 @@ div.clear {
   top: 0;
   width: 54px;
   height: 100%;
-  background: url(/assets/car_arrows.png) no-repeat -1px center;
+  background: url(/assets/car_arrows.png) no-repeat;
   cursor: pointer;
 }
 .ace-carousel-arr-left {
   left: 0;
+  background-position: -1px center;
 }
 .ace-carousel-arr-right {
   right: 0;
+  background-position: -60px center;
 }
 .ace-carousel-arr-left:hover {
   background-position: -118px center;
