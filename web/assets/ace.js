@@ -445,7 +445,7 @@ ace.ui.register('carousel',{
       +'<div class="'+x+'-arr '+x+'-arr-left" xdata-dir="-1" style="display:none;"></div>'
       +'<div class="'+x+'-arr '+x+'-arr-right" xdata-dir="1" style="display:none;></div>'
     );
-    z;$.mask = z.$.cont.find('div.'+x+'-mask');
+    .;$.mask = z.$.cont.find('div.'+x+'-mask');
     z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden');
     z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none');
     z;$.arrows = z.$.cont.find('div.'+x+'-arr');
