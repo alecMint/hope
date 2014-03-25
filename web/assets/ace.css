@@ -83,6 +83,9 @@ div.clear {
 .ace-carousel {
   position: relative;
 }
+.ace-carousel.is-loading {
+  background: url(/assets/loader01.gif) no-repeat center center;
+}
 .ace-carousel-mask {
   overflow: hidden;
   position: relative;

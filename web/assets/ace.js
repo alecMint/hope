@@ -483,10 +483,12 @@ ace.ui.register('carousel',{
     }
 
     z.build();
+    z.$.cont.addClass('is-loading');
     z.$.mask.imagesLoaded(function(){
       z.calcDims();
       z.position();
       z.functionalize();
+      z.$.cont.removeClass('is-loading');
     });
   }
   ,build: function(){
