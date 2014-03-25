@@ -482,7 +482,7 @@ ace.ui.register('carousel',{
       z.$.slide1.css({
         left: z.$.slide0.width()+'px'
         ,display: ''
-      );
+      });
       z.$.slide0.css('visibility','');
       z.$.arrows.css('display','');
     }
