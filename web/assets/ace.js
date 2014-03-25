@@ -529,8 +529,8 @@ ace.ui.register('carousel',{
     z.$.mask.css('height',z.itemHeight+'px');
 
     $.each(z.opts.imgs,function(i){
-      var jItems = z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',i*z.itemWidth)
-      ,jImgs = jItems.find('img.'+x+'-img')
+      var jItems = z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',(i*z.itemWidth)+'px')
+      ,jImgs = jItems.find('img.'+x+'-img-img')
       ;
       jImgs.css(
         ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgs[0].width,jImgs[0].height])
