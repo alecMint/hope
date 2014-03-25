@@ -32,6 +32,7 @@ ace = {
     (function checkReady(){
       if (!window.$)
         return setTimeout(checkReady,z.config.readyCheckDelay);
+      z._jQExtensions();
       console.log('ace ready');
       z._ready = true;
       $.each(z._readyCbs,function(i,cb){
