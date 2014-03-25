@@ -574,7 +574,11 @@ ace.ui.register('carousel',{
       var jSlide = $(this)
       ,targetX = -1*jSlide.position().left + z.$.mask.width()
       ,indexOfTarget = Math.floor(targetX/z.itemWidth);
-      z.log(indexOfTarget);
+      z.log('indexOfTarget ('+i+')',indexOfTarget);
+      if (indexOfTarget < 0)
+        return true;
+      var moveX = indexOfTarget*z.itemWidth + jSlide.position.left();
+      z.log('moveX',moveX);
     });
   }
 });
