@@ -751,7 +751,12 @@ ace.shadbox.close = function(){
   z.isOpen = z.isOpening = false;
   if (z.$.cont) {
     z.$.cont.css('display','none');
-    z.$.content.removeClass('error loading');
+    z.$.content.removeClass('error loading').css({
+      width: ''
+      ,height: ''
+      ,left: ''
+      ,top: ''
+    });
     z.$.contentItem.empty();
   }
 }
