@@ -595,6 +595,7 @@ ace.ui.register('carousel',{
           jBro.position().left + z.slideWidth
           +'px');
       } else if (x > z.slideWidth+z.$.mask.width()) {
+        z.log(x,' > ',z.slideWidth+z.$.mask.width());
         jSlide.css('left',0);
       }
     }
