@@ -473,6 +473,7 @@ ace.ui.register('carousel',{
   opts: {
     imgs: []
     ,dims: '203x152'
+    ,speed: 300
   }
   ,init: function(){
     var z = this
@@ -579,10 +580,10 @@ ace.ui.register('carousel',{
 
     z.$.slide0.animate({
       left: (z.$.slide0.position().left-moveX)+'px'
-    },{complete:checkForSwap});
+    },{duration:z.opts.speed,complete:checkForSwap});
     z.$.slide1.animate({
       left: (z.$.slide1.position().left-moveX)+'px'
-    },{complete:checkForSwap});
+    },{duration:z.opts.speed,complete:checkForSwap});
 
     function checkForSwap(now,fx){
       var jSlide = $(this)
