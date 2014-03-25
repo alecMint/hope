@@ -587,10 +587,10 @@ ace.ui.register('carousel',{
 
     function checkForSwap(now,fx){
       var jSlide = $(this)
-      ,x = jSlide.position().left
+      //,x = jSlide.position().left
       ;
       //console.log(now,fx);
-      if (x < limit) {
+      if (now < limit) {
         fx.end = x+2*z.slideWidth;
         jSlide.css('left',(now+2*z.slideWidth)+'px');
         z.log('swapping',fx.end);
