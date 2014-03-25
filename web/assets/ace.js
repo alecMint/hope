@@ -68,7 +68,6 @@ ace = {
           key: key
           ,cssKey: 'ace-'+key
           ,log: function(a,b,c,d){
-            arguments.unshift(this.key);
             console.log.call(console,this.key,a,b,c,d);
           }
         });
