@@ -1,6 +1,17 @@
 /*
   1078488011
   $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+
+  $('.grid-4:first').widgetize('carousel',{
+    imgs: [
+      'http://www.cleanenergyflorida.org/wp-content/uploads/2014/03/trees.jpg'
+      ,'http://crazy-frankenstein.com/free-wallpapers-files/seasonal-wallpapers/spring-trees-wallpapers/spring-trees-2-wallpapers-1680x1050.jpg'
+      ,'http://nickjones.me/wp-content/uploads/2013/07/fruit-trees-spring.jpg'
+      ,'http://naturespicwallpaper.com/wp-content/uploads/2014/02/trees8.jpg'
+      ,'http://upload.wikimedia.org/wikipedia/commons/8/84/Autumn_trees_in_Dresden.jpg'
+      ,'http://siliconangle.com/files/2013/07/Trees.jpg'
+    ]
+  });
 */
 
 
@@ -55,6 +66,10 @@ ace = {
         },proto,{
           key: key
           ,cssKey: 'ace-'+key
+          ,log: function(){
+            arguments.unshift(this.key);
+            console.log.apply(console,arguments);
+          }
         });
         module.instances = [];
         ace.evt.trigger(key+':registered');
@@ -288,6 +303,50 @@ ace = {
     }
   }
 
+  ,_jQExtensions: function(){
+    $.fn.imagesLoaded = function(cb){
+      var $elm = this
+        ,jimgs = this.find('img').andSelf().filter('img')
+        ,imgs = []
+        ,numLoaded = 0
+        ,numImgs,loaded
+      ;
+      numImgs = jimgs.length;
+      if (!numImgs)
+        return done();
+      loaded = function(index){
+        if (!imgs[index]) {
+          imgs[index] = true;
+          if (++numLoaded == numImgs)
+            done();
+        }
+      };
+      jimgs.each(function(index){
+        var doIt = function(){
+          loaded(index);
+        };
+        imgs.push(false);
+        if (this.complete) {
+          doIt();
+        } else {
+          $(this).bind('load',doIt).bind('error',doIt);
+          if (this.complete)
+            doIt();
+        }
+      });
+      function done(){
+        if (cb) {
+          setTimeout(function(){
+            cb.call($elm);
+          },0);
+        }
+      }
+    }
+    $.fn.widgetize = function(widgetName, opts){
+      ace.ui.widgetize(widgetName, this, opts);
+    }
+  }
+
 };
 
 ace.ui.register('instagram',{
@@ -351,5 +410,70 @@ ace.ui.register('instagram',{
     }
   }
 });
+
+
+ace.ui.register('carousel',{
+  opts: {
+    imgs: []
+    ,dims: '203xx152'
+  }
+  ,init: function(){
+    var z = this
+    ,d = z.opts.dims.split('x')
+    ;
+    z.imgWidth = +d[0];
+    z.imgHeight = +d[1];
+
+    if (!z.opts.imgs.length) {
+      z.$.cont.css('display','none');
+      return z.log('missing imgs');
+    }
+
+    z.build();
+    z.calcDims();
+    z.functionalize();
+  }
+  ,build: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+    z.$.cont.html('<div class="'+x+'-mask">'
+        + '<div class="'+x+'-slide '+x+'-slide0"></div>'
+        + '<div class="'+x+'-slide '+x+'-slide1"></div>'
+      + '</div>'
+      +'<div class="'+x+'-arr '+x+'-arr-left" xdata-dir="-1" style="display:none;"></div>'
+      +'<div class="'+x+'-arr '+x+'-arr-right" xdata-dir="1" style="display:none;></div>'
+    );
+    z;$.mask = z.$.cont.find('div.'+x+'-mask');
+    z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden');
+    z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none');
+    z;$.arrows = z.$.cont.find('div.'+x+'-arr');
+    $.each(z.opts.imgs,function(k,v){
+      var html = '<div class="'+x+'-img" style="width:'+z.imgWidth+'px;height:'+z.imgHeight+'px;">'
+        + '<img class="'+x+'-img-img" alt="" src="'+v+'" />'
+      + '</div>';
+      z.$.slide0.append(html);
+      z.$.slide1.append(html);
+    });
+  }
+  ,functionalize: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+
+    z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());
+    if (z.opts.imgs.length*z.itemWidth > z.$.mask.width()) {
+
+    }
+  }
+  ,calcDims: function(){
+    var z = this
+    ,x = z.cssKey
+    ,td = ace.util.trueDim(z.$.slide0.find('div.'+x+'-img').eq(0));
+    z.itemWidth = td.w;
+    z.itemHeight = td.h;
+  }
+});
+
 
 ace.init();
