@@ -5,7 +5,7 @@
   $('.grid-4:first').html('<div>').find('div').widgetize('carousel',{
     imgs: [
       'http://www.cleanenergyflorida.org/wp-content/uploads/2014/03/trees.jpg'
-      ,'http://crazy-frankenstein.com/free-wallpapers-files/seasonal-wallpapers/spring-trees-wallpapers/spring-trees-2-wallpapers-1680x1050.jpg'
+      ,'http://www.ecologistblog.com/wp-content/uploads/2013/09/trees.jpg'
       ,'http://nickjones.me/wp-content/uploads/2013/07/fruit-trees-spring.jpg'
       ,'http://naturespicwallpaper.com/wp-content/uploads/2014/02/trees8.jpg'
       ,'http://upload.wikimedia.org/wikipedia/commons/8/84/Autumn_trees_in_Dresden.jpg'
@@ -589,9 +589,8 @@ ace.ui.register('carousel',{
       var jSlide = $(this)
       ,x = jSlide.position().left
       ,jBro = z.$.slides.eq((+jSlide.data('w')+1)%2)
-      console.log(jSlide.data('w'),jBro,z.$.slides);
+      ;
       if (x < -1*z.slideWidth) {
-        console.log('swapping');
         jSlide.css('left',
           jBro.position().left + z.slideWidth
           +'px');
