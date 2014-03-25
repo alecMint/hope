@@ -447,7 +447,7 @@ ace.ui.register('carousel',{
     z.$.mask = z.$.cont.find('div.'+x+'-mask');
     z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden');
     z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none');
-    z;$.arrows = z.$.cont.find('div.'+x+'-arr');
+    z.$.arrows = z.$.cont.find('div.'+x+'-arr');
     $.each(z.opts.imgs,function(k,v){
       var html = '<div class="'+x+'-img" style="width:'+z.imgWidth+'px;height:'+z.imgHeight+'px;">'
         + '<img class="'+x+'-img-img" alt="" src="'+v+'" />'
