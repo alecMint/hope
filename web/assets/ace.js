@@ -529,11 +529,11 @@ ace.ui.register('carousel',{
     ,td = ace.util.trueDim(z.$.slide0.find('div.'+x+'-img').eq(0));
     z.itemWidth = td.w;
     z.itemHeight = td.h;
+    z.slideWidth = z.opts.imgs.length*z.itemWidth;
   }
   ,position: function(){
     var z = this
     ,x = z.cssKey
-    ,slideWidth = z.opts.imgs.length*z.itemWidth
     ;
 
     z.$.mask.css('height',z.itemHeight+'px');
@@ -548,9 +548,9 @@ ace.ui.register('carousel',{
     });
 
     //z.log(slideWidth,' > ',z.$.mask.width());
-    if (slideWidth > z.$.mask.width()) {
+    if (z.slideWidth > z.$.mask.width()) {
       z.$.slide1.css({
-        left: slideWidth+'px'
+        left: z.slideWidth+'px'
         ,display: ''
       });
       z.$.arrows.css('display','');
@@ -566,11 +566,9 @@ ace.ui.register('carousel',{
   }
   ,slide: function(dir){
     var z = this
-    ,numVisible = Math.floor(z.$.mask.width()/z.itemWidth)
     ,moveX
     ;
 
-    //z.$.slides.stop();
     z.$.slides.each(function(i,v){
       var jSlide = $(this)
       ,targetX = -1*jSlide.position().left + z.$.mask.width()
@@ -579,6 +577,19 @@ ace.ui.register('carousel',{
         moveX = indexOfTarget*z.itemWidth + jSlide.position().left;
     });
     z.log('moveX',moveX);
+
+    z.$.slide0.animate({
+      left: (z.$.slide0.position().left-moveX)+'px'
+    },{step:checkForSwap});
+    z.$.slide1.animate({
+      left: (z.$.slide1.position().left-moveX)+'px'
+    },{step:checkForSwap});
+
+    function checkForSwap(now,fx){
+      var jSlide = $(this);
+      console.log(fx);
+    }
+
   }
 });
 
