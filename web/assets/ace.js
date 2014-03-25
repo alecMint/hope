@@ -596,7 +596,7 @@ ace.ui.register('carousel',{
           +'px');
       } else if (x > z.$.mask.width()) {
         jSlide.css('left',
-          jBro.position().left i z.slideWidth
+          jBro.position().left - z.slideWidth
           +'px');
       }
     }
