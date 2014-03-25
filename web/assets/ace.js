@@ -67,9 +67,9 @@ ace = {
         },proto,{
           key: key
           ,cssKey: 'ace-'+key
-          ,log: function(){
+          ,log: function(a,b,c,d){
             arguments.unshift(this.key);
-            console.log.apply(console,arguments);
+            console.log.call(console,this.key,a,b,c,d);
           }
         });
         module.instances = [];
