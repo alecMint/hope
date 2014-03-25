@@ -102,6 +102,9 @@ div.clear {
   overflow: hidden;
   position: absolute;
 }
+.ace-carousel-img-img {
+  position: absolute;
+}
 
 
 
