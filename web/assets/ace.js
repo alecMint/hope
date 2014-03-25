@@ -566,6 +566,7 @@ ace.ui.register('carousel',{
   }
   ,slide: function(dir){
     var z = this
+    ,limit = -1*z.slideWidth
     ,moveX
     ;
 
@@ -576,7 +577,6 @@ ace.ui.register('carousel',{
       if (indexOfTarget > 0)
         moveX = indexOfTarget*z.itemWidth + jSlide.position().left;
     });
-    z.log('moveX',moveX);
 
     z.$.slide0.animate({
       left: (z.$.slide0.position().left-moveX)+'px'
@@ -586,8 +586,13 @@ ace.ui.register('carousel',{
     },{step:checkForSwap});
 
     function checkForSwap(now,fx){
-      var jSlide = $(this);
-      console.log(fx);
+      var jSlide = $(this)
+      ,x = jSlide.position().left
+      ;
+      if (x < limit) {
+        z.log('swapping');
+        jSlide.css('left',(x+2*z.slideWidth)+'px');
+      }
     }
 
   }
