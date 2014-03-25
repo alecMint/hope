@@ -587,7 +587,7 @@ ace.ui.register('carousel',{
     function checkForSwap(now,fx){
       var jSlide = $(this)
       ,x = jSlide.position().left
-      ,jBro = z.$.slides[(+jSlide.data('w')+1)%2]
+      ,jBro = z.$.slides.eq((+jSlide.data('w')+1)%2)
       console.log(jSlide.data('w'),jBro,z.$.slides);
       if (x < -1*z.slideWidth) {
         console.log('swapping');
