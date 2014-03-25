@@ -67,8 +67,12 @@ ace = {
         },proto,{
           key: key
           ,cssKey: 'ace-'+key
-          ,log: function(a,b,c,d){
-            console.log.call(console,this.key,a,b,c,d);
+          ,log: function(){
+            var args = this.key;
+            $.each(arguments,function(i,v){
+              args.push(v);
+            });
+            console.log.apply(console,args);
           }
         });
         module.instances = [];
@@ -570,7 +574,7 @@ ace.ui.register('carousel',{
       var jSlide = $(this)
       ,v = Math.ceil(jSlide.position().left/z.itemWidth)
       z.log(v);
-      z.log(numVisible*z.itemWidth + -1*jSlide.position());
+      z.log(numVisible*z.itemWidth + -1*jSlide.position().left);
     });
   }
 });
