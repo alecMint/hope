@@ -2,7 +2,7 @@
   1078488011
   $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 
-  $('.grid-4:first').widgetize('carousel',{
+  $('.grid-4:first').html('<div>').find('div').widgetize('carousel',{
     imgs: [
       'http://www.cleanenergyflorida.org/wp-content/uploads/2014/03/trees.jpg'
       ,'http://crazy-frankenstein.com/free-wallpapers-files/seasonal-wallpapers/spring-trees-wallpapers/spring-trees-2-wallpapers-1680x1050.jpg'
