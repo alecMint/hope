@@ -617,11 +617,10 @@ ace.ui.register('carousel',{
 
 
 ace.shadbox = function(src,opts,cb){
-  var z = this
+  var z = ace.shadbox
   ,opts_ = $.extend({},typeof(opts)=='object'?opts:{},z.config.defaults)
   ,cb_ = cb ? cb : (opts instanceof Function ? opts : null)
   ;
-  _z = z;
 
   z.close();
   if (!z.$.cont)
