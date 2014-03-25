@@ -68,7 +68,7 @@ ace = {
           key: key
           ,cssKey: 'ace-'+key
           ,log: function(){
-            var args = this.key;
+            var args = [this.key];
             $.each(arguments,function(i,v){
               args.push(v);
             });
