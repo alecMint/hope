@@ -589,6 +589,7 @@ ace.ui.register('carousel',{
       var jSlide = $(this)
       ,x = jSlide.position().left
       ;
+      console.log(now,fx);
       if (x < limit) {
         z.log('swapping');
         jSlide.css('left',(x+2*z.slideWidth)+'px');
