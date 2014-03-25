@@ -685,7 +685,6 @@ ace.shadbox.open = function(src,opts,cb){
     width: ''
     ,height: ''
   });
-  z.$.contentItem.empty();
   z.$.content.css({
     left: initialX+'px'
     ,top: initialY+'px'
@@ -753,6 +752,7 @@ ace.shadbox.close = function(){
   if (z.$.cont) {
     z.$.cont.css('display','none');
     z.$.content.removeClass('error loading');
+    z.$.contentItem.empty();
   }
 }
 
