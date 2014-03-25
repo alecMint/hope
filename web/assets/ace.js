@@ -533,7 +533,7 @@ ace.ui.register('carousel',{
       ,jImgs = jItems.find('img.'+x+'-img')
       ;
       jImgs.css(
-        ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgs[0].width,jImgs[0].height]);
+        ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgs[0].width,jImgs[0].height])
       );
     });
 
