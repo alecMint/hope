@@ -749,8 +749,10 @@ ace.shadbox.open = function(src,opts,cb){
 ace.shadbox.close = function(){
   var z = this;
   z.open = z.opening = false;
-  z.$.cont.css('display','none');
-  z.$.content.removeClass('error loading');
+  if (z.$.cont) {
+    z.$.cont.css('display','none');
+    z.$.content.removeClass('error loading');
+  }
 }
 
 
