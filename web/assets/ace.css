@@ -105,11 +105,11 @@ div.clear {
 }
 .ace-carousel-arr-left {
   left: 0;
-  background-position: 0 center;
+  background-position: 1px center;
 }
 .ace-carousel-arr-right {
   right: 0;
-  background-position: -60px center;
+  background-position: -58px center;
 }
 .ace-carousel-arr-left:hover {
   background-position: -119px center;

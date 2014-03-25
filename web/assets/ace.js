@@ -505,6 +505,7 @@ ace.ui.register('carousel',{
     z.$.mask = z.$.cont.find('div.'+x+'-mask');
     z.$.slide0 = z.$.cont.find('div.'+x+'-slide0').css('visibility','hidden');
     z.$.slide1 = z.$.cont.find('div.'+x+'-slide1').css('display','none');
+    z.$.slides = z.$.slide0.add(z.$.slide1);
     z.$.arrows = z.$.cont.find('div.'+x+'-arr');
     $.each(z.opts.imgs,function(k,v){
       var html = '<div class="'+x+'-img" style="width:'+z.imgWidth+'px;height:'+z.imgHeight+'px;">'
@@ -554,6 +555,21 @@ ace.ui.register('carousel',{
   }
   ,functionalize: function(){
     var z = this;
+
+    z.$.arrows.bind('click',function(){
+      z.slide(+$(this).attr('xdata-dir'));
+    });
+  }
+  ,slide: function(dir){
+    var z = this
+    ,numVisible = Math.floor(z.$.mask.width()/z.itemWidth)
+    ,targetX
+    ;
+
+    z.$.slides.each(function(i,jSlide){
+      var v = Math.ceil(jSlide.position().left/z.itemWidth)
+      console.log(v);
+    });
   }
 });
 
