@@ -473,7 +473,7 @@ ace.ui.register('carousel',{
 
     z.$.mask.css('height',z.itemHeight+'px');
 
-    $.each(z.$.imgs,function(i){
+    $.each(z.opts.imgs,function(i){
       z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',i*z.itemWidth);
     });
 
