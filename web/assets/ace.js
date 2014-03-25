@@ -579,10 +579,10 @@ ace.ui.register('carousel',{
     });
 
     z.$.slide0.animate({
-      left: dir*(z.$.slide0.position().left-moveX)+'px'
+      left: (z.$.slide0.position().left-(dir*moveX))+'px'
     },{duration:z.opts.speed,complete:checkForSwap});
     z.$.slide1.animate({
-      left: dir*(z.$.slide1.position().left-moveX)+'px'
+      left: (z.$.slide1.position().left-(dir*moveX))+'px'
     },{duration:z.opts.speed,complete:checkForSwap});
 
     function checkForSwap(now,fx){
