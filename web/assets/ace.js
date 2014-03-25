@@ -475,6 +475,7 @@ ace.ui.register('carousel',{
     imgs: []
     ,dims: '203x152'
     ,speed: 300
+    ,shadbox: true
   }
   ,init: function(){
     var z = this
