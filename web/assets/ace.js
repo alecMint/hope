@@ -543,9 +543,9 @@ ace.ui.register('carousel',{
         left: z.$.slide0.width()+'px'
         ,display: ''
       });
-      z.$.slide0.css('visibility','');
       z.$.arrows.css('display','');
     }
+    z.$.slide0.css('visibility','');
   }
   ,functionalize: function(){
     var z = this;
