@@ -526,6 +526,7 @@ ace.ui.register('carousel',{
   ,position: function(){
     var z = this
     ,x = z.cssKey
+    ,slideWidth = z.opts.imgs.length*z.itemWidth
     ;
 
     z.$.mask.css('height',z.itemHeight+'px');
@@ -539,10 +540,10 @@ ace.ui.register('carousel',{
       );
     });
 
-    //z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());
-    if (z.opts.imgs.length*z.itemWidth > z.$.mask.width()) {
+    //z.log(slideWidth,' > ',z.$.mask.width());
+    if (slideWidth > z.$.mask.width()) {
       z.$.slide1.css({
-        left: z.$.slide0.width()+'px'
+        left: slideWidth+'px'
         ,display: ''
       });
       z.$.arrows.css('display','');
