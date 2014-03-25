@@ -679,7 +679,7 @@ ace.shadbox.open = function(src,opts,cb){
     ,initialY = (viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()
     ,img
   ;
-  z.opening = true;
+  z.isOpening = true;
   z.$.content.addClass('loading').css({
     width: ''
     ,height: ''
@@ -727,16 +727,16 @@ ace.shadbox.open = function(src,opts,cb){
       ,complete: function(){
         z.$.content.removeClass('loading');
         jImg.fadeTo(opts.anim.contentFadeInSpeed,1,function(){
-          z.opening = false;
-          z.open = true;
+          z.isOpening = false;
+          z.isOpen = true;
           if (cb)
             cb();
         });
       }
     });
   }).bind('error',function(){
-    z.opening = false;
-    z.open = true;
+    z.isOpening = false;
+    z.isOpen = true;
     z.$.content.removeClass('loading').addClass('error').css({
       left: (viewportWidth-z.$.content.width())/2 + 'px'
       ,top: ((viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()) + 'px'
@@ -748,7 +748,7 @@ ace.shadbox.open = function(src,opts,cb){
 }
 ace.shadbox.close = function(){
   var z = this;
-  z.open = z.opening = false;
+  z.isOpen = z.isOpening = false;
   if (z.$.cont) {
     z.$.cont.css('display','none');
     z.$.content.removeClass('error loading');
