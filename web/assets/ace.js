@@ -406,6 +406,7 @@ ace = {
 
 };
 
+
 ace.ui.register('instagram',{
   opts: {
     clientId: 'a26e3cd4b7b24a50857f54f78f051b63'
@@ -564,6 +565,10 @@ ace.ui.register('carousel',{
     z.$.arrows.bind('click',function(){
       z.slide(+$(this).attr('xdata-dir'));
     });
+
+    z.$.slide0Imgs.add(z.$.slide1Imgs).find('img.'+x+'-img-img').bind('click',function(){
+      ace.shadbox($(this).attr('src'));
+    });
   }
   ,slide: function(dir){
     var z = this
@@ -603,6 +608,144 @@ ace.ui.register('carousel',{
 
   }
 });
+
+
+ace.shadbox = function(src,opts,cb){
+  var z = this
+  ,opts_ = $.extend({},typeof(opts)=='object'?opts:{},z.config.defaults)
+  ,cb_ = cb ? cb : (opts instanceof Function ? opts : null)
+  ;
+
+  z.close();
+  if (!z.$.cont)
+    z.build();
+
+  z.open(src,opts_,cb_);
+};
+ace.shadbox.config = {
+  cssKey: 'amint-shadbox'
+  ,defaults: {
+    viewport: {
+      padding: {x:.05, y:.05}
+    }
+    ,anim: {
+      fadeSpeed: 100
+      ,delay: 300
+      ,contentExpandSpeed: 300
+      ,contentFadeInSpeed: 300
+    }
+  }
+}
+ace.shadbox.$ = {};
+ace.shadbox.build = function(){
+  var z = this
+    ,x = z.config.cssKey
+  ;
+  z.$.cont = $('<div class="'+x+'" style="display:none;">'
+    + '<div class="'+x+'-bg"></div>'
+    + '<div class="'+x+'-content">'
+      + '<div class="'+x+'-content-item"></div>'
+      + '<a class="'+x+'-close" href="#"></a>'
+    + '</div>'
+  + '</div>');
+  $('body').append(z.$.cont);
+  z.$.bg = $.cont.find('div.'+x+'-bg');
+  z.$.content = $.cont.find('div.'+x+'-content');
+  z.$.contentItem = $.content.find('div.'+x+'-content-item');
+  z.$.close = $.content.find('a.'+x+'-close');
+
+  z.$.cont.bind('click',function(){
+    z.close();
+  });
+  z.$.close.bind('click',function(){
+    e.preventDefault();
+  });
+}
+ace.shadbox.open = function(src,opts,cb){
+  var z = this
+    ,d = $(document)
+    ,w = $(window)
+    ,viewportWidth = w.width()
+    ,viewportHeight = w.height()
+    ,paddingX = viewportWidth*opts.viewport.padding.x
+    ,paddingY = viewportHeight*opts.viewport.padding.y
+    ,initialX = (viewportWidth-z.$.content.width())/2
+    ,initialY = (viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()
+    ,img
+  ;
+  z.opening = true;
+  z.$.content.addClass('loading').css({
+    width: ''
+    ,height: ''
+  });
+  z.$.contentItem.empty();
+  z.$.content.css({
+    left: initialX+'px'
+    ,top: initialY+'px'
+  });
+  z.$.cont.css({
+    width: d.width()+'px'
+    ,height: d.height()+'px'
+  }).fadeIn(opts.anim.fadeSpeed);
+  img = new Image;
+  $(img).bind('load',function(){
+    var viewWidth = viewportWidth-paddingX
+    ,viewHeight = viewportHeight-paddingY
+    ,imgRatio,viewRatio,targetWidth,targetHeight,targetX,targetY
+    ;
+    if (img.width > viewWidth || img.height > viewHeight) {
+      imgRatio = img.width/img.height;
+      viewRatio = viewWidth/viewHeight;
+      if (viewRatio < imgRatio) {
+        targetWidth = viewWidth;
+        targetHeight = targetWidth/imgRatio;
+      } else {
+        targetHeight = viewHeight;
+        targetWidth = targetHeight*imgRatio;
+      }
+    } else {
+      targetWidth = img.width;
+      targetHeight = img.height;
+    }
+    targetX = (viewportWidth-targetWidth)/2;
+    targetY = (viewportHeight-targetHeight)/2 + ace.util.getViewportScrollY();
+    jImg = $('<img src="'+src+'" alt="" />').fadeTo(0,0);
+    z.$.contentItem.append(jimg);
+    z.$.content.delay(opts.anim.delay).animate({
+      width: targetWidth+'px'
+      ,height: targetHeight+'px'
+      ,left: targetX+'px'
+      ,top: targetY+'px'
+    },{
+      duration: opts.anim.contentExpandSpeed
+      ,complete: function(){
+        z.$.content.removeClass('loading');
+        jImg.fadeTo(opts.anim.contentFadeInSpeed,1,function(){
+          z.opening = false;
+          z.open = true;
+          if (cb)
+            cb();
+        });
+      }
+    });
+  }).bind('error',function(){
+    z.opening = false;
+    z.open = true;
+    z.$.content.removeClass('loading').addClass('error').css({
+      left: (viewportWidth-z.$.content.width())/2 + 'px'
+      ,top: ((viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()) + 'px'
+    });
+    if (cb)
+      cb();
+  });
+  img.src = src;
+}
+ace.shadbox.close = function(){
+  var z = this;
+  z.open = z.opening = false;
+  z.$.cont.css('display','none');
+  z.$.content.removeClass('error loading');
+}
 
 
 ace.init();
