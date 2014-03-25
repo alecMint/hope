@@ -679,6 +679,7 @@ ace.shadbox.open = function(src,opts,cb){
     ,initialY = (viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()
     ,img
   ;
+  console.log(viewportWidth,viewportHeight,paddingX,paddingY,initialX,initialY);
   z.isOpening = true;
   z.$.content.addClass('loading').css({
     width: ''
