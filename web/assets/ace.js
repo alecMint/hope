@@ -473,7 +473,7 @@ ace.ui.register('instagram',{
 ace.ui.register('carousel',{
   opts: {
     imgs: []
-    ,dims: '203x152'
+    ,dims: '200x150'
     ,speed: 300
     ,shadbox: true
   }
