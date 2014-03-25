@@ -301,6 +301,59 @@ ace = {
       }
       return arr;
     }
+
+    ,getImageToWindowFit: function(windowSize,imgSize,center){
+      /**
+        ex:
+          center = [null,50/100]
+          center = [0.2,0.8]
+      **/
+      windowSize = [+windowSize[0],+windowSize[1]];
+      imgSize = [+imgSize[0],+imgSize[1]];
+      if (!center) center = [null,null];
+      center = [center[0] === null ? null : +center[0],center[1] === null ? null : +center[1]];
+
+      var window_w2h = windowSize[0]/windowSize[1],
+        img_w2h = imgSize[0]/imgSize[1],
+        offsetX = offsetY = 0,
+        newWidth,newHeight,fit;
+
+      if (window_w2h > img_w2h) {
+        newWidth = windowSize[0];
+        newHeight = newWidth/img_w2h;
+        if (newHeight < windowSize[1]) newHeight = windowSize[1];
+        offsetY = -1 * (newHeight-windowSize[1])/2;
+        if (center[1] !== null) offsetY += (.5-center[1])*newHeight;
+        if (offsetY > 0) offsetY = 0;
+        else if (offsetY < windowSize[1]-newHeight) offsetY = windowSize[1]-newHeight;
+      } else {
+        newHeight = windowSize[1];
+        newWidth = newHeight*img_w2h;
+        if (newWidth < windowSize[0]) newWidth = windowSize[0];
+        offsetX = -1*(newWidth-windowSize[0])/2;
+        if (center[0] !== null) offsetX += (.5-center[0])*newWidth;
+        if (offsetX > 0) offsetX = 0;
+        else if (offsetX < windowSize[0]-newWidth) offsetX = windowSize[0]-newWidth;
+      }
+
+      fit = {
+        width: newWidth,
+        height: newHeight,
+        offset: {
+          x: offsetX,
+          y: offsetY
+        }
+      };
+      fit.style = 'width:'+fit.width+'px;height:'+fit.height+'px;left:'+fit.offset.x+'px;top:'+fit.offset.y+'px;';
+      fit.css = {
+        width: fit.width+'px',
+        height: fit.height+'px',
+        left: fit.offset.x+'px',
+        top: fit.offset.y+'px'
+      };
+      return fit;
+    }
+
   }
 
   ,_jQExtensions: function(){
@@ -430,9 +483,11 @@ ace.ui.register('carousel',{
     }
 
     z.build();
-    z.calcDims();
-    z.position();
-    z.functionalize();
+    z.$.mask.imagesLoaded(function(){
+      z.calcDims();
+      z.position();
+      z.functionalize();
+    });
   }
   ,build: function(){
     var z = this
@@ -474,7 +529,12 @@ ace.ui.register('carousel',{
     z.$.mask.css('height',z.itemHeight+'px');
 
     $.each(z.opts.imgs,function(i){
-      z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',i*z.itemWidth);
+      var jItems = z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',i*z.itemWidth)
+      ,jImgs = jItems.find('img.'+x+'-img')
+      ;
+      jImgs.css(
+        ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgs[0].width,jImgs[0].height]);
+      );
     });
 
     //z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());

@@ -98,6 +98,9 @@ div.clear {
 }
 .ace-carousel-arr-left {
 }
+.ace-carousel-img {
+  overflow: hidden;
+}
 
 
 
