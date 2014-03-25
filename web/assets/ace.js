@@ -568,9 +568,12 @@ ace.ui.register('carousel',{
       z.slide(+$(this).attr('xdata-dir'));
     });
 
-    z.$.slide0Imgs.add(z.$.slide1Imgs).find('img.'+x+'-img-img').bind('click',function(){
-      ace.shadbox($(this).attr('src'));
-    });
+    if (z.opts.shadbox) {
+      z.$.cont.addClass('shadbox_enabled');
+      z.$.slide0Imgs.add(z.$.slide1Imgs).find('img.'+x+'-img-img').bind('click',function(){
+        ace.shadbox($(this).attr('src'));
+      });
+    }
   }
   ,slide: function(dir){
     var z = this
