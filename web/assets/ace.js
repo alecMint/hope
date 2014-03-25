@@ -457,7 +457,7 @@ ace.ui.register('carousel',{
       z.$.slide1.append(html);
     });
     z.$.slide0Imgs = z.$.slide0.find('div.'+x+'-img');
-    z.$.slide1Imgs = z.$.slide`.find('div.'+x+'-img');
+    z.$.slide1Imgs = z.$.slide1.find('div.'+x+'-img');
   }
   ,calcDims: function(){
     var z = this
@@ -471,11 +471,12 @@ ace.ui.register('carousel',{
     ,x = z.cssKey
     ;
 
+    z.$.mask.css('height',z.itemHeight+'px');
+
     $.each(z.$.imgs,function(i){
       z.$.slide0Imgs.eq(i).add(z.$.slide1Imgs.eq(i)).css('left',i*z.itemWidth);
     });
 
-    z.$.mask.css('height',z.itemHeight+'px');
     //z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());
     if (z.opts.imgs.length*z.itemWidth > z.$.mask.width()) {
       z.$.slide1.css({
