@@ -104,6 +104,9 @@ div.clear {
   top: 0;
   padding: 0 4px;
 }
+.ace-carousel-img-wrap {
+  overflow: hidden;
+}
 .ace-carousel-img-img {
   position: absolute;
   display: block;
