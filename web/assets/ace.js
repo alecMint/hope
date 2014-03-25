@@ -621,7 +621,7 @@ ace.shadbox = function(src,opts,cb){
   ,opts_ = $.extend({},typeof(opts)=='object'?opts:{},z.config.defaults)
   ,cb_ = cb ? cb : (opts instanceof Function ? opts : null)
   ;
-  _z = z;
+
   z.close();
   if (!z.$.cont)
     z.build();
@@ -716,7 +716,7 @@ ace.shadbox.open = function(src,opts,cb){
     targetX = (viewportWidth-targetWidth)/2;
     targetY = (viewportHeight-targetHeight)/2 + ace.util.getViewportScrollY();
     jImg = $('<img src="'+src+'" alt="" />').fadeTo(0,0);
-    z.$.contentItem.append(jimg);
+    z.$.contentItem.append(jImg);
     z.$.content.delay(opts.anim.delay).animate({
       width: targetWidth+'px'
       ,height: targetHeight+'px'
