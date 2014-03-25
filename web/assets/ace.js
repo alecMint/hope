@@ -495,7 +495,7 @@ ace.ui.register('carousel',{
     var z = this
     ,x = z.cssKey
     ;
-    z.$.cont.html('<div class="'+x+'-mask">'
+    z.$.cont.html('<div class="'+x+'-mask" style="height:'+z.imgHeight+'px;">'
         + '<div class="'+x+'-slide '+x+'-slide0"></div>'
         + '<div class="'+x+'-slide '+x+'-slide1"></div>'
       + '</div>'
