@@ -19,3 +19,5 @@ require_once(TEMPLATEPATH . '/functions/theme/init.php');
  *    ADD YOUR CUSTOM FUNCTIONS BELOW
  *  ================================================================================================
  */
+
+require_once(TEMPLATEPATH.'/../../../assets/functions.php');
