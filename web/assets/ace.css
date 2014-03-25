@@ -109,6 +109,12 @@ div.clear {
 .ace-carousel-arr-right {
   right: 0;
 }
+.ace-carousel-arr-left:hover {
+  background-position: -118px center;
+}
+.ace-carousel-arr-right:hover {
+  background-position: -118px center;
+}
 .ace-carousel-img {
   overflow: hidden;
   position: absolute;
