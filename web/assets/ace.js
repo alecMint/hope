@@ -570,6 +570,7 @@ ace.ui.register('carousel',{
     ,targetX
     ;
 
+    //z.$.slides.stop();
     z.$.slides.each(function(i,v){
       var jSlide = $(this)
       ,targetX = -1*jSlide.position().left + z.$.mask.width()
