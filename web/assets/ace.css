@@ -105,17 +105,17 @@ div.clear {
 }
 .ace-carousel-arr-left {
   left: 0;
-  background-position: -1px center;
+  background-position: 0 center;
 }
 .ace-carousel-arr-right {
   right: 0;
   background-position: -60px center;
 }
 .ace-carousel-arr-left:hover {
-  background-position: -118px center;
+  background-position: -117px center;
 }
 .ace-carousel-arr-right:hover {
-  background-position: -177px center;
+  background-position: -176px center;
 }
 .ace-carousel-img {
   overflow: hidden;
