@@ -415,7 +415,7 @@ ace.ui.register('instagram',{
 ace.ui.register('carousel',{
   opts: {
     imgs: []
-    ,dims: '203xx152'
+    ,dims: '203x152'
   }
   ,init: function(){
     var z = this
@@ -461,9 +461,11 @@ ace.ui.register('carousel',{
     ,x = z.cssKey
     ;
 
-    z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());
+    z.$.mask.css('height',z.itemHeight+'px');
+    //z.log(z.opts.imgs.length*z.itemWidth,' > ',z.$.mask.width());
     if (z.opts.imgs.length*z.itemWidth > z.$.mask.width()) {
-
+      z.$.slide1.css('left',z.$.slide0.width()+'px');
+      z.$.arrows.css('display','');
     }
   }
   ,calcDims: function(){

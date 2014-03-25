@@ -81,10 +81,16 @@ div.clear {
 
 
 .ace-carousel {
+  position: relative;
 }
 .ace-carousel-mask {
+  overflow: hidden;
+  position: relative;
 }
 .ace-carousel-slide {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .ace-carousel-arr {
 }
