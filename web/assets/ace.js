@@ -590,12 +590,12 @@ ace.ui.register('carousel',{
       ,x = jSlide.position().left
       ,jBro = z.$.slides.eq((+jSlide.data('w')+1)%2)
       ;
+      z.log(x,' > ',z.slideWidth+z.$.mask.width());
       if (x < -1*z.slideWidth) {
         jSlide.css('left',
           jBro.position().left + z.slideWidth
           +'px');
       } else if (x > z.slideWidth+z.$.mask.width()) {
-        z.log(x,' > ',z.slideWidth+z.$.mask.width());
         jSlide.css('left',0);
       }
     }
