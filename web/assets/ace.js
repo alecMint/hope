@@ -8,7 +8,7 @@
     ,'http://www.ecologistblog.com/wp-content/uploads/2013/09/trees.jpg'
     ,'http://nickjones.me/wp-content/uploads/2013/07/fruit-trees-spring.jpg'
     ,'http://naturespicwallpaper.com/wp-content/uploads/2014/02/trees8.jpg'
-    ,'http://upload.wikimedia.org/wikipedia/commons/8/84/Autumn_trees_in_Dresden.jpg'
+    ,'http://img.timeinc.net/time/photoessays/2008/trees/franklin_trees_01.jpg'
     ,'http://siliconangle.com/files/2013/07/Trees.jpg'
   ]
 }</script>
