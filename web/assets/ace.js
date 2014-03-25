@@ -560,7 +560,9 @@ ace.ui.register('carousel',{
     z.$.slide0.css('visibility','');
   }
   ,functionalize: function(){
-    var z = this;
+    var z = this
+    ,x = z.cssKey
+    ;
 
     z.$.arrows.bind('click',function(){
       z.slide(+$(this).attr('xdata-dir'));
