@@ -655,10 +655,10 @@ ace.shadbox.build = function(){
     + '</div>'
   + '</div>');
   $('body').append(z.$.cont);
-  z.$.bg = $.cont.find('div.'+x+'-bg');
-  z.$.content = $.cont.find('div.'+x+'-content');
-  z.$.contentItem = $.content.find('div.'+x+'-content-item');
-  z.$.close = $.content.find('a.'+x+'-close');
+  z.$.bg = z.$.cont.find('div.'+x+'-bg');
+  z.$.content = z.$.cont.find('div.'+x+'-content');
+  z.$.contentItem = z.$.content.find('div.'+x+'-content-item');
+  z.$.close = z.$.content.find('a.'+x+'-close');
 
   z.$.cont.bind('click',function(){
     z.close();
