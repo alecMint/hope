@@ -2,7 +2,7 @@
   1078488011
   $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 
-<script type="text/amint-carousel">{
+<script type="text/ace-carousel">{
   imgs: [
     'http://www.cleanenergyflorida.org/wp-content/uploads/2014/03/trees.jpg'
     ,'http://www.ecologistblog.com/wp-content/uploads/2013/09/trees.jpg'
