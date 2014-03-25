@@ -145,7 +145,7 @@ div.clear {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 9999; /* menu items also at 999 :/ */
   cursor: pointer;
 }
 .amint-shadbox-bg {
