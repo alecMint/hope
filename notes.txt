@@ -1,0 +1,13 @@
+
+--- Post Theme Install ---
+
+
+
+
+
+--- If Installing a Different Theme ---
+
+Symlink for style.css needs to be created
+cd [path to theme]
+rm style.css
+ln -s ../../uploads/x/style.css style.css
