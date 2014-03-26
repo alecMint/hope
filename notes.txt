@@ -12,7 +12,7 @@ ln -s ../../uploads/x/style.css style.css
 
 
 May need to add the stylesheet href to header.php or mod-document.head.php
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php vres('/wp-content/themes/[theme]/style.css'); ?>" />
 
 
 Add assets to [theme]/template-parts/mod-document-head.php
