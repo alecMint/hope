@@ -5,3 +5,4 @@ workspace
 hooky.json
 npm-debug.log
 web/wp-content/uploads*
+web/wp-content/tmp_uploads*
