@@ -1,13 +1,29 @@
 
 --- Post Theme Install ---
 
+Add following line to [theme]/functions.php
+require_once(TEMPLATEPATH.'/../../../assets/functions.php');
 
-
-
-
---- If Installing a Different Theme ---
 
 Symlink for style.css needs to be created
 cd [path to theme]
 rm style.css
 ln -s ../../uploads/x/style.css style.css
+
+
+Add assets to [theme]/template-parts/mod-document-head.php
+<link rel="stylesheet" type="text/css" href="<?php vres('/assets/ace.css'); ?>" />
+<script src="<?php vres('/assets/ace.js'); ?>"></script>
+
+
+May need to upgrade jquery version
+http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
+
+
+
+--- To Do ---
+
+- Get style.css working. Not editable atm
+- Fix carousel
+  - Add a third if necessary (calc width), use array to loop in checkForSwap
+
