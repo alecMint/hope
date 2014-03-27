@@ -16,4 +16,4 @@ $r = curl_exec($ch);
 
 echo 'sup<br />';
 echo $r;
-} catch (Exception $e){echo "$e";}
+
