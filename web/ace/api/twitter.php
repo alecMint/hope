@@ -5,6 +5,7 @@ https://dev.twitter.com/docs/auth/application-only-auth
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 
+exit('yo');
 \ace\Ace::e('sup');
 
 $key = '';
