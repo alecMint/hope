@@ -492,7 +492,7 @@ ace.ui.register('carousel',{
 
     z.build();
     z.calcDims();
-    z.buildSlides();
+    z.position();
     z.functionalize();
   }
   ,build: function(){
@@ -508,6 +508,8 @@ ace.ui.register('carousel',{
     z.$.mask = z.$.cont.find('div.'+x+'-mask');
     z.$.slideCont = z.$.mask.find('div.'+x+'-slideCont');
     z.$.arrows = z.$.cont.find('div.'+x+'-arr');
+    z.$.slides = z.createSlide();
+    z.$.slideCont.append(z.$.slides);
   }
   ,calcDims: function(){
     var z = this
@@ -519,19 +521,6 @@ ace.ui.register('carousel',{
     z.maskWidth = z.$.mask.width();
     z.slideDistance = Math.floor(z.maskWidth/z.itemWidth)*z.itemWidth;
   }
-  ,buildSlides: function(){
-    var z = this;
-    z.$.slides = z.createSlide();
-    z.$.mask.append(z.$.slides);
-    z.$.mask.css('height',z.itemHeight+'px');
-
-    if (z.slideWidth > z.maskWidth) {
-      // need arrow functionality
-      z.$.slides.add(z.createSlide()).add(z.createSlide());
-      z.$.arrows.css('display','');
-    }
-    z.$.slides.css('visibility','');
-  }
   ,createSlide: function(){
     var z = this
     ,x = z.cssKey
@@ -541,23 +530,40 @@ ace.ui.register('carousel',{
       return z.$.slides.eq(0).clone(true);
     jSlide = $('<div class="'+x+'-slide" style="visibility:hidden;"></div>')
     $.each(z.opts.imgs,function(i,src){
-      var jImg = $('<div class="'+x+'-img is-loading">'
+      jSlide.append('<div class="'+x+'-img is-loading" style="width:'+z.imgWidth+'px;height:'+z.imgHeight+'px;">'
         + '<div class="'+x+'-img-wrap">'
           + '<img class="'+x+'-img-img" alt="" src="'+src+'" />'
         + '</div>'
-      + '</div>').css({
-        width: z.imgWidth+'px'
-        ,height: z.imgHeight+'px'
-        ,left: (i*z.itemHeight)+'px'
-      }).imagesLoaded(function(){
-        var jImgImg = t.find('img.'+x+'-img-img');
-        jImg.removeClass('is-loading');
-        jImgImg.css(
-          ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgImg[0].width,jImgImg[0].height]).css
-        );
-      });
-      jSlide.append(jImg);
+      + '</div>');
     });
+  }
+  ,position: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+    z.$.slides = z.createSlide();
+    z.$.mask.append(z.$.slides);
+    z.$.mask.css('height',z.itemHeight+'px');
+
+    if (z.slideWidth > z.maskWidth) {
+      // need arrow functionality
+      z.$.slides.add(z.createSlide()).add(z.createSlide());
+      z.$.arrows.css('display','');
+    }
+
+    z.$.slides.each(function(){
+      z.$.slides.eq(i).find('div.'+x+'-img').each(function(i){
+        var jImg = $(this).css('left',(i*z.itemHeight)+'px').imagesLoaded(function(){
+          var jImgImg = t.find('img.'+x+'-img-img');
+          jImg.removeClass('is-loading');
+          jImgImg.css(
+            ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgImg[0].width,jImgImg[0].height]).css
+          );
+        });
+      });
+    });
+
+    z.$.slides.css('visibility','');
   }
   ,functionalize: function(){
     var z = this
