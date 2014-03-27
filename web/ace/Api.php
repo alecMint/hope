@@ -7,6 +7,7 @@ class Api {
 
   private function __clone(){}
   private function __construct(){}
+  private static $params = null;
   private static $routes = array(
     'twitter/oauth2' => 'Twitter::getOAuth2Token',
   );
@@ -36,7 +37,14 @@ class Api {
   }
 
   private static function getParams(){
-    return array_merge($_POST,$_GET);
+    if (self::$params !== null)
+      return self::$params;
+    return self::$params = array_merge($_POST,$_GET);
+  }
+
+  private static function setData($error,$data){
+    $r = $error ? array('error'=>$error) : array('data'=>$data);
+    exit(json_encode($r));
   }
 
 }
