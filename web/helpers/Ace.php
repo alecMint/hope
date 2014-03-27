@@ -7,7 +7,7 @@ class Ace {
   private function __clone(){}
   private function __construct(){}
   
-  public static function loadConfig(){
+  public static function loadConfig($F1,$F2){
     /*extract(self::$config);
     $args = func_get_args();
     foreach ($args as $a){
