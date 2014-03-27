@@ -23,7 +23,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   "Host: api.twitter.com",
   "User-Agent: My Twitter App v1.0.23",
-  "Authorization: $creds",
+  "Authorization: Basic $creds",
   "Content-Length: 29",
   "Accept-Encoding: gzip",
 ));
