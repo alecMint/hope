@@ -6,8 +6,8 @@ $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
 $creds =  base64_encode(rawurlencode($key).':'.rawurlencode($secret));
 
 
-/*
 $ch = curl_init();
+/*
 curl_setopt($ch, CURLOPT_USERPWD, $creds);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -21,7 +21,11 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  "Authorization: $creds"
+  "Host: api.twitter.com",
+  "User-Agent: My Twitter App v1.0.23",
+  "Authorization: $creds",
+  "Content-Length: 29",
+  "Accept-Encoding: gzip",
 ));
 
 $r = curl_exec($ch);
