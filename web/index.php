@@ -1,7 +1,8 @@
 <?php
 
-exit('hey'.dirname(__FILE__));
-//include dirname(__FILE__).'/bootshell.php';
+
+include dirname(__FILE__).'/bootshell.php';
+exit('hey32'.dirname(__FILE__));
 
 /**
  * Front to the WordPress application. This file doesn't do anything, but loads
