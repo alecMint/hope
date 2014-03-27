@@ -1,7 +1,6 @@
 <?php
 
 define('WEBROOT',dirname(__DIR__));
-exit 'hey: '.WEBROOT;
 
 include WEBROOT.'/helpers/common.php';
 include WEBROOT.'/helpers/Ace.php';
