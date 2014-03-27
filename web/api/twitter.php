@@ -1,5 +1,6 @@
 <?php
-
+echo 'hru';
+/*
 try {
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
 $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
@@ -17,3 +18,4 @@ $r = curl_exec($ch);
 echo 'sup<br />';
 echo $r;
 } catch (Exception $e){echo "$e";}
+*/
