@@ -547,9 +547,9 @@ ace.ui.register('carousel',{
 
     if (z.slideWidth > z.maskWidth) {
       // need arrow functionality
-      z.$.slides = z.$.slides.add(jSlide=z.createSlide());
+      z.$.slides = z.$.slides.add(jSlide=z.createSlide().css('left',(-z.slideWidth)+'px'));
       z.$.slidesCont.append(jSlide);
-      z.$.slides = z.$.slides.add(jSlide=z.createSlide());
+      z.$.slides = z.$.slides.add(jSlide=z.createSlide().css('left',z.slideWidth+'px'));
       z.$.slidesCont.append(jSlide);
       z.$.arrows.css('display','');
     }
