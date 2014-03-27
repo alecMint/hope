@@ -8,6 +8,7 @@ class Ace {
   private function __construct(){}
   
   public static function loadConfig($F1,$F2){
+    echo "loadConfig";exit;
     /*extract(self::$config);
     $args = func_get_args();
     foreach ($args as $a){
