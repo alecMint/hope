@@ -506,10 +506,10 @@ ace.ui.register('carousel',{
       +'<div class="'+x+'-arr '+x+'-arr-right" xdata-dir="1" style="display:none;"></div>'
     );
     z.$.mask = z.$.cont.find('div.'+x+'-mask');
-    z.$.slideCont = z.$.mask.find('div.'+x+'-slideCont');
+    z.$.slidesCont = z.$.mask.find('div.'+x+'-slide_cont');
     z.$.arrows = z.$.cont.find('div.'+x+'-arr');
     z.$.slides = z.createSlide();
-    z.$.slideCont.append(z.$.slides);
+    z.$.slidesCont.append(z.$.slides);
   }
   ,calcDims: function(){
     var z = this
