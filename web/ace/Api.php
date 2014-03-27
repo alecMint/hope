@@ -42,7 +42,7 @@ class Api {
     return self::$params = array_merge($_POST,$_GET);
   }
 
-  private static function setData($error,$data){
+  private static function setData($error,$data=null){
     $r = $error ? array('error'=>$error) : array('data'=>$data);
     exit(json_encode($r));
   }
