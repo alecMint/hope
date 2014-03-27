@@ -9,7 +9,7 @@ use \ace\Ace;
 class Twitter {
 
   public function getOAuth2Token(){
-    $key = Ace::getConfig('hopeTwitterAppKey');
+    $key = Ace::getConfig('hopeTwitterAppKey').'wef';
     $secret = Ace::getConfig('hopeTwitterAppSecret');
     $creds = base64_encode(rawurlencode($key).':'.rawurlencode($secret));
 
