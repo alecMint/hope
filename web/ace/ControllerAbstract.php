@@ -6,7 +6,7 @@ abstract class ControllerAbstract {
 
   private $params = null;
 
-  private static function getParams(){
+  protected static function getParams(){
     if ($this->$params !== null)
       return $this->$params;
     return $this->params = array_merge($_POST,$_GET);

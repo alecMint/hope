@@ -39,8 +39,31 @@ class Twitter extends ControllerAbstract {
     return $r->access_token;
   }
 
-  public function get($secondTry=false){
+  public function get(){
+    $params = $this->getInput(array(
+      'route' => true,
+      'p' => false,
+    ));
+    if (!is_array($params['p']))
+      $params['p'] = array();
 
+    $url = 'https://api.twitter.com/1.1/'.$params['route'].'.json';
+    $url .= '?'.http_build_query($params['p']);
+    $creds = $this->getAppToken();
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+      "Authorization: Bearer $creds",
+    ));
+    $r = json_decode(curl_exec($ch));
+    $r = json_decode(curl_exec($ch));
+    if (!is_object($r))
+      throw new \Exception('unexpected response from twitter');
+    if (isset($r->errors))
+      throw new \Exception(json_encode($r->errors));
+    return $r;
   }
 
 }
