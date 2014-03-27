@@ -540,6 +540,7 @@ ace.ui.register('carousel',{
   ,position: function(){
     var z = this
     ,x = z.cssKey
+    ,jSlide
     ;
     z.$.slides = z.createSlide();
     z.$.mask.append(z.$.slides);
@@ -547,7 +548,10 @@ ace.ui.register('carousel',{
 
     if (z.slideWidth > z.maskWidth) {
       // need arrow functionality
-      z.$.slides.add(z.createSlide()).add(z.createSlide());
+      z.$.slides.add(jSlide=z.createSlide());
+      z.$.slidesCont.append(jSlide);
+      z.$.slides.add(jSlide=z.createSlide());
+      z.$.slidesCont.append(jSlide);
       z.$.arrows.css('display','');
     }
 
