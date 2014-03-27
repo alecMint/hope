@@ -608,7 +608,7 @@ ace.ui.register('carousel',{
       },{
         duration: z.opts.speed
         ,complete: function(){
-          var offsetX = z.$.slidesCont.position().x;
+          var offsetX = z.$.slidesCont.position().left;
           z.$.slides.sort(function(a,b){
             return $(a).position().left-$(b).position().left;
           });
