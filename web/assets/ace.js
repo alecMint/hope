@@ -548,9 +548,9 @@ ace.ui.register('carousel',{
     if (z.slideWidth > z.maskWidth) {
       // need arrow functionality
       z.$.slides = z.$.slides.add(jSlide=z.createSlide());
-      z.$.slidesCont.append(jSlide);
+      //z.$.slidesCont.append(jSlide);
       z.$.slides = z.$.slides.add(jSlide=z.createSlide());
-      z.$.slidesCont.append(jSlide);
+      //z.$.slidesCont.append(jSlide);
       z.$.arrows.css('display','');
     }
 
