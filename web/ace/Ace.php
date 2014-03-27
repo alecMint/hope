@@ -21,6 +21,10 @@ class Ace {
     self::$config = get_defined_vars();
   }
 
+  public static function getConfig($k){
+    return self::g(self::$config,$k);
+  }
+
   public static function vres($path){
     echo $path . (strpos($path,'?') === false ? '?' : '&') . filemtime(WEBROOT.$path);
   }
@@ -28,10 +32,10 @@ class Ace {
   public static function g($p,$k,$d=null){
     //slightly faster to not convert to array first
     //if (!is_array($k)) $k = array($k);
-    if (!is_array($k)) $d = isset($p[$k]) ? $p[$k] : $d;
+    if (!is_array($k)) $d = array_key_exists($k,$p) ? $p[$k] : $d;
     else {
       for ($i=0,$c=count($k);$i<$c;$i++) {
-        if (isset($p[$k[$i]])) {
+        if (array_key_exists($k[$i],$p)) {
           $d = $p[$k[$i]];
           break;
         }
