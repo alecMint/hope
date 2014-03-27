@@ -8,15 +8,15 @@ class Ace {
   private function __construct(){}
   
   public static function loadConfig(){
-    extract(self::$config);
+    /*extract(self::$config);
     $args = func_get_args();
-    foreach($args as $a){
+    foreach ($args as $a){
       if (is_array($a)) 
         extract($a);
       else if (is_file($a))
         include $a;
     }
-    self::$config = get_defined_vars();
+    self::$config = get_defined_vars();*/
   }
 
 }
