@@ -1,6 +1,7 @@
 <?php
 
-ini_set('display_errors',1);error_reporting(E_ALL);
+if (!empty($_GET['debug']))
+  ini_set('display_errors',1);error_reporting(E_ALL);
 
 define('WEBROOT',dirname(__FILE__));
 define('APP_PATH',WEBROOT.'/ace');
