@@ -1,7 +1,5 @@
 <?php
 
-var_dump(is_file(dirname(__FILE__).'/bootshell.php'));
-exit;
 include dirname(__FILE__).'/bootshell.php';
 
 /**

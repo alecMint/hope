@@ -1,6 +1,8 @@
 <?php
 
-exit('wgwef');
+echo 'HEY!!!!';
+exit;
+
 /*
 define('WEBROOT',dirname(__DIR__));
 
