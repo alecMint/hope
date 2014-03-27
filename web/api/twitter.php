@@ -1,4 +1,7 @@
 <?php
+/*
+https://dev.twitter.com/docs/auth/application-only-auth
+*/
 echo 'hru';
 
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
@@ -17,6 +20,7 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 //curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token?screen_name=twitterapi&count=2');
 */
 
+curl_setopt($ch, CURLOPT_VERBOSE , true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
