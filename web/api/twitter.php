@@ -23,7 +23,7 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 curl_setopt($ch, CURLOPT_VERBOSE , true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   "Host: api.twitter.com",
@@ -38,7 +38,7 @@ $r = curl_exec($ch);
 
 echo 'sup<br />';
 //echo "$creds<br />";
-echo $r;
+//echo $r;
 
 
 /*
