@@ -17,8 +17,12 @@ cd /root/sire
 
 --- Post Theme Install ---
 
+Add following to top of index.php
+include dirname(__FILE__).'/bootshell.php';
+
+
 Add following line to [theme]/functions.php
-require_once(TEMPLATEPATH.'/../../../assets/functions.php');
+require_once TEMPLATEPATH.'/../../../assets/functions.php';
 
 
 Symlink for style.css needs to be created
@@ -43,6 +47,5 @@ http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
 
 --- To Do ---
 
-- Fix carousel
-  - Add a third if necessary (calc width), use array to loop in checkForSwap
+
 
