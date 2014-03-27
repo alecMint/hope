@@ -1,4 +1,4 @@
-<?
+<?php
 
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
 $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
