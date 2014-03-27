@@ -7,7 +7,6 @@ class Api {
 
   private function __clone(){}
   private function __construct(){}
-  private static $params = null;
   private static $routes = array(
     'twitter/oauth2' => 'Twitter::getOAuth2Token',
   );
@@ -33,13 +32,7 @@ class Api {
     if (!method_exists($controller,$route[1]))
       throw new \Exception('invalid method');
 
-    return $controller->$method(self::getParams());
-  }
-
-  private static function getParams(){
-    if (self::$params !== null)
-      return self::$params;
-    return self::$params = array_merge($_POST,$_GET);
+    return $controller->$method();
   }
 
   private static function setData($error,$data=null){

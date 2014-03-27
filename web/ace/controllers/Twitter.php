@@ -5,8 +5,9 @@ https://dev.twitter.com/docs/auth/application-only-auth
 
 namespace ace\controllers;
 use \ace\Ace;
+use \ace\ControllerAbstract;
 
-class Twitter {
+class Twitter extends ControllerAbstract {
 
   public function getOAuth2Token(){
     $key = Ace::getConfig('hopeTwitterAppKey');
@@ -29,6 +30,10 @@ class Twitter {
     if (!isset($r->access_token))
       throw new \Exception('missing access_token');
     return $r;
+  }
+
+  public function get($secondTry=false){
+    
   }
 
 }
