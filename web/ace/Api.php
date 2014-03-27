@@ -26,10 +26,10 @@ class Api {
       throw new \Exception('route not found');
 
     $route = explode('::',$route);
-    $controllerKey = $route[0];
-    $methodKey = $route[1];
+    $class = '\\ace\\controllers\\'.$route[0];
+    exit($class);
 
-    $controller = new "\\ace\\controllers\\\$controllerKey";
+    $controller = new $class;
     if (!method_exists($controller,$methodKey))
       throw new \Exception('invalid method');
 
