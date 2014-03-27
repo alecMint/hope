@@ -3,7 +3,7 @@
 https://dev.twitter.com/docs/auth/application-only-auth
 */
 
-namespace ace\helpers;
+namespace ace\controllers;
 use \ace\Ace;
 
 class Twitter {
