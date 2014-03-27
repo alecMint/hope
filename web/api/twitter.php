@@ -8,8 +8,8 @@ echo 'hru';
 
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
 $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
-$creds = rawurlencode($key).':'.rawurlencode($secret);
-//$creds =  base64_encode($creds);
+//$creds = rawurlencode($key).':'.rawurlencode($secret);
+$creds =  base64_encode($creds);
 
 
 $ch = curl_init();
@@ -29,12 +29,12 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  "Host: api.twitter.com",
-  "User-Agent: My Twitter App v1.0.23",
+  //"Host: api.twitter.com",
+  //"User-Agent: My Twitter App v1.0.23",
   "Authorization: Basic $creds",
-  "Content-Type: application/x-www-form-urlencoded;charset=UTF-8",
-  "Content-Length: 29",
-  "Accept-Encoding: gzip",
+  //"Content-Type: application/x-www-form-urlencoded;charset=UTF-8",
+  //"Content-Length: 29",
+  //"Accept-Encoding: gzip",
 ));
 
 $r = curl_exec($ch);
