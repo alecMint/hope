@@ -1,7 +1,7 @@
 <?php
 
-exit 'wefwfwef';
-include dirname(__FILE__).'/bootshell.php';
+//exit 'wefwfwef';
+//include dirname(__FILE__).'/bootshell.php';
 
 /**
  * Front to the WordPress application. This file doesn't do anything, but loads
