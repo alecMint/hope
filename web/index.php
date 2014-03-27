@@ -1,6 +1,6 @@
 <?php
 
-//exit 'wefwfwef';
+exit(dirname(__FILE__).'/bootshell.php');
 //include dirname(__FILE__).'/bootshell.php';
 
 /**
