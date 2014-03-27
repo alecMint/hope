@@ -1,6 +1,6 @@
 <?php
 
-exit('hey');
+exit('hey'.dirname(__FILE__));
 //include dirname(__FILE__).'/bootshell.php';
 
 /**
