@@ -29,7 +29,7 @@ class Api {
     $controllerKey = $route[0];
     $methodKey = $route[1];
 
-    $controller = new "\ace\controllers\\$controllerKey";
+    $controller = new '\ace\controllers\\'.$controllerKey;
     if (!method_exists($controller,$methodKey))
       throw new \Exception('invalid method');
 
