@@ -516,7 +516,7 @@ ace.ui.register('carousel',{
   ,calcDims: function(){
     var z = this
     ,x = z.cssKey
-    ,td = ace.util.trueDim(z.$.slides.eq(0).find('div.'+x+'-img').eq(0));
+    ,td = ace.util.trueDim(z.$.slides.eq(0).find('div.'+x+'-img').eq(0),true);
     z.itemWidth = td.w;
     z.itemHeight = td.h;
     z.slideWidth = z.opts.imgs.length*z.itemWidth;
