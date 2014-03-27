@@ -556,9 +556,9 @@ ace.ui.register('carousel',{
       z.$.arrows.css('display','');
     }
 
-    z.$.slides.each(function(){
-      z.$.slides.eq(i).find('div.'+x+'-img').each(function(i){
-        var jImg = $(this).css('left',(i*z.itemHeight)+'px').imagesLoaded(function(){
+    z.$.slides.each(function(i){
+      z.$.slides.eq(i).find('div.'+x+'-img').each(function(n){
+        var jImg = $(this).css('left',(n*z.itemHeight)+'px').imagesLoaded(function(){
           var jImgImg = t.find('img.'+x+'-img-img');
           jImg.removeClass('is-loading');
           jImgImg.css(
