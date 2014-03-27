@@ -20,13 +20,14 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-/*curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   "Host: api.twitter.com",
   "User-Agent: My Twitter App v1.0.23",
   "Authorization: Basic $creds",
   "Content-Length: 29",
   "Accept-Encoding: gzip",
-));*/
+));
 
 $r = curl_exec($ch);
 
