@@ -5,8 +5,8 @@ https://dev.twitter.com/docs/auth/application-only-auth
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 
-$key = 'HFUeBKXV6OLp1PYXl3RVzQ';
-$secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
+$key = '';
+$secret = '';
 $creds = rawurlencode($key).':'.rawurlencode($secret);
 $creds =  base64_encode($creds);
 
