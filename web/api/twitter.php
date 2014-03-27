@@ -8,7 +8,8 @@ echo 'hru';
 
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
 $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
-$creds =  base64_encode(rawurlencode($key).':'.rawurlencode($secret));
+$creds = rawurlencode($key).':'.rawurlencode($secret);
+//$creds =  base64_encode($creds);
 
 
 $ch = curl_init();
