@@ -543,8 +543,6 @@ ace.ui.register('carousel',{
     ,x = z.cssKey
     ,jSlide
     ;
-    z.$.slides = z.createSlide();
-    z.$.mask.append(z.$.slides);
     z.$.mask.css('height',z.itemHeight+'px');
 
     if (z.slideWidth > z.maskWidth) {
