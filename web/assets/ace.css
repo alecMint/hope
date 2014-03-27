@@ -121,7 +121,10 @@ div.clear {
   overflow: hidden;
   position: absolute;
   top: 0;
-  padding: 0 4px;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  padding: 4px;
+  margin: 0 4px;
 }
 .ace-carousel-img.is-loading {
   background: url(/assets/loader02.gif) no-repeat center center;
