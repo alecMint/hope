@@ -9,6 +9,7 @@ class Api {
   private function __construct(){}
   private static $routes = array(
     'twitter/token/app' => 'Twitter::getAppToken',
+    'twitter/get' => 'Twitter::get',
   );
   
   public static function request($route){
