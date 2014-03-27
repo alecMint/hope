@@ -83,11 +83,11 @@ div.clear {
 .ace-carousel {
   position: relative;
 }
-.ace-carousel.is-loading {
-  background: url(/assets/loader02.gif) no-repeat center center;
-}
 .ace-carousel-mask {
   overflow: hidden;
+  position: relative;
+}
+.ace-carousel-slide_cont {
   position: relative;
 }
 .ace-carousel-slide {
@@ -122,6 +122,9 @@ div.clear {
   position: absolute;
   top: 0;
   padding: 0 4px;
+}
+.ace-carousel-img.is-loading {
+  background: url(/assets/loader02.gif) no-repeat center center;
 }
 .ace-carousel-img-wrap {
   overflow: hidden;
