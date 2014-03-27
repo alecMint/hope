@@ -608,15 +608,18 @@ ace.ui.register('carousel',{
       },{
         duration: z.opts.speed
         ,complete: function(){
-          var offsetX = z.$.slidesCont.position().left;
+          var offsetX = z.$.slidesCont.position().left
+          ,x;
           z.$.slides.sort(function(a,b){
             return $(a).position().left-$(b).position().left;
           });
-          if (z.$.slides.eq(0).position().left+offsetX + z.slideWidth < -z.slideDistance) {
+          // only need the first half of the ifs,
+          //  but otherwise we waste resources popping them back and forth
+          if ((x=z.$.slides.eq(0).position().left+offsetX) + z.slideWidth < -z.slideDistance && x-z.slideDistance <= z.maskWidth+z.slideDistance) {
             // push onto end
             z.$.slides.eq(0).css('left', (z.$.slides.eq(2).position().left+z.slideWidth)+'px');
-          } else if (z.$.slides.eq(2).position().left+offsetX > z.maskWidth+z.slideDistance) {
-            // pop into beginning
+          } else if ((x=z.$.slides.eq(2).position().left+offsetX) > z.maskWidth+z.slideDistance && x+z.slideWidth+z.slideDistance >= -z.slideDistance) {
+            // pop onto beginning
             z.$.slides.eq(2).css('left', (z.$.slides.eq(0).position().left-z.slideWidth)+'px');
           }
           z.slideQueue.shift();
