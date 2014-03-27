@@ -1,7 +1,5 @@
 <?php
 
-namespace ace;
-
 class Ace {
 
   private static $config = array();

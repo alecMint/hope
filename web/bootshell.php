@@ -1,12 +1,9 @@
 <?php
 
-ini_set('display_errors',1);error_reporting(E_ALL);
+//ini_set('display_errors',1);error_reporting(E_ALL);
 
 define('WEBROOT',dirname(__FILE__));
 define('APP_PATH',WEBROOT.'/ace');
-
-var_dump(WEBROOT);
-var_dump(APP_PATH);
 
 include APP_PATH.'/helpers/common.php';
 include APP_PATH.'/Ace.php';
