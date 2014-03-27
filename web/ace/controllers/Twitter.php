@@ -24,7 +24,8 @@ class Twitter {
     $r = json_decode(curl_exec($ch));
     if (!is_object($r))
       throw new \Exception('unexpected response from twitter');
-    exit(json_encode($r));
+    if (isset($r->errors))
+      throw new \Exception(json_encode($r->errors));
     if (!isset($r->access_token))
       throw new \Exception('missing access_token');
     return $r;
