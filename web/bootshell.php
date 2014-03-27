@@ -10,5 +10,5 @@ include APP_PATH.'/Ace.php';
 
 \ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
 
-echo WEBROOT.'4444';
+echo json_encode(\ace\Ace::$config);
 exit;
