@@ -1,7 +1,7 @@
 <?php
 
 function vres($path){
-    echo $path . (strpos($path,'?') === false ? '?' : '&') . filemtime($_SERVER['DOCUMENT_ROOT'].$path);
+    echo $path . (strpos($path,'?') === false ? '?' : '&') . filemtime(WEBROOT.$path);
 }
 
 function _g($p,$k,$d=null) {

@@ -1,8 +1,8 @@
 <?php
 
-
+var_dump(is_file(dirname(__FILE__).'/bootshell.php'));
+exit;
 include dirname(__FILE__).'/bootshell.php';
-exit('hey32'.dirname(__FILE__));
 
 /**
  * Front to the WordPress application. This file doesn't do anything, but loads
