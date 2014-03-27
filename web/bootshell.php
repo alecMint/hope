@@ -8,7 +8,7 @@ define('APP_PATH',WEBROOT.'/ace');
 include APP_PATH.'/helpers/common.php';
 include APP_PATH.'/Ace.php';
 
-\ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
+Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
 
-echo json_encode(\ace\Ace::$config);
+echo json_encode(Ace::$config);
 exit;

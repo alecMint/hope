@@ -1,6 +1,6 @@
 <?php
 
-namespace ace;
+//namespace ace;
 
 class Ace {
 
