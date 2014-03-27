@@ -4,8 +4,7 @@ echo 'hru';
 $key = 'HFUeBKXV6OLp1PYXl3RVzQ';
 $secret = 'kMBnmyGwgmcpWRNyXPPGDmMhRanKHkVOxDSkUU4M6Kc';
 $creds =  base64_encode(urlencode($key).':'.urlencode($secret));
-echo $creds;
-/*
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_USERPWD, $creds);
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'grant_type=client_credentials');
@@ -18,4 +17,3 @@ $r = curl_exec($ch);
 echo 'sup<br />';
 echo $r;
 } catch (Exception $e){echo "$e";}
-*/
