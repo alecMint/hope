@@ -22,9 +22,9 @@ class Twitter {
       "Authorization: Basic $creds",
     ));
     $r = json_decode(curl_exec($ch));
-    if (!is_array($r))
+    if (!is_object($r))
       throw new \Exception('unexpected response from twitter');
-    if (!isset($r['access_token']))
+    if (!isset($r->access_token))
       throw new \Exception('missing access_token');
     return $r;
   }
