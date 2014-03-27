@@ -532,7 +532,7 @@ ace.ui.register('carousel',{
     $.each(z.opts.imgs,function(i,src){
       jSlide.append('<div class="'+x+'-img is-loading" style="width:'+z.imgWidth+'px;height:'+z.imgHeight+'px;">'
         + '<div class="'+x+'-img-wrap">'
-          + '<img class="'+x+'-img-img" alt="" src="'+src+'" />'
+          + '<img class="'+x+'-img-img" alt="" src="'+src+'" style="display:none;" />'
         + '</div>'
       + '</div>');
     });
@@ -563,7 +563,7 @@ ace.ui.register('carousel',{
           jImg.removeClass('is-loading');
           jImgImg.css(
             ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgImg[0].width,jImgImg[0].height]).css
-          );
+          ).css('display','');
         });
       });
     });
