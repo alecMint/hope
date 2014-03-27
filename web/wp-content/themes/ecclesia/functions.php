@@ -20,4 +20,4 @@ require_once(TEMPLATEPATH . '/functions/theme/init.php');
  *  ================================================================================================
  */
 
-require_once TEMPLATEPATH.'/../../../helpers/wordpress.php';
+require_once TEMPLATEPATH.'/../../../ace/helpers/wordpress.php';

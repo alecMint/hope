@@ -1,9 +1,10 @@
 <?php
 
 define('WEBROOT',dirname(__DIR__));
+define('APP_PATH',WEBROOT.'/ace');
 
-include WEBROOT.'/helpers/common.php';
-include WEBROOT.'/helpers/Ace.php';
+include APP_PATH.'/helpers/common.php';
+include APP_PATH.'/helpers/Ace.php';
 
 var_dump(class_exists('Ace'));exit;
 
