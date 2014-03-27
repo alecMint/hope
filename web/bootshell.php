@@ -6,7 +6,7 @@ define('APP_PATH',WEBROOT.'/ace');
 include APP_PATH.'/helpers/common.php';
 include APP_PATH.'/helpers/Ace.php';
 
-var_dump(class_exists('Ace'));exit;
+var_dump(class_exists('Ace'));
 
 \ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
 
