@@ -2,7 +2,7 @@
 
 ini_set('display_errors',1);error_reporting(E_ALL);
 
-define('WEBROOT',dirname(__DIR__));
+define('WEBROOT',dirname(__FILE__));
 define('APP_PATH',WEBROOT.'/ace');
 
 var_dump(WEBROOT);
