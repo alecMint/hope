@@ -608,18 +608,17 @@ ace.ui.register('carousel',{
       },{
         duration: z.opts.speed
         ,complete: function(){
-          var offsetX = z.$.slidesCont.position().left
-          ,x;
+          var offsetX = z.$.slidesCont.position().left;
           z.$.slides.sort(function(a,b){
             return $(a).position().left-$(b).position().left;
           });
-          // only need the first half of the ifs,
-          //  but otherwise we waste resources popping them back and forth
-          if ((x=z.$.slides.eq(0).position().left+offsetX) + z.slideWidth < -z.slideDistance && x-z.slideDistance <= z.maskWidth+z.slideDistance) {
+          // this wastes resources popping back and forth unnecessarily
+          //  dont have time to fix atm
+          if (z.$.slides.eq(0).position().left+offsetX + z.slideWidth < -z.slideDistance) {
             // push onto end
             z.$.slides.eq(0).css('left', (z.$.slides.eq(2).position().left+z.slideWidth)+'px');
-          } else if ((x=z.$.slides.eq(2).position().left+offsetX) > z.maskWidth+z.slideDistance && x+z.slideWidth+z.slideDistance >= -z.slideDistance) {
-            // pop onto beginning
+          } else if (z.$.slides.eq(2).position().left+offsetX > z.maskWidth+z.slideDistance) {
+            // pop into beginning
             z.$.slides.eq(2).css('left', (z.$.slides.eq(0).position().left-z.slideWidth)+'px');
           }
           z.slideQueue.shift();
