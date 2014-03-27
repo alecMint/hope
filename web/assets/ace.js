@@ -87,6 +87,8 @@ ace = {
     ,moduleReady: function(moduleKey,cb){
       var z = this;
       ace.evt.ready(moduleKey+':registered',function(){
+        ace.ready(cb);
+        /* these are silly
         var module = z.getModule(moduleKey)
         ,i = 0
         ,deps
@@ -104,6 +106,7 @@ ace = {
         function depsRdy(){
           ace.ready(cb);
         }
+        */
       });
     }
 
