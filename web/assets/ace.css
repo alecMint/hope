@@ -124,7 +124,7 @@ div.clear {
   background: #fff;
   border: 1px solid #d6d6d6;
   padding: 4px;
-  margin: 0 2px;
+  margin: 0 1px;
 }
 .ace-carousel-img.is-loading {
   background: url(/assets/loader02.gif) no-repeat center center;
