@@ -21,7 +21,12 @@ class Twitter {
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
       "Authorization: Basic $creds",
     ));
-    return curl_exec($ch);
+    $r = json_decode(curl_exec($ch));
+    if (!is_array($r))
+      throw new \Exception('unexpected response from twitter');
+    if (!isset($r['access_token']))
+      throw new \Exception('missing access_token');
+    return $r;
   }
 
 }
