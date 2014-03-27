@@ -2,7 +2,7 @@
 
 namespace ace\controllers;
 
-class Ace {
+class Api {
 
   private function __clone(){}
   private function __construct(){}

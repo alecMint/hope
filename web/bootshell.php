@@ -7,9 +7,7 @@ define('WEBROOT',dirname(__FILE__));
 define('APP_PATH',WEBROOT.'/ace');
 
 include APP_PATH.'/autoload.php';
-//include APP_PATH.'/Ace.php';
 
 \ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
-
 
 include APP_PATH.'/router.php';
