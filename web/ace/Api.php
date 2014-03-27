@@ -27,10 +27,9 @@ class Api {
 
     $route = explode('::',$route);
     $class = '\\ace\\controllers\\'.$route[0];
-    exit($class);
 
     $controller = new $class;
-    if (!method_exists($controller,$methodKey))
+    if (!method_exists($controller,$route[1]))
       throw new \Exception('invalid method');
 
     return $controller->$methodKey(self::getParams());
