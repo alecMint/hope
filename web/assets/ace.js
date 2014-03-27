@@ -536,6 +536,7 @@ ace.ui.register('carousel',{
         + '</div>'
       + '</div>');
     });
+    return jSlide;
   }
   ,position: function(){
     var z = this
