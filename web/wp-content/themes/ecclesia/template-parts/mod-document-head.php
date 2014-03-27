@@ -71,10 +71,10 @@ wp_head();
 </style>
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php vres('/wp-content/themes/ecclesia/style.css'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php Ace::vres('/wp-content/themes/ecclesia/style.css'); ?>" />
 
-<link rel="stylesheet" type="text/css" href="<?php vres('/assets/ace.css'); ?>" />
-<script src="<?php vres('/assets/ace.js'); ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php Ace::vres('/assets/ace.css'); ?>" />
+<script src="<?php Ace::vres('/assets/ace.js'); ?>"></script>
 
 </head>
 <?php flush(); ?>
