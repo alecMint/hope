@@ -16,5 +16,10 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.twitter.com/oauth2/token');
 $r = curl_exec($ch);
 
 echo 'sup<br />';
+echo "$creds<br />";
 echo $r;
 
+
+/*
+  
+*/
