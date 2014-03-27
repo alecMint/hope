@@ -8,8 +8,15 @@ use \ace\Ace;
 use \ace\ControllerAbstract;
 
 class Twitter extends ControllerAbstract {
+  private $appToken = null;
 
-  public function getOAuth2Token(){
+  public function getAppToken(){
+    if ($this->appToken !== null)
+      return $this->appToken;
+    return $this->_getAppToken();
+  }
+
+  private function _getAppToken(){
     $key = Ace::getConfig('hopeTwitterAppKey');
     $secret = Ace::getConfig('hopeTwitterAppSecret');
     $creds = base64_encode(rawurlencode($key).':'.rawurlencode($secret));
@@ -29,11 +36,11 @@ class Twitter extends ControllerAbstract {
       throw new \Exception(json_encode($r->errors));
     if (!isset($r->access_token))
       throw new \Exception('missing access_token');
-    return $r;
+    return $r->access_token;
   }
 
   public function get($secondTry=false){
-    
+
   }
 
 }

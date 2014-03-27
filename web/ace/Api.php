@@ -8,7 +8,7 @@ class Api {
   private function __clone(){}
   private function __construct(){}
   private static $routes = array(
-    'twitter/oauth2' => 'Twitter::getOAuth2Token',
+    'twitter/token/app' => 'Twitter::getAppToken',
   );
   
   public static function request($route){
