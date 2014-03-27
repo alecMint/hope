@@ -4,44 +4,12 @@ namespace ace\controllers;
 
 class Ace {
 
-  public static $config = array();
-
   private function __clone(){}
   private function __construct(){}
   
-  public static function loadConfig(){
-    extract(self::$config);
-    $args = func_get_args();
-    foreach ($args as $a){
-      if (is_array($a)) 
-        extract($a);
-      else if (is_file($a))
-        include $a;
-    }
-    self::$config = get_defined_vars();
-  }
-
-  public static function vres($path){
-    echo $path . (strpos($path,'?') === false ? '?' : '&') . filemtime(WEBROOT.$path);
-  }
-
-  public static function g($p,$k,$d=null){
-    //slightly faster to not convert to array first
-    //if (!is_array($k)) $k = array($k);
-    if (!is_array($k)) $d = isset($p[$k]) ? $p[$k] : $d;
-    else {
-      for ($i=0,$c=count($k);$i<$c;$i++) {
-        if (isset($p[$k[$i]])) {
-          $d = $p[$k[$i]];
-          break;
-        }
-      }
-    }
-    return $d;
-  }
-
-  public static function e($s){
-    exit("e: $s");
+  public static function request($route){
+    var_dump($route);
+    exit;
   }
 
 }
