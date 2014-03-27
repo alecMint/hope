@@ -135,6 +135,9 @@ div.clear {
 .ace-carousel-img-img {
   position: absolute;
   display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
 }
 .ace-carousel.shadbox_enabled .ace-carousel-img-img {
   cursor: pointer;
