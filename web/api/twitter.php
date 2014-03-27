@@ -25,6 +25,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   "Host: api.twitter.com",
   "User-Agent: My Twitter App v1.0.23",
   "Authorization: Basic $creds",
+  "Content-Type: application/x-www-form-urlencoded;charset=UTF-8",
   "Content-Length: 29",
   "Accept-Encoding: gzip",
 ));
