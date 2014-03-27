@@ -40,4 +40,8 @@ class Ace {
     return $d;
   }
 
+  public static function e($s){
+    exit("e: $s");
+  }
+
 }
