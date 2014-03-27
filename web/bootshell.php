@@ -8,7 +8,7 @@ include APP_PATH.'/helpers/Ace.php';
 
 var_dump(class_exists('Ace'));exit;
 
-Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
+\ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.override.php' );
 
 echo WEBROOT.'4444';
 exit;

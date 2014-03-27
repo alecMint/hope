@@ -22,7 +22,7 @@ include dirname(__FILE__).'/bootshell.php';
 
 
 Add following line to [theme]/functions.php
-require_once TEMPLATEPATH.'/../../../helpers/wordpress.php';
+require_once TEMPLATEPATH.'/../../../ace/helpers/wordpress.php';
 
 
 Symlink for style.css needs to be created
