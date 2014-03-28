@@ -782,7 +782,11 @@ ace.ui.register('twitter',{
     numGet: 10
     ,numShow: 1
     ,scroll: 'x'
+    ,scrollDelay: 2000
+    ,scrollSpeed: 300
+    ,classes = ''
   }
+  ,tweets = []
   ,init: function(){
     var z = this;
     z.getData(function(){
@@ -804,7 +808,8 @@ ace.ui.register('twitter',{
       if (!(data.data instanceof Array))
         return z.log('unexpected response');
       z.data = data.data;
-      z.log(data.data);
+      if (!z.data[0])
+        return z.log('no tweets');
       cb();
     });
   }
@@ -815,23 +820,31 @@ ace.ui.register('twitter',{
     ;
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
+    z.$.cont.addClass(z.opts.classes);
     z.$.cont.html('<div class="'+x+'-tweets_cont"></div>');
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
-      var jTweet = $('<div class="'+x+'-tweet"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
+      var tweet = {
+        $: {}
+      };
+      tweet.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
         + '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
         + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
       + '</div></div></div>');
-      z.$.tweets = z.$.tweets.add(jTweet);
+      tweet.$.wrap: jTweet.find('div.'+x+'-tweet-wrap')
+      tweet.$.wrapInner: jTweet.find('div.'+x+'-tweet-wrap-inner')
+      z.tweets.push(tweet);
+      if (i < z.opts.numShow)
+        z.$.cont.css('display','');
+      z.$.tweetsCont.append(tweet.$.cont);
     });
-    for (i=0;i<z.$.tweets.length&&i<z.opts.numShow;++i)
-      z.$.tweetsCont.append(z.$.tweets.eq(i));
   }
   ,functionalize: function(){
     var z = this
     ,x = z.cssKey
     ;
+    z.setUpScroll();
   }
   ,formatText: function(tweet){
     var text = tweet.text
@@ -875,6 +888,51 @@ ace.ui.register('twitter',{
       }
     });
     return str;
+  }
+  ,setUpScroll: function(){
+    var z = this
+    ,z.topIndex = 0
+    ;
+    if (!z.opts.scroll || z.opts.numShow <= z.$.tweets.length)
+      return;
+    if (z.opts.scroll != 'x' && z.opts.scroll != 'y')
+      return z.log('invalid scroll option',z.opts.scroll);
+    setTimeout(scroll,z.opts.scrollDelay);
+    function scroll(){
+      var outgoingTweet = tweets[z.topIndex]
+      ,incomingTweet = tweets[z.topIndex+z.opts.numShow]
+      ,outgoingAnim,incomingAnim
+      ,td = ace.util.trueDim(tweet.$.cont)
+      ;
+
+      if (z.opts.scroll == 'x') {
+        outgoingTweet.$.wrap.css('width',td.w+'px');
+        incomingTweet.$.wrap.css('width',0);
+        outgoingAnim = { width: 0 };
+        incomingAnim = { width: 'auto' };
+      } else {
+        outgoingTweet.$.wrap.css('height',td.h+'px');
+        incomingTweet.$.wrap.css('height',0);
+        outgoingAnim = { height: 0 };
+        incomingAnim = { height: 'auto' };
+      }
+
+      outgoingTweet.animate(outgoingAnim,{
+        duration: z.opts.scrollSpeed
+        ,complete: function(){
+          z.$.tweetsCont.append($(this).css('display','none'));
+          setTimeout(scroll,z.opts.scrollDelay);
+        }
+      });
+      incomingTweet.animate(incomingAnim,{
+        duration: z.opts.scrollSpeed
+        ,complete: function(){
+
+        }
+      });
+
+      z.topIndex = (z.topIndex+1)%z.tweets.length;
+    }
   }
 });
 
