@@ -850,6 +850,8 @@ ace.ui.register('twitter',{
       return '';
     }
     secs = now - Math.round(date.getTime()/1000);
+    if (secs < 0)
+      secs = 0;
     $.each(intervals,function(i,interval){
       var ago = Math.floor(secs/interval[1]);
       console.log(secs,interval[1],ago);
