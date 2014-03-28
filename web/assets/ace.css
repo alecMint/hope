@@ -161,7 +161,7 @@ div.clear {
   cursor: pointer;
 }
 .ace-shadbox-bg {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -174,7 +174,7 @@ div.clear {
   opacity: 0.6;
 }
 .ace-shadbox-content {
-  position: absolute;
+  position: fixed;
   width: 100px;
   height: 100px;
   background: #000 no-repeat center center;

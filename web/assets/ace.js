@@ -698,10 +698,11 @@ ace.shadbox.open = function(src,opts,cb){
     ,paddingX = viewportWidth*opts.viewport.padding.x
     ,paddingY = viewportHeight*opts.viewport.padding.y
     ,initialX = (viewportWidth-z.$.content.width())/2
-    ,initialY = (viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()
+    //,initialY = (viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()
+    ,initialY = (viewportHeight-z.$.content.height())/2
     ,img
   ;
-  console.log(viewportWidth,viewportHeight,paddingX,paddingY,initialX,initialY,ace.util.getViewportScrollY());
+
   z.isOpening = true;
   z.$.content.addClass('loading').css({
     width: ''
@@ -736,7 +737,8 @@ ace.shadbox.open = function(src,opts,cb){
       targetHeight = img.height;
     }
     targetX = (viewportWidth-targetWidth)/2;
-    targetY = (viewportHeight-targetHeight)/2 + ace.util.getViewportScrollY();
+    //targetY = (viewportHeight-targetHeight)/2 + ace.util.getViewportScrollY();
+    targetY = (viewportHeight-targetHeight)/2;
     jImg = $('<img src="'+src+'" alt="" />').fadeTo(0,0);
     z.$.contentItem.append(jImg);
     z.$.content.delay(opts.anim.delay).animate({
@@ -761,7 +763,8 @@ ace.shadbox.open = function(src,opts,cb){
     z.isOpen = true;
     z.$.content.removeClass('loading').addClass('error').css({
       left: (viewportWidth-z.$.content.width())/2 + 'px'
-      ,top: ((viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()) + 'px'
+      //,top: ((viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()) + 'px'
+      ,top: ((viewportHeight-z.$.content.height())/2
     });
     if (cb)
       cb();
