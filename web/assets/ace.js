@@ -907,6 +907,7 @@ ace.ui.register('twitter',{
         incomingTweet.$.cont.css({display:'',width:'auto'});
         autoValue = incomingTweet.$.cont.width();
         incomingTweet.$.cont.css('width',0);
+        incomingTweet.$.wrap.css('width',autoValue+'px');
         outgoingAnim = { width: 0 };
         incomingAnim = { width: autoValue+'px' };
       } else {
@@ -914,6 +915,7 @@ ace.ui.register('twitter',{
         incomingTweet.$.cont.css({display:'',height:'auto'});
         autoValue = incomingTweet.$.cont.height();
         incomingTweet.$.cont.css('height',0);
+        incomingTweet.$.wrap.css('height',autoValue+'px');
         outgoingAnim = { height: 0 };
         incomingAnim = { height: autoValue+'px' };
       }
