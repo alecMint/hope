@@ -784,7 +784,7 @@ ace.ui.register('twitter',{
     ,scroll: 'x'
     ,scrollDelay: 2000
     ,scrollSpeed: 300
-    ,classes = ''
+    ,classes: ''
   }
   ,tweets = []
   ,init: function(){
