@@ -906,20 +906,21 @@ ace.ui.register('twitter',{
       if (z.opts.scroll == 'x') {
         outgoingTweet.$.wrap.css('width',td.w+'px');
         incomingTweet.$.wrap.css('width',0);
+        incomingTweet.$.css('display','');
         outgoingAnim = { width: 0 };
-        incomingAnim = { width: 'auto' };
+        incomingAnim = { width: 'show' };
       } else {
         outgoingTweet.$.wrap.css('height',td.h+'px');
         incomingTweet.$.wrap.css('height',0);
         incomingTweet.$.css('display','');
         outgoingAnim = { height: 0 };
-        incomingAnim = { height: 'auto' };
+        incomingAnim = { height: 'show' };
       }
 
       outgoingTweet.$.wrap.animate(outgoingAnim,{
         duration: z.opts.scrollSpeed
         ,complete: function(){
-          z.$.tweetsCont.append(outgoingTweet.css('display','none'));
+          z.$.tweetsCont.append(outgoingTweet.$.cont.css('display','none'));
           setTimeout(scroll,z.opts.scrollDelay);
         }
       });
