@@ -916,14 +916,14 @@ ace.ui.register('twitter',{
         incomingAnim = { height: 'auto' };
       }
 
-      outgoingTweet.animate(outgoingAnim,{
+      outgoingTweet.$.wrap.animate(outgoingAnim,{
         duration: z.opts.scrollSpeed
         ,complete: function(){
           z.$.tweetsCont.append($(this).css('display','none'));
           setTimeout(scroll,z.opts.scrollDelay);
         }
       });
-      incomingTweet.animate(incomingAnim,{
+      incomingTweet.$.wrap.animate(incomingAnim,{
         duration: z.opts.scrollSpeed
         ,complete: function(){
 
