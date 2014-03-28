@@ -442,9 +442,8 @@ ace.ui.register('instagram',{
       z.$.cont.addClass('type-'+t);
     });
     $.each(z.media,function(i,m){
-      console.log(m);
       var jImg = $('<div class="'+x+'-img">'
-        + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" />'
+        + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" xdata-img="'+m.images.standard_resolution.url+'" />'
       + '</div>');
       jImg.attr('alt',m.caption.text);
       z.$.cont.append(jImg);
@@ -472,7 +471,7 @@ ace.ui.register('instagram',{
     if (z.opts.shadbox) {
       z.$.cont.addClass('shadbox_enabled');
       z.$.slides.find('img.'+x+'-img-img').bind('click',function(){
-        ace.shadbox($(this).attr('src'));
+        ace.shadbox($(this).attr('xdata-img'));
       });
     }
   }
