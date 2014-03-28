@@ -50,6 +50,7 @@ class Twitter extends ControllerAbstract {
     $url = 'https://api.twitter.com/1.1/'.$params['route'].'.json';
     $url .= '?'.http_build_query($params['p']);
     $creds = $this->getAppToken();
+    echo "$creds<br />";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
