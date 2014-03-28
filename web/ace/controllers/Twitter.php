@@ -50,7 +50,6 @@ class Twitter extends ControllerAbstract {
     $url = 'https://api.twitter.com/1.1/'.$params['route'].'.json';
     $url .= '?'.http_build_query($params['p']);
     $creds = $this->getAppToken();
-    echo "$creds<br />";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -59,7 +58,6 @@ class Twitter extends ControllerAbstract {
       "Authorization: Bearer $creds",
     ));
     $r = json_decode(curl_exec($ch));
-    echo json_encode($r)."<br />";
     if (!is_object($r))
       throw new \Exception('unexpected response from twitter');
     if (isset($r->error))
