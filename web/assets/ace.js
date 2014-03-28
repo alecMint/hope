@@ -816,7 +816,6 @@ ace.ui.register('twitter',{
   ,build: function(){
     var z = this
     ,x = z.cssKey
-    ,i
     ;
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
@@ -898,8 +897,8 @@ ace.ui.register('twitter',{
       return z.log('invalid scroll option',z.opts.scroll);
     setTimeout(scroll,z.opts.scrollDelay);
     function scroll(){
-      var outgoingTweet = tweets[z.topIndex]
-      ,incomingTweet = tweets[z.topIndex+z.opts.numShow]
+      var outgoingTweet = z.tweets[z.topIndex]
+      ,incomingTweet = z.tweets[z.topIndex+z.opts.numShow]
       ,outgoingAnim,incomingAnim
       ,td = ace.util.trueDim(tweet.$.cont)
       ;
