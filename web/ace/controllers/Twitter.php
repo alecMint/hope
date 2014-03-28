@@ -58,11 +58,11 @@ class Twitter extends ControllerAbstract {
       "Authorization: Bearer $creds",
     ));
     $r = json_decode(curl_exec($ch));
-    $r = json_decode(curl_exec($ch));
+    echo json_encode($r)."<br />";
     if (!is_object($r))
       throw new \Exception('unexpected response from twitter');
-    if (isset($r->errors))
-      throw new \Exception(json_encode($r->errors));
+    if (isset($r->error))
+      throw new \Exception($r->error);
     return $r;
   }
 
