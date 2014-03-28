@@ -814,7 +814,7 @@ ace.ui.register('twitter',{
     ;
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
-    z.$.cont.html('<div class="'+x+'"-tweets_cont"></div>');
+    z.$.cont.html('<div class="'+x+'-tweets_cont"></div>');
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
