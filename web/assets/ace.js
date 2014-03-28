@@ -835,7 +835,7 @@ ace.ui.register('twitter',{
       item.$.wrapInner = item.$.cont.find('div.'+x+'-tweet-wrap-inner')
       z.tweets.push(item);
       if (i < z.opts.numShow)
-        z.$.cont.css('display','');
+        item.$.cont.css('display','');
       z.$.tweetsCont.append(item.$.cont);
     });
   }
