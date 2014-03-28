@@ -798,7 +798,12 @@ ace.ui.register('twitter',{
         ,count: z.opts.num
       }
     },function(data){
-      z.log(data);
+      if (data.error)
+        return z.log(data.error);
+      if (!(data.data instanceof Array))
+        return z.log('unexpected response');
+      z.data = data.data;
+      z.log(z.data);
     });
   }
   ,build: function(){
