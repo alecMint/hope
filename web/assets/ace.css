@@ -212,6 +212,7 @@ div.clear {
   /* use wrap-inner for styling */
   margin: 0 !important;
   padding: 0 !important;
+  float: left;
 }
 .ace-twitter-tweet-wrap {
   /* use wrap-inner for styling */
