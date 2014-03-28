@@ -852,7 +852,7 @@ ace.ui.register('twitter',{
     $.each(intervals,function(i,interval){
       var ago = Math.floor(secs/interval[1]);
       if (ago > 1) {
-        str = interval[0]+(ago==1?'':'s');
+        str = ago+' '+interval[0]+(ago==1?'':'s')+' ago';
         return false;
       }
     });
