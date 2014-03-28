@@ -818,9 +818,9 @@ ace.ui.register('twitter',{
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
-      var jTweet = $('<div class="'+x+'"-tweet"><div class="'+x+'"-tweet-wrap"><div class="'+x+'"-tweet-wrap-inner">'
-        + '<div class="'+x+'"-tweet-text">'+tweet.text+'</div>'
-        + '<div class="'+x+'"-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
+      var jTweet = $('<div class="'+x+'-tweet"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
+        + '<div class="'+x+'-tweet-text">'+tweet.text+'</div>'
+        + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
       + '</div></div></div>');
       z.$.tweets = z.$.tweets.add(jTweet);
     });
