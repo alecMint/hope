@@ -764,7 +764,7 @@ ace.shadbox.open = function(src,opts,cb){
     z.$.content.removeClass('loading').addClass('error').css({
       left: (viewportWidth-z.$.content.width())/2 + 'px'
       //,top: ((viewportHeight-z.$.content.height())/2 + ace.util.getViewportScrollY()) + 'px'
-      ,top: ((viewportHeight-z.$.content.height())/2
+      ,top: ((viewportHeight-z.$.content.height())/2) + 'px'
     });
     if (cb)
       cb();
