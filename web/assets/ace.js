@@ -817,6 +817,7 @@ ace.ui.register('twitter',{
     var z = this
     ,x = z.cssKey
     ;
+    z.$.cont.addClass('has-num-'+z.opts.numShow);
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
     $.each(z.opts.type.split('-'),function(i,v){
