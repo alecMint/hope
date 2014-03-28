@@ -834,6 +834,7 @@ ace.ui.register('twitter',{
   }
   ,formatTime: function(createdAt){
     var date = new Date(createdAt)
+    ,now = Math.round(+new Date/1000)
     ,intervals = [
       ['year',31536000]
       ,['month',2628000]
@@ -848,7 +849,7 @@ ace.ui.register('twitter',{
       z.log('unexpected timestamp format',createdAt);
       return '';
     }
-    secs = Math.round(date.getTime()/1000);
+    secs = now - Math.round(date.getTime()/1000);
     $.each(intervals,function(i,interval){
       var ago = Math.floor(secs/interval[1]);
       console.log(secs,interval[1],ago);
