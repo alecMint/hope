@@ -819,7 +819,9 @@ ace.ui.register('twitter',{
     ;
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
-    z.$.cont.addClass(z.opts.classes);
+    $.each(z.opts.type.split('-'),function(i,v){
+      z.$.cont.addClass('type-'+v);
+    });
     z.$.cont.html('<div class="'+x+'-tweets_cont"></div><div class="clear">&nbsp;</div>');
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
@@ -897,7 +899,7 @@ ace.ui.register('twitter',{
       return z.log('invalid scroll option',z.opts.scroll);
     setTimeout(scroll,z.opts.scrollDelay);
     function scroll(){
-      console.log('SCROLL');
+      console.log('SCROLL',z.opts.type);
       var outgoingTweet = z.tweets[z.topIndex]
       ,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
       ,outgoingAnim,incomingAnim,autoValue
