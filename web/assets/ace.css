@@ -68,6 +68,9 @@ div.clear {
   margin: 0;
   padding: 0;
 }
+.ace-instagram.shadbox_enabled .ace-instagram-img-img {
+  cursor: pointer;
+}
 
 .ace-instagram.type-squares .ace-instagram-img {
   float: left;
@@ -245,8 +248,8 @@ div.clear {
 }
 
 .ace-twitter.type-sidebar.has-num-3 {
-  height: 200px;
-  max-height: 200px;
+  height: 190px;
+  max-height: 190px;
   overflow: hidden;
 }
 

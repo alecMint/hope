@@ -47,6 +47,4 @@ http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
 
 --- To Do ---
 
-Twittter Feed
-http://local.hopechapellongbeach.com/ace/api/twitter/get?route=statuses/user_timeline&p[screen_name]=jewelmint&p[count]=2&p[exclude_replies]=true
-
+- Add shadbox to instagram widget

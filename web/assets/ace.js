@@ -413,6 +413,7 @@ ace.ui.register('instagram',{
     ,url: 'https://api.instagram.com/v1/'
     ,type: 'squares med'
     ,num: 12
+    ,shadbox: true
   }
   ,init: function(){
     var z = this;
@@ -441,6 +442,7 @@ ace.ui.register('instagram',{
       z.$.cont.addClass('type-'+t);
     });
     $.each(z.media,function(i,m){
+      console.log(m);
       var jImg = $('<div class="'+x+'-img">'
         + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" />'
       + '</div>');
@@ -464,6 +466,13 @@ ace.ui.register('instagram',{
           t.stop().fadeTo(200,1);
         else
           t.stop().fadeTo(200,.5);
+      });
+    }
+
+    if (z.opts.shadbox) {
+      z.$.cont.addClass('shadbox_enabled');
+      z.$.slides.find('img.'+x+'-img-img').bind('click',function(){
+        ace.shadbox($(this).attr('src'));
       });
     }
   }
