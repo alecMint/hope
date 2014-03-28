@@ -827,10 +827,10 @@ ace.ui.register('twitter',{
       var item = {
         $: {}
       };
-      item.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
+      item.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner"><div class="'+x+'-tweet-wrap-inner2">'
         + '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
         + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
-      + '</div></div></div>');
+      + '</div></div></div></div>');
       item.$.wrap = item.$.cont.find('div.'+x+'-tweet-wrap')
       item.$.wrapInner = item.$.cont.find('div.'+x+'-tweet-wrap-inner')
       if (i < z.opts.numShow)
