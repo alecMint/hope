@@ -781,6 +781,7 @@ ace.ui.register('twitter',{
   opts: {
     type: ''
     ,num: 10
+    ,scroll: 'x'
   }
   ,init: function(){
     var z = this;
@@ -803,18 +804,54 @@ ace.ui.register('twitter',{
       if (!(data.data instanceof Array))
         return z.log('unexpected response');
       z.data = data.data;
-      z.log(z.data);
+      cb();
     });
   }
   ,build: function(){
     var z = this
     ,x = z.cssKey
     ;
+    $.each(z.opts.type.split(' '),function(i,t){
+      z.$.cont.addClass('type-'+t);
+    });
+    z.$.tweets = $([]);
+    $.each(z.data,function(i,tweet){
+      var jTweet = $('<div class="'+x+'"-tweet">'
+        + '<div class="'+x+'"-tweet-text">'+tweet.text+'</div>'
+        + '<div class="'+x+'"-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
+      + '</div>');
+    });
   }
   ,functionalize: function(){
     var z = this
     ,x = z.cssKey
     ;
+  }
+  ,formatTime: function(createdAt){
+    var date = new Date(createdAt)
+    ,intervals = [
+      ['year',31536000]
+      ,['month',2628000]
+      ,['week',604800]
+      ,['day',86400]
+      ,['hour',3600]
+      ,['minute',60]
+    ]
+    ,secs,str
+    ;
+    if (!date.getTime) {
+      z.log('unexpected timestamp format',createdAt);
+      return '';
+    }
+    secs = Math.round(date.getTime()/1000);
+    $.each(intervals,function(i,interval){
+      var ago = Math.floor(seconds/interval[1]);
+      if (ago > 1) {
+        str = interval[0]+(ago==1?'':'s');
+        return false;
+      }
+    });
+    return str;
   }
 });
 
