@@ -919,7 +919,7 @@ ace.ui.register('twitter',{
       outgoingTweet.$.wrap.animate(outgoingAnim,{
         duration: z.opts.scrollSpeed
         ,complete: function(){
-          z.$.tweetsCont.append($(this).css('display','none'));
+          z.$.tweetsCont.append(outgoingTweet.css('display','none'));
           setTimeout(scroll,z.opts.scrollDelay);
         }
       });
