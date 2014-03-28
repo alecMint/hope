@@ -229,4 +229,7 @@ div.clear {
   padding-left: 1em;
   color: #888;
 }
+.ace-twitter.is-scroll-x .ace-twitter-tweet-wrap-inner {
+  padding-right: 1em;
+}
 
