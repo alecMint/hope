@@ -643,7 +643,7 @@ ace.shadbox = function(src,opts,cb){
   z.open(src,opts_,cb_);
 };
 ace.shadbox.config = {
-  cssKey: 'amint-shadbox'
+  cssKey: 'ace-shadbox'
   ,defaults: {
     viewport: {
       padding: {x:.05, y:.05}
@@ -814,16 +814,18 @@ ace.ui.register('twitter',{
     ;
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
+    z.$.cont.html('<div class="'+x+'"-tweets_cont"></div>');
+    z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
-      var jTweet = $('<div class="'+x+'"-tweet"><div class="'+x+'"-tweet-wrap">'
+      var jTweet = $('<div class="'+x+'"-tweet"><div class="'+x+'"-tweet-wrap"><div class="'+x+'"-tweet-wrap-inner">'
         + '<div class="'+x+'"-tweet-text">'+tweet.text+'</div>'
         + '<div class="'+x+'"-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
-      + '</div></div>');
+      + '</div></div></div>');
       z.$.tweets = z.$.tweets.add(jTweet);
     });
     for (i=0;i<z.$.tweets.length&&i<z.opts.numShow;++i)
-      z.$.cont.append(z.$.tweets.eq(i));
+      z.$.tweetsCont.append(z.$.tweets.eq(i));
   }
   ,functionalize: function(){
     var z = this
