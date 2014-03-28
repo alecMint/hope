@@ -254,7 +254,8 @@ div.clear {
   background: #e8e5d1;
 }
 .ace-twitter.type-sidebar .ace-twitter-wrap {
-  background: url(/assets/twitterbird-bg1.png) no-repeat 230px 200px;
+  height: 100%;
+  background: url(/assets/twitterbird-bg1.png) no-repeat;
 }
 .ace-twitter.type-sidebar .ace-twitter-wrap2 {
   padding: 10px;
@@ -263,5 +264,8 @@ div.clear {
   height: 250px;
   max-height: 250px;
   overflow: hidden;
+}
+.ace-twitter.type-sidebar.has-num-3 .ace-twitter-wrap {
+  background-position:  252px 212px;
 }
 
