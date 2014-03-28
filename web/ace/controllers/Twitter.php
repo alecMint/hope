@@ -63,6 +63,8 @@ class Twitter extends ControllerAbstract {
       throw new \Exception('unexpected response from twitter');
     if (isset($r->error))
       throw new \Exception($r->error);
+    if (isset($r->errors))
+      throw new \Exception(json_encode($r->errors));
     return $r;
   }
 
