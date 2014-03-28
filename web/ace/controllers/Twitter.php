@@ -55,7 +55,7 @@ class Twitter extends ControllerAbstract {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-      "Authorization: Bearer $creds",
+      "Authorization: Bearer $creds43",
     ));
     $r = json_decode(curl_exec($ch));
     //echo json_encode($r)."<br />";
