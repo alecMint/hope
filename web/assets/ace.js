@@ -834,10 +834,10 @@ ace.ui.register('twitter',{
     $.each(z.opts.type.split('-'),function(i,v){
       z.$.cont.addClass('type-'+v);
     });
-    z.$.cont.html('<div class="'+x+'-wrap">'
+    z.$.cont.html('<div class="'+x+'-wrap"><div class="'+x+'-wrap2">'
       + '<div class="'+x+'-tweets_cont"></div>'
       + '<div class="clear">&nbsp;</div>'
-    + '</div>');
+    + '</div></div>');
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){

@@ -254,8 +254,10 @@ div.clear {
   background: #e8e5d1;
 }
 .ace-twitter.type-sidebar .ace-twitter-wrap {
-  padding: 10px;
   background: url(/assets/twitterbird-bg1.png) no-repeat 230px 200px;
+}
+.ace-twitter.type-sidebar .ace-twitter-wrap2 {
+  padding: 10px;
 }
 .ace-twitter.type-sidebar.has-num-3 {
   height: 250px;
