@@ -229,7 +229,10 @@ div.clear {
   padding-left: 1em;
   color: #888;
 }
+.ace-twitter.is-scroll-x .ace-twitter-tweets_cont {
+  margin-left: -20px;
+}
 .ace-twitter.is-scroll-x .ace-twitter-tweet-wrap-inner {
-  margin-left: 1em;
+  margin-left: 20px;
 }
 
