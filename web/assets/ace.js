@@ -899,22 +899,23 @@ ace.ui.register('twitter',{
     function scroll(){
       var outgoingTweet = z.tweets[z.topIndex]
       ,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
-      ,outgoingAnim,incomingAnim
-      ,td = ace.util.trueDim(outgoingTweet.$.cont)
+      ,outgoingAnim,incomingAnim,autoValue
       ;
 
       if (z.opts.scroll == 'x') {
-        outgoingTweet.$.wrap.css('width',td.w+'px');
-        //incomingTweet.$.cont.css('width',0);
-        incomingTweet.$.cont.css('display','');
+        outgoingTweet.$.wrap.css('width',outgoingTweet.$.cont.width()+'px');
+        incomingTweet.$.cont.css({display:'',width:'auto'});
+        autoValue = incomingTweet.$.cont.width();
+        incomingTweet.$.cont.css('width',0);
         outgoingAnim = { width: 0 };
-        incomingAnim = { width: 'show' };
+        incomingAnim = { width: autoValue+'px' };
       } else {
-        outgoingTweet.$.wrap.css('height',td.h+'px');
-        //incomingTweet.$.cont.css('height',0);
-        incomingTweet.$.cont.css('display','');
+        outgoingTweet.$.wrap.css('height',outgoingTweet.$.cont.height()+'px');
+        incomingTweet.$.cont.css({display:'',height:'auto'});
+        autoValue = incomingTweet.$.cont.height();
+        incomingTweet.$.cont.css('height',0);
         outgoingAnim = { height: 0 };
-        incomingAnim = { height: 'show' };
+        incomingAnim = { height: autoValue+'px' };
       }
 
       outgoingTweet.$.cont.animate(outgoingAnim,{

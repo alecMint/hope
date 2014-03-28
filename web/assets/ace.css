@@ -209,6 +209,9 @@ div.clear {
   font-size: 12px;
   line-height: 1.6;
   overflow: hidden;
+  /* use wrap-inner for styling */
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .ace-twitter-tweet-wrap {
   /* use wrap-inner for styling */
