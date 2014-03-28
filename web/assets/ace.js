@@ -780,7 +780,8 @@ ace.shadbox.close = function(){
 ace.ui.register('twitter',{
   opts: {
     type: ''
-    ,num: 10
+    ,numGet: 10
+    ,numShow: 2
     ,scroll: 'x'
   }
   ,init: function(){
@@ -796,7 +797,7 @@ ace.ui.register('twitter',{
       route: 'statuses/user_timeline'
       ,p: {
         screen_name: z.opts.screenName
-        ,count: z.opts.num
+        ,count: z.opts.numGet
       }
     },function(data){
       if (data.error)
@@ -810,17 +811,21 @@ ace.ui.register('twitter',{
   ,build: function(){
     var z = this
     ,x = z.cssKey
+    ,i
     ;
     $.each(z.opts.type.split(' '),function(i,t){
       z.$.cont.addClass('type-'+t);
     });
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
-      var jTweet = $('<div class="'+x+'"-tweet">'
+      var jTweet = $('<div class="'+x+'"-tweet"><div class="'+x+'"-tweet-wrap">'
         + '<div class="'+x+'"-tweet-text">'+tweet.text+'</div>'
         + '<div class="'+x+'"-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
-      + '</div>');
+      + '</div></div>');
+      z.$.tweets = z.$.tweets.add(jTweet);
     });
+    for (i=0;i<z.$.tweets.length&&i<z.opts.numShow;++i)
+      z.$.cont.append(z.$.tweets.eq(i));
   }
   ,functionalize: function(){
     var z = this
