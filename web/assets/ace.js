@@ -872,8 +872,7 @@ ace.ui.register('twitter',{
       ,['day',86400]
       ,['hour',3600]
       ,['minute',60]
-    ]
-    ,secs,str
+    ],secs,str
     ;
     if (!date.getTime) {
       z.log('unexpected timestamp format',createdAt);
@@ -884,7 +883,7 @@ ace.ui.register('twitter',{
       secs = 0;
     $.each(intervals,function(i,interval){
       var ago = Math.floor(secs/interval[1]);
-      if (ago > 1) {
+      if (ago >= 1) {
         str = ago+' '+interval[0]+(ago==1?'':'s')+' ago';
         return false;
       }
