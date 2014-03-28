@@ -906,13 +906,13 @@ ace.ui.register('twitter',{
       if (z.opts.scroll == 'x') {
         outgoingTweet.$.wrap.css('width',td.w+'px');
         incomingTweet.$.wrap.css('width',0);
-        incomingTweet.$.css('display','');
+        incomingTweet.$.cont.css('display','');
         outgoingAnim = { width: 0 };
         incomingAnim = { width: 'show' };
       } else {
         outgoingTweet.$.wrap.css('height',td.h+'px');
         incomingTweet.$.wrap.css('height',0);
-        incomingTweet.$.css('display','');
+        incomingTweet.$.cont.css('display','');
         outgoingAnim = { height: 0 };
         incomingAnim = { height: 'show' };
       }
