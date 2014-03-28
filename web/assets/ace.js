@@ -782,8 +782,8 @@ ace.ui.register('twitter',{
     numGet: 10
     ,numShow: 1
     ,scroll: 'x'
-    ,scrollDelay: 15000
-    ,scrollSpeed: 300
+    ,scrollDelay: 6000
+    ,scrollSpeed: 1000
     ,classes: ''
   }
   ,tweets: []
@@ -905,13 +905,13 @@ ace.ui.register('twitter',{
 
       if (z.opts.scroll == 'x') {
         outgoingTweet.$.wrap.css('width',td.w+'px');
-        incomingTweet.$.cont.css('width',0);
+        //incomingTweet.$.cont.css('width',0);
         incomingTweet.$.cont.css('display','');
         outgoingAnim = { width: 0 };
         incomingAnim = { width: 'show' };
       } else {
         outgoingTweet.$.wrap.css('height',td.h+'px');
-        incomingTweet.$.cont.css('height',0);
+        //incomingTweet.$.cont.css('height',0);
         incomingTweet.$.cont.css('display','');
         outgoingAnim = { height: 0 };
         incomingAnim = { height: 'show' };
