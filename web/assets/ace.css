@@ -203,5 +203,16 @@ div.clear {
 }
 .ace-twitter-tweets_cont {
 }
-
+.ace-twitter-tweet {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.ace-twitter-tweet-wrap {
+}
+.ace-twitter-tweet-wrap-inner {
+}
+.ace-twitter-tweet-text {
+}
+.ace-twitter-tweet-time {
+}
 
