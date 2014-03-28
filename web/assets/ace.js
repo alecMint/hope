@@ -900,7 +900,7 @@ ace.ui.register('twitter',{
       var outgoingTweet = z.tweets[z.topIndex]
       ,incomingTweet = z.tweets[z.topIndex+z.opts.numShow]
       ,outgoingAnim,incomingAnim
-      ,td = ace.util.trueDim(tweet.$.cont)
+      ,td = ace.util.trueDim(outgoingTweet.$.cont)
       ;
 
       if (z.opts.scroll == 'x') {
