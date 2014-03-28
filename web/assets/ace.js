@@ -782,7 +782,7 @@ ace.ui.register('twitter',{
     numGet: 10
     ,numShow: 1
     ,scroll: 'x'
-    ,scrollDelay: 6000
+    ,scrollDelay: 15000
     ,scrollSpeed: 300
     ,classes: ''
   }
