@@ -843,7 +843,7 @@ ace.ui.register('twitter',{
         return true;
       urls[url] = true;
       url = url.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"); // adds slashes to regex control chars
-      text = text.replace(new RegExp('('+url+')','g'),'<a href="$&">$&</a>');
+      text = text.replace(new RegExp('('+url+')','g'),'<a href="$&" target="_blank">$&</a>');
     });
     return text;
   }
