@@ -205,7 +205,7 @@ div.clear {
 }
 .ace-twitter-tweet {
   font-size: 12px;
-  line-height: 1.3;
+  line-height: 1.6;
 }
 .ace-twitter-tweet-wrap {
 }
@@ -216,5 +216,6 @@ div.clear {
 }
 .ace-twitter-tweet-time {
   display: inline;
+  padding-left: 1em;
 }
 

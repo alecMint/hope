@@ -804,6 +804,7 @@ ace.ui.register('twitter',{
       if (!(data.data instanceof Array))
         return z.log('unexpected response');
       z.data = data.data;
+      z.log(data.data);
       cb();
     });
   }
