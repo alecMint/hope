@@ -825,19 +825,19 @@ ace.ui.register('twitter',{
     z.$.tweetsCont = z.$.cont.find('div.'+x+'-tweets_cont');
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
-      var tweet = {
+      var item = {
         $: {}
       };
-      tweet.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
+      item.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
         + '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
         + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
       + '</div></div></div>');
-      tweet.$.wrap = jTweet.find('div.'+x+'-tweet-wrap')
-      tweet.$.wrapInner = jTweet.find('div.'+x+'-tweet-wrap-inner')
-      z.tweets.push(tweet);
+      item.$.wrap = jTweet.find('div.'+x+'-tweet-wrap')
+      item.$.wrapInner = jTweet.find('div.'+x+'-tweet-wrap-inner')
+      z.tweets.push(item);
       if (i < z.opts.numShow)
         z.$.cont.css('display','');
-      z.$.tweetsCont.append(tweet.$.cont);
+      z.$.tweetsCont.append(item.$.cont);
     });
   }
   ,functionalize: function(){
