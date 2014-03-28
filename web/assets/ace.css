@@ -220,10 +220,6 @@ div.clear {
   padding: 0 !important;
 }
 .ace-twitter-tweet-wrap-inner {
-  /* use wrap-inner2 for styling */
-  overflow: hidden;
-}
-.ace-twitter-tweet-wrap-inner2 {
 }
 .ace-twitter-tweet-text {
   display: inline;
@@ -233,7 +229,7 @@ div.clear {
   padding-left: 1em;
   color: #888;
 }
-.ace-twitter.is-scroll-x .ace-twitter-tweet-wrap-inner2 {
-  padding-right: 2em;
+.ace-twitter.is-scroll-x .ace-twitter-tweet-wrap-inner {
+  margin-left: 1em;
 }
 
