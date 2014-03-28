@@ -428,7 +428,7 @@ ace.ui.register('instagram',{
       ,count: z.opts.num
     },function(data){
       if (!(data && data.data))
-        return console.log('instagram api error');
+        return z.log('instagram api error');
       z.media = data.data;
       cb();
     });
@@ -798,7 +798,7 @@ ace.ui.register('twitter',{
         ,count: z.opts.num
       }
     },function(data){
-      console.log(data);
+      z..log(data);
     });
   }
   ,build: function(){
