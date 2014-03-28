@@ -237,7 +237,10 @@ div.clear {
   margin-left: 30px;
 }
 
+.ace-twitter.is-scroll-x .ace-twitter-tweets_cont {
+  margin-bottom: -8px;
+}
 .ace-twitter.is-scroll-y .ace-twitter-tweet-wrap-inner {
-  padding-bottom: 6px;
+  margin-bottom: 8px;
 }
 
