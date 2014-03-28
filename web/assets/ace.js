@@ -911,6 +911,7 @@ ace.ui.register('twitter',{
       } else {
         outgoingTweet.$.wrap.css('height',td.h+'px');
         incomingTweet.$.wrap.css('height',0);
+        incomingTweet.$.css('display','');
         outgoingAnim = { height: 0 };
         incomingAnim = { height: 'auto' };
       }
