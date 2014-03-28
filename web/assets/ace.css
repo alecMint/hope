@@ -238,9 +238,9 @@ div.clear {
 }
 
 .ace-twitter.is-scroll-x .ace-twitter-tweets_cont {
-  margin-bottom: -8px;
+  margin-bottom: -10px;
 }
 .ace-twitter.is-scroll-y .ace-twitter-tweet-wrap-inner {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
