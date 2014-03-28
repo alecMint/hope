@@ -897,6 +897,7 @@ ace.ui.register('twitter',{
       return z.log('invalid scroll option',z.opts.scroll);
     setTimeout(scroll,z.opts.scrollDelay);
     function scroll(){
+      console.log('SCROLL');
       var outgoingTweet = z.tweets[z.topIndex]
       ,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
       ,outgoingAnim,incomingAnim,autoValue
@@ -929,9 +930,6 @@ ace.ui.register('twitter',{
       });
       incomingTweet.$.cont.animate(incomingAnim,{
         duration: z.opts.scrollSpeed
-        ,complete: function(){
-
-        }
       });
 
       z.topIndex = (z.topIndex+1)%z.tweets.length;
