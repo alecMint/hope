@@ -244,6 +244,15 @@ div.clear {
   margin-bottom: 10px;
 }
 
+.ace-twitter.type-featured {
+  height: 2em;
+  max-height: 2em;
+}
+
+.ace-twitter.type-sidebar {
+  border: 1px solid #dbd8c5;
+  background: #e8e5d1;
+}
 .ace-twitter.type-sidebar.has-num-3 {
   height: 200px;
   max-height: 200px;
