@@ -851,6 +851,7 @@ ace.ui.register('twitter',{
     secs = Math.round(date.getTime()/1000);
     $.each(intervals,function(i,interval){
       var ago = Math.floor(secs/interval[1]);
+      console.log(secs,interval[1],ago);
       if (ago > 1) {
         str = ago+' '+interval[0]+(ago==1?'':'s')+' ago';
         return false;
