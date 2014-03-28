@@ -779,9 +779,8 @@ ace.shadbox.close = function(){
 
 ace.ui.register('twitter',{
   opts: {
-    type: ''
-    ,numGet: 10
-    ,numShow: 2
+    numGet: 10
+    ,numShow: 1
     ,scroll: 'x'
   }
   ,init: function(){
@@ -813,9 +812,8 @@ ace.ui.register('twitter',{
     ,x = z.cssKey
     ,i
     ;
-    $.each(z.opts.type.split(' '),function(i,t){
-      z.$.cont.addClass('type-'+t);
-    });
+    if (z.opts.scroll)
+      z.$.cont.addClass('is-scroll-'+z.opts.scroll);
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
       var jTweet = $('<div class="'+x+'"-tweet"><div class="'+x+'"-tweet-wrap">'
