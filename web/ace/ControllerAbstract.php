@@ -4,11 +4,11 @@ namespace ace;
 
 abstract class ControllerAbstract {
 
-  protected $params = null;
+  private $params = null;
 
   protected function getParams(){
-    if ($this->$params !== null)
-      return $this->$params;
+    if ($this->params !== null)
+      return $this->params;
     return $this->params = array_merge($_POST,$_GET);
   }
 
