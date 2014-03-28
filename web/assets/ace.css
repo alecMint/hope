@@ -240,16 +240,13 @@ div.clear {
   margin-left: 30px;
 }
 
-.ace-twitter.is-scroll-y .ace-twitter-tweets_cont {
-  margin-bottom: -10px;
-}
 .ace-twitter.is-scroll-y .ace-twitter-tweet-wrap-inner {
   margin-bottom: 10px;
 }
 
 .ace-twitter.type-sidebar.has-num-3 {
-  height: 190px;
-  max-height: 190px;
+  height: 200px;
+  max-height: 200px;
   overflow: hidden;
 }
 
