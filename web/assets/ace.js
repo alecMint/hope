@@ -898,7 +898,7 @@ ace.ui.register('twitter',{
     setTimeout(scroll,z.opts.scrollDelay);
     function scroll(){
       var outgoingTweet = z.tweets[z.topIndex]
-      ,incomingTweet = z.tweets[z.topIndex+z.opts.numShow]
+      ,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
       ,outgoingAnim,incomingAnim
       ,td = ace.util.trueDim(outgoingTweet.$.cont)
       ;
