@@ -1,17 +1,12 @@
 /*
-  1078488011
-  $('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+1078488011
+$('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 
-<script type="text/ace-carousel">{
-  imgs: [
-    'http://www.cleanenergyflorida.org/wp-content/uploads/2014/03/trees.jpg'
-    ,'http://www.ecologistblog.com/wp-content/uploads/2013/09/trees.jpg'
-    ,'http://nickjones.me/wp-content/uploads/2013/07/fruit-trees-spring.jpg'
-    ,'http://naturespicwallpaper.com/wp-content/uploads/2014/02/trees8.jpg'
-    ,'http://img.timeinc.net/time/photoessays/2008/trees/franklin_trees_01.jpg'
-    ,'http://siliconangle.com/files/2013/07/Trees.jpg'
-  ]
-}</script>
+hopechapel_lb
+$('.grid-4.widgets-container').html('<div>').find('div').widgetize('twitter',{
+  type: ''
+  ,screenName: 'jewelmint'
+});
 */
 
 
@@ -779,6 +774,44 @@ ace.shadbox.close = function(){
     z.$.contentItem.empty();
   }
 }
+
+
+
+ace.ui.register('twitter',{
+  opts: {
+    type: ''
+    ,num: 10
+  }
+  ,init: function(){
+    var z = this;
+    z.getData(function(){
+      z.build();
+      z.functionalize();
+    });
+  }
+  ,getData: function(cb){
+    var z = this;
+    $.getJSON('/ace/api/twitter/get',{
+      route: 'statuses/user_timeline'
+      ,p: {
+        screen_name: z.opts.screenName
+        ,count: z.opts.num
+      }
+    },function(data){
+      console.log(data);
+    });
+  }
+  ,build: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+  }
+  ,functionalize: function(){
+    var z = this
+    ,x = z.cssKey
+    ;
+  }
+});
 
 
 ace.init();
