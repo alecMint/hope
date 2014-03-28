@@ -786,7 +786,7 @@ ace.ui.register('twitter',{
     ,scrollSpeed: 300
     ,classes: ''
   }
-  ,tweets = []
+  ,tweets: []
   ,init: function(){
     var z = this;
     z.getData(function(){
