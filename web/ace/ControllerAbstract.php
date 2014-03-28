@@ -4,7 +4,7 @@ namespace ace;
 
 abstract class ControllerAbstract {
 
-  private $params = null;
+  protected $params = null;
 
   protected function getParams(){
     if ($this->$params !== null)
