@@ -890,9 +890,8 @@ ace.ui.register('twitter',{
     return str;
   }
   ,setUpScroll: function(){
-    var z = this
-    ,z.topIndex = 0
-    ;
+    var z = this;
+    z.topIndex = 0
     if (!z.opts.scroll || z.opts.numShow <= z.$.tweets.length)
       return;
     if (z.opts.scroll != 'x' && z.opts.scroll != 'y')
