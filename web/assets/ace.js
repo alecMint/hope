@@ -470,7 +470,7 @@ ace.ui.register('instagram',{
 
     if (z.opts.shadbox) {
       z.$.cont.addClass('shadbox_enabled');
-      z.$.slides.find('img.'+x+'-img-img').bind('click',function(){
+      z.$.cont.find('img.'+x+'-img-img').bind('click',function(){
         ace.shadbox($(this).attr('xdata-img'));
       });
     }
