@@ -820,8 +820,8 @@ ace.ui.register('twitter',{
     z.$.tweets = $([]);
     $.each(z.data,function(i,tweet){
       var jTweet = $('<div class="'+x+'-tweet"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
-        + '<div class="'+x+'-tweet-text">'+tweet.text+'</div>'
-        + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet.created_at)+'</div>'
+        + '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
+        + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
       + '</div></div></div>');
       z.$.tweets = z.$.tweets.add(jTweet);
     });
@@ -833,8 +833,22 @@ ace.ui.register('twitter',{
     ,x = z.cssKey
     ;
   }
-  ,formatTime: function(createdAt){
-    var date = new Date(createdAt)
+  ,formatText: function(tweet){
+    var text = tweet.text
+    ,urls = {}
+    ;
+    $.each(tweet.entities.urls,function(i,url){
+      url = url.url;
+      if (urls[url])
+        return true;
+      urls[url] = true;
+      url = url.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"); // adds slashes to regex control chars
+      text = text.replace(new RegExp('('+url+')','g'),'<a href="$&">$&</a>');
+    });
+    return text;
+  }
+  ,formatTime: function(tweet){
+    var date = new Date(tweet.created_at)
     ,now = Math.round(+new Date/1000)
     ,intervals = [
       ['year',31536000]
