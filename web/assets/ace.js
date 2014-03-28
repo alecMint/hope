@@ -798,7 +798,7 @@ ace.ui.register('twitter',{
         ,count: z.opts.num
       }
     },function(data){
-      z..log(data);
+      z.log(data);
     });
   }
   ,build: function(){
