@@ -833,10 +833,10 @@ ace.ui.register('twitter',{
       + '</div></div></div>');
       item.$.wrap = item.$.cont.find('div.'+x+'-tweet-wrap')
       item.$.wrapInner = item.$.cont.find('div.'+x+'-tweet-wrap-inner')
-      z.tweets.push(item);
       if (i < z.opts.numShow)
         item.$.cont.css('display','');
       z.$.tweetsCont.append(item.$.cont);
+      z.tweets.push(item);
     });
   }
   ,functionalize: function(){
