@@ -477,11 +477,11 @@ ace.ui.register('carousel',{
     ,speed: 300
     ,shadbox: true
   }
-  ,slideQueue: []
   ,init: function(){
     var z = this
     ,d = z.opts.dims.split('x')
     ;
+    z.slideQueue = [];
     z.imgWidth = +d[0];
     z.imgHeight = +d[1];
 
@@ -786,9 +786,9 @@ ace.ui.register('twitter',{
     ,scrollSpeed: 1000
     ,classes: ''
   }
-  ,tweets: []
   ,init: function(){
     var z = this;
+    z.tweets = [];
     z.getData(function(){
       z.build();
       z.functionalize();
