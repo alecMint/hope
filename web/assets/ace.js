@@ -832,8 +832,8 @@ ace.ui.register('twitter',{
         + '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
         + '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
       + '</div></div></div>');
-      tweet.$.wrap: jTweet.find('div.'+x+'-tweet-wrap')
-      tweet.$.wrapInner: jTweet.find('div.'+x+'-tweet-wrap-inner')
+      tweet.$.wrap = jTweet.find('div.'+x+'-tweet-wrap')
+      tweet.$.wrapInner = jTweet.find('div.'+x+'-tweet-wrap-inner')
       z.tweets.push(tweet);
       if (i < z.opts.numShow)
         z.$.cont.css('display','');
