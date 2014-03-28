@@ -212,7 +212,9 @@ div.clear {
 .ace-twitter-tweet-wrap-inner {
 }
 .ace-twitter-tweet-text {
+  display: inline;
 }
 .ace-twitter-tweet-time {
+  display: inline;
 }
 
