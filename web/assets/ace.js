@@ -907,8 +907,8 @@ ace.ui.register('twitter',{
   ,setUpScroll: function(){
     var z = this;
     z.topIndex = 0;
-    z.log(z.opts.numShow,' <= ',z.$.tweets.length,z.opts.numShow <= z.$.tweets.length);
-    if (!z.opts.scroll || z.opts.numShow <= z.$.tweets.length)
+    z.log(z.opts.numShow,' <= ',z.$.tweets.length,z.opts.numShow <= z.tweets.length);
+    if (!z.opts.scroll || z.opts.numShow <= z.tweets.length)
       return;
     if (z.opts.scroll != 'x' && z.opts.scroll != 'y')
       return z.log('invalid scroll option',z.opts.scroll);
