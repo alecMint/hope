@@ -866,6 +866,7 @@ ace.ui.register('twitter',{
     var text = tweet.text
     ,urls = {}
     ;
+    z.log(tweet);
     $.each(tweet.entities.urls,function(i,url){
       url = url.url;
       if (urls[url])

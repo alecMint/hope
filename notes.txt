@@ -47,6 +47,8 @@ http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
 
 --- To Do ---
 
+- Add hashtag links to twitter feed
+
 - Bulletin uploader
     - https://github.com/mattcg/node-tika
     - http://msdn.microsoft.com/en-us/library/cc488002.aspx
