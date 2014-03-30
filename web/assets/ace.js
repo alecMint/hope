@@ -876,7 +876,7 @@ ace.ui.register('twitter',{
       text = text.replace(new RegExp('('+url+')','g'),'<a href="$&" target="_blank">$&</a>');
     });
     $.each(tweet.entities.hashtags,function(i,item){
-      text = text.replace(new RegExp('#('+item.text+')','g'),'<a href="https://twitter.com/search?q=%23$&&src=hash" target="_blank">$&</a>');
+      text = text.replace(new RegExp('#('+item.text+')','g'),'<a href="https://twitter.com/search?q=%23$1&src=hash" target="_blank">#$1</a>');
     });
     return text;
   }
