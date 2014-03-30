@@ -864,16 +864,20 @@ ace.ui.register('twitter',{
   }
   ,formatText: function(tweet){
     var text = tweet.text
+    ,escapeRegEx = /[-[\]{}()*+?.,\\^$|#\s]/g // adds slashes to regex control chars
     ,urls = {}
     ;
     this.log(tweet);
-    $.each(tweet.entities.urls,function(i,url){
-      url = url.url;
+    $.each(tweet.entities.urls,function(i,item){
+      var url = item.url;
       if (urls[url])
         return true;
       urls[url] = true;
-      url = url.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"); // adds slashes to regex control chars
+      url = url.replace(escapeRegEx, "\\$&");
       text = text.replace(new RegExp('('+url+')','g'),'<a href="$&" target="_blank">$&</a>');
+    });
+    $.each(tweet.entities.hashtags,function(i,item){
+      text = text.replace(new RegExp('(#'+item.text+')','g'),'<a href="https://twitter.com/search?q=$&&src=hash" target="_blank">$&</a>');
     });
     return text;
   }
