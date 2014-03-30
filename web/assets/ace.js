@@ -867,7 +867,6 @@ ace.ui.register('twitter',{
     ,escapeRegEx = /[-[\]{}()*+?.,\\^$|#\s]/g // adds slashes to regex control chars
     ,urls = {}
     ;
-    this.log(tweet);
     $.each(tweet.entities.urls,function(i,item){
       var url = item.url;
       if (urls[url])
