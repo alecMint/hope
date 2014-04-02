@@ -245,6 +245,7 @@ div.clear {
 }
 
 .ace-twitter.type-featured {
+  display: none;
   height: 60px;
   max-height: 60px;
   border: 1px solid #dbd8c5;
