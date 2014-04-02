@@ -252,7 +252,8 @@ div.clear {
 }
 .ace-twitter.type-featured .ace-twitter-wrap {
   height: 100%;
-  background: url(/assets/twitterbird-bg1.png) no-repeat;
+  background: url(/assets/twitterbird-bg2.png) no-repeat;
+  background-position:  252px 28px;
 }
 .ace-twitter.type-featured .ace-twitter-wrap2 {
   padding: 10px;
