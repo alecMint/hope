@@ -10,7 +10,9 @@ div.clear {
 #header .text-logo {
   bottom: 19px;
 }
-
+input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
+  padding-bottom: 5px;
+}
 /* END theme overrides */
 
 
