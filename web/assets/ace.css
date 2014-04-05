@@ -1,17 +1,29 @@
 
+/* BEGIN globals */
 div.clear {
   clear: both;
   height: 0;
   width: auto;
   overflow: hidden;
 }
+/* END globals */
 
 /* BEGIN theme overrides */
+input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
+  padding-bottom: 4px;
+}
 #header .text-logo {
   bottom: 19px;
 }
-input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
+.main-nav-subnav {
+  padding-top: 4px;
   padding-bottom: 4px;
+}
+.subnav-list {
+  border-bottom: none;
+}
+.subnav-list li:last-child {
+  border-bottom: none;
 }
 /* END theme overrides */
 
