@@ -28,10 +28,10 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list a {
   padding: 9px 10px;
 }
-.subnav-list a:first-child {
+.subnav-list .menu-item:first-child a {
   padding-top: 15px;
 }
-.subnav-list a:last-child {
+.subnav-list .menu-item:last-child a {
   padding-bottom: 15px;
 }
 .subnav-list a:hover, .subnav-list a:active, .subnav-list > .item-hover a {
