@@ -2,7 +2,8 @@
 
 
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/slides.min.jquery.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.plugins.js"></script>
+<!--<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.plugins.js"></script>-->
+<script type="text/javascript" src="<?php \ace\Ace::vres('/jquery.plugins.js'); ?>"></script>
 
 <script type="text/javascript">
 jQuery(document).ready(function(){

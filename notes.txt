@@ -50,6 +50,10 @@ jQuery('#main-nav').pragmaNavigation({
     ,subnavsOffsetTop: -15
 });
 
+Inspect diffs:
+open ./web/wp-content/themes/ecclesia/js/jquery.plugins.js
+
+
 
 
 --- To Do ---

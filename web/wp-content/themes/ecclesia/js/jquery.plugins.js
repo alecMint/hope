@@ -178,10 +178,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[subnavTimeoutKey]) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
-          $.each(subnavs,function(i,v){
-            if (subnav != v)
-              v.css('display','none');
-          });
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
         }
