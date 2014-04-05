@@ -10,6 +10,7 @@ jQuery(document).ready(function(){
     /* Main navigation */
     jQuery('#main-nav').pragmaNavigation({
         subnavsOffsetLeft: 0
+        ,subnavsOffsetTop: -15
     });
     
     /* Front page slider */
