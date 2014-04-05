@@ -93,8 +93,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
 
   conf = jQuery.extend({
     initialSubnavZIndex: 1000,          // zIndex for the 1st subnav, subsequent subnavs get incremental values
-    slideDownSpeed: 400,                // time of the slide-down animation in miliseconds
-    slideUpSpeed: 200,                  // time of the slide-up animation in miliseconds
+    slideDownSpeed: 9400,                // time of the slide-down animation in miliseconds
+    slideUpSpeed: 9200,                  // time of the slide-up animation in miliseconds
     slideDownEffect: 'easeOutQuart',   // name of the easing function (look at the easing functions at the bottom of this file)
     slideUpEffect: 'easeOutQuart',      // name of the easing function (look at the easing functions at the bottom of this file)
     eventTimeoutTime: 200,              // delay before a mouse event is actioned
@@ -180,7 +180,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (item.hasClass('top-menu-item')) {
           topItems.removeClass('item-hover');
           $.each(subnavs,function(k,v){
-            v.parent().stop().css('height',0);
+            //v.stop().css('height',0);
           });
         }
 
