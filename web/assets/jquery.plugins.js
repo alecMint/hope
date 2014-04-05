@@ -180,8 +180,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (item.hasClass('top-menu-item')) {
           topItems.removeClass('item-hover');
           $.each(subnavs,function(k,v){
-            //v.stop().css('height',0);
-            subnav.stop().animate({height: 'hide'}, 0, conf.slideUpEffect);
+            v.stop().css('display','none');
           });
         }
 
