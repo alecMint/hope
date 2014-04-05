@@ -127,6 +127,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
      
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
+      console.log('LEV',levelItems,levelItems.html());
       levelItems.each(function(i){
         var item = jQuery(this);
         if (!topItems.filled)
@@ -183,8 +184,9 @@ jQuery.fn.pragmaNavigation = function(conf) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
           $.each(topItems,function(i,v){
-            if (v != item)
-              v.removeClass('item-hover').find('ul.subnav-list').css('display','none');
+            if (v != item) {
+              v.removeClass('item-hover');
+            }
           });
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
