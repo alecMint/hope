@@ -179,7 +179,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
 
     function hideSubNavs(item){
       item.removeClass('item-hover');
-      if (item.subset.length) {
+      if (item.subset && item.subset.length) {
         $.each(item.subset,function(i,v){
           v.css('display','none');
           hideSubNavs(v);
