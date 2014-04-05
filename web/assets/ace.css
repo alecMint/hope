@@ -16,8 +16,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   bottom: 19px;
 }
 .main-nav-subnav {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 10px;
 }
 .subnav-list {
   border-bottom: none;
@@ -26,8 +25,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   border-bottom: none;
 }
 .subnav-list a {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 6px 0;
 }
 /* END theme overrides */
 
