@@ -183,9 +183,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
           $.each(topItems,function(i,v){
-            if (v != item) {
-              v.css('display','none').removeClass('item-hover');
-            }
+            if (v != item)
+              v.removeClass('item-hover').find('ul.subnav-list').css('display','none');
           });
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
