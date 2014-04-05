@@ -182,6 +182,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
           topItems.removeClass('item-hover');
           $.each(subnavs,function(k,v){
             v.stop().css('display','none');
+            clearTimeout(timeouts[ jqd(v,'UID') ])
+            delete timeouts[ jqd(v,'UID') ]
           });
         }
 
