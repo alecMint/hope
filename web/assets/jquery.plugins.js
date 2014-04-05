@@ -118,7 +118,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     var items = new Object();
     var subnavs = new Object();
     var timeouts = new Object();
-    var topItems = [];
+    var topItems = null;
     
     nav.find('ul.level-1').wrap('<div class="main-nav-subnav level-1"></div>');
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
@@ -127,7 +127,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
      
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
-      console.log('LEV',levelItems,levelItems.html());
+      if (!topItems)
+        topItems = levelItems;
       levelItems.each(function(i){
         var item = jQuery(this);
         if (!topItems.filled)
