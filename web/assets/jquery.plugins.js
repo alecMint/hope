@@ -118,7 +118,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
     var items = new Object();
     var subnavs = new Object();
     var timeouts = new Object();
-    var topItems = $([]);
+
+    var topItems = $([])
     
     nav.find('ul.level-1').wrap('<div class="main-nav-subnav level-1"></div>');
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
@@ -179,7 +180,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (item.hasClass('top-menu-item')) {
           topItems.removeClass('item-hover');
           $.each(subnavs,function(k,v){
-            //v.css('display','none');
+            v.stop().css('height',0);
           });
         }
 
