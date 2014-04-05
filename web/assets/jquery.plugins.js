@@ -149,6 +149,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           item.children('a').addClass('has-subnav');
           var subnav = item.children('div.main-nav-subnav');
           subnav.tier = tier;
+          subnav.parentItem = item;
           
           subnavIndex++;
           var subnavUID = 'sub_'+subnavIndex;
@@ -184,6 +185,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           topItems.removeClass('item-hover')
         $.each(subnavs,function(k,v){
           if (isTopItem || v.tier >= subnav.tier) {
+            v.parentItem.removeClass('item-hover');
             v.stop().css('display','none');
             clearTimeout(timeouts[ jqd(v,'UID') ])
             delete timeouts[ jqd(v,'UID') ]
