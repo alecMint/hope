@@ -34,6 +34,9 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list a:last-child {
   padding-bottom: 15px;
 }
+.subnav-list a:hover, .subnav-list a:active, .subnav-list > .item-hover a {
+  background-color: #5c7b99;
+}
 .subnav-list a.has-subnav {
   background-image: url(/assets/arrow-list-o10.png);
   background-position: right 15px;
