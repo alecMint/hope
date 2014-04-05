@@ -6,6 +6,13 @@ div.clear {
   overflow: hidden;
 }
 
+/* BEGIN theme overrides */
+#header .text-logo {
+  bottom: 19px;
+}
+
+/* END theme overrides */
+
 
 .sidebysideimgs {
 }
