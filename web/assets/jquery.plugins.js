@@ -295,7 +295,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           itemPosLeft = itemPos.left - subnavWidth - conf.subnavsOffsetLeft;
         }
       }
-      console.log('pstop',itemPosTop,subnav.offset(),subnav.height());
+      console.log('pstop',item.offset(),subnav.offset(),subnav.height());
       subnav.css({ top: itemPosTop, left: itemPosLeft });
     }
     
