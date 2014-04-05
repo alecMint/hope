@@ -118,7 +118,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     var items = new Object();
     var subnavs = new Object();
     var timeouts = new Object();
-    var topItems = [];
+    topItems = [];
     
     nav.find('ul.level-1').wrap('<div class="main-nav-subnav level-1"></div>');
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
@@ -132,7 +132,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
       levelItems.each(function(i){
         var item = jQuery(this);
 
-        var subnavSet = [];
+        item.subnavs = [];
         if (item.hasClass('top-menu-item'))
           topItems.push(item);
         
@@ -166,13 +166,12 @@ jQuery.fn.pragmaNavigation = function(conf) {
           initializeSubnav(item,subnav)
           itemAddMouseEvents(item,subnav);
           subnavAddMouseEvents(subnav);
-          item.subnavs = makeDropDowns(subnav);
+          makeDropDowns(subnav);
           
           level = level__tmp; parentSubnavUIDs = parentSubnavUIDs__tmp; parentItemUIDs = parentItemUIDs__tmp;
 
-          subnavSet.push(subnav);
+          item.subnavs.push(subnav);
         }
-        return subnavSet;
       });
     }
 
