@@ -20,7 +20,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 }
 .subnav-list {
   border-top: none;
-  line-height: 1.1em;
+  line-height: 1.15em;
 }
 .subnav-list li {
   border-bottom: none;
