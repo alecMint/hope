@@ -27,6 +27,9 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list a {
   padding: 6px 10px;
 }
+.subnav-list a.has-subnav {
+  background-position: right 15px;
+}
 /* END theme overrides */
 
 
