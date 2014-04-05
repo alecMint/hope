@@ -193,8 +193,12 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
-          if (item.hasClass('top-menu-item'))
-            hideSubNavs(item);
+          if (item.hasClass('top-menu-item')) {
+            $.each(topItems,function(i,v){
+              if (v != item)
+                hideSubNavs(item);
+            });
+          }
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
