@@ -172,6 +172,10 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
+          $.each(items,function(i,v){
+            if (item != v)
+              v.css('display','none');
+          });
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
