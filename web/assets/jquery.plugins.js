@@ -131,8 +131,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
         topItems = levelItems;
       levelItems.each(function(i){
         var item = jQuery(this);
-        if (!topItems.filled)
-          topItems.push(item);
         
         itemIndex++;
         var itemUID = 'item_'+itemIndex;
@@ -169,7 +167,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
           level = level__tmp; parentSubnavUIDs = parentSubnavUIDs__tmp; parentItemUIDs = parentItemUIDs__tmp;
         }
       });
-      topItems.filled = true;
     }
     
     function itemAddMouseEvents(item,subnav) {
@@ -178,17 +175,13 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
+          topItems.removeClass('item-hover');
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
         if (timeouts[subnavTimeoutKey]) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
-          $.each(topItems,function(i,v){
-            if (v != item) {
-              v.removeClass('item-hover');
-            }
-          });
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
         }
