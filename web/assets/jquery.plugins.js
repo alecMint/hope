@@ -178,6 +178,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
         if (item.hasClass('top-menu-item')) {
+          console.log('mouseneter',+new Date);
           topItems.removeClass('item-hover');
           $.each(subnavs,function(k,v){
             v.stop().css('display','none');
