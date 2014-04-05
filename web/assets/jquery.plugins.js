@@ -190,13 +190,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
         var itemTimeoutKey = jqd(item,'UID');
-        if (item.hasClass('top-menu-item')) {
-          $.each(topItems,function(i,v){
-            console.log(v == item,+new Date);
-            if (v != item)
-              hideSubNavs(v);
-          });
-        }
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
@@ -208,6 +201,13 @@ jQuery.fn.pragmaNavigation = function(conf) {
         } else {
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
+          if (item.hasClass('top-menu-item')) {
+            $.each(topItems,function(i,v){
+              console.log(v == item,+new Date);
+              if (v != item)
+                hideSubNavs(v);
+            });
+          }
         }
       }).mouseleave(function(){
         var itemTimeout = setItemTimeout(item);
