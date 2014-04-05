@@ -21,11 +21,11 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list {
   border-bottom: none;
 }
-.subnav-list li:last-child {
+.subnav-list li {
   border-bottom: none;
 }
 .subnav-list a {
-  padding: 6px 0;
+  padding: 6px 10px;
 }
 /* END theme overrides */
 
