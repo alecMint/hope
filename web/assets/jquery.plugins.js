@@ -128,7 +128,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
       if (!topItems)
-        topItems = levelItems.addClass;
+        topItems = levelItems;
       levelItems.each(function(i){
         var item = jQuery(this);
         
