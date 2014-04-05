@@ -126,11 +126,12 @@ jQuery.fn.pragmaNavigation = function(conf) {
     
     makeDropDowns(nav);
 
-    function makeDropDowns (navLevel) {
+    function makeDropDowns (navLevel,tier) {
       var levelItems = navLevel.children('ul').children('li');
 
       if (!topItems.length)
         levelItems.addClass('top-menu-item');
+      tier = tier || 0;
 
       levelItems.each(function(i){
         var item = jQuery(this);
@@ -147,6 +148,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (item.find('ul.subnav-list').size()>0) { // If item has subnav
           item.children('a').addClass('has-subnav');
           var subnav = item.children('div.main-nav-subnav');
+          subnav.tier = tier;
           
           subnavIndex++;
           var subnavUID = 'sub_'+subnavIndex;
@@ -168,7 +170,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           initializeSubnav(item,subnav)
           itemAddMouseEvents(item,subnav);
           subnavAddMouseEvents(subnav);
-          makeDropDowns(subnav);
+          makeDropDowns(subnav,tier+1);
           
           level = level__tmp; parentSubnavUIDs = parentSubnavUIDs__tmp; parentItemUIDs = parentItemUIDs__tmp;
         }
@@ -177,15 +179,16 @@ jQuery.fn.pragmaNavigation = function(conf) {
 
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
-        if (item.hasClass('top-menu-item')) {
-          console.log('mouseneter',+new Date);
-          topItems.removeClass('item-hover');
-          $.each(subnavs,function(k,v){
+        var isTopItem = item.hasClass('top-menu-item')
+        if (isTopItem)
+          topItems.removeClass('item-hover')
+        $.each(subnavs,function(k,v){
+          if (isTopItem || v.tier >= subnav.tier) {
             v.stop().css('display','none');
             clearTimeout(timeouts[ jqd(v,'UID') ])
             delete timeouts[ jqd(v,'UID') ]
-          });
-        }
+          }
+        });
 
         var itemTimeoutKey = jqd(item,'UID');
         if (timeouts[itemTimeoutKey]) {
