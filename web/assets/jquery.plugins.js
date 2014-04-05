@@ -128,7 +128,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
       if (!topItems)
-        topItems = levelItems;
+        topItems = levelItems.addClass('top-menu-item');
       levelItems.each(function(i){
         var item = jQuery(this);
         
@@ -177,7 +177,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
           topItems.removeClass('item-hover');
-          console.log(item.hasClass('main-nav-list-item'),item.outerHTML); // main-nav-list-item
+          console.log(item.hasClass('top-menu-item'));
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
