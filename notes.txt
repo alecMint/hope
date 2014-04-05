@@ -44,6 +44,10 @@ May need to upgrade jquery version
 http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
 
 
+open ./web/wp-content/themes/ecclesia/template-parts/mod-footer-scripts.php
+
+
+
 
 --- To Do ---
 

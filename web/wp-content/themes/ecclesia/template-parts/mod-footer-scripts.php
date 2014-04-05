@@ -8,7 +8,9 @@
 jQuery(document).ready(function(){
 
     /* Main navigation */
-    jQuery('#main-nav').pragmaNavigation();
+    jQuery('#main-nav').pragmaNavigation({
+        subnavsOffsetLeft: 0
+    });
     
     /* Front page slider */
     jQuery("#front-slider").slides({
