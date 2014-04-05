@@ -195,6 +195,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         } else {
           if (item.hasClass('top-menu-item')) {
             $.each(topItems,function(i,v){
+              console.log(v == item);
               if (v != item)
                 hideSubNavs(v);
             });
