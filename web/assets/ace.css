@@ -29,10 +29,11 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   padding: 9px 10px;
 }
 .subnav-list .menu-item:first-child a {
-  padding-top: 15px;
+  margin-top: 4px;
+  padding-top: 10px;
 }
 .subnav-list .menu-item:last-child a {
-  padding-bottom: 15px;
+  padding-bottom: 14px;
 }
 .subnav-list a:hover, .subnav-list a:active, .subnav-list > .item-hover a {
   background-color: #5c7b99;
@@ -40,7 +41,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list a.has-subnav {
   background-image: url(/assets/arrow-list-o10.png);
   background-repeat: no-repeat;
-  background-position: right 15px;
+  background-position: right 12px;
 }
 /* END theme overrides */
 
