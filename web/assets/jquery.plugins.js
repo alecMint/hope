@@ -202,8 +202,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[subnavTimeoutKey]) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
-          positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
+          positionSubnav(item,subnav);
         }
       }).mouseleave(function(){
         var itemTimeout = setItemTimeout(item);
