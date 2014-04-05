@@ -9,7 +9,8 @@ jQuery(document).ready(function(){
 
     /* Main navigation */
     jQuery('#main-nav').pragmaNavigation({
-        subnavsOffsetLeft: 0
+        initialSubnavZIndex: 1
+        ,subnavsOffsetLeft: 0
         ,subnavsOffsetTop: -15
     });
     
