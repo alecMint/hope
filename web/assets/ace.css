@@ -29,10 +29,10 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   padding: 9px 10px;
 }
 .subnav-list a:first-child {
-  padding-top: 12px;
+  padding-top: 15px;
 }
 .subnav-list a:last-child {
-  padding-bottom: 12px;
+  padding-bottom: 15px;
 }
 .subnav-list a.has-subnav {
   background-image: url(/assets/arrow-list-o10.png);
