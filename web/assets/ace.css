@@ -26,7 +26,13 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   border-bottom: none;
 }
 .subnav-list a {
-  padding: 6px 10px;
+  padding: 9px 10px;
+}
+.subnav-list a:first-child {
+  padding-top: 12px;
+}
+.subnav-list a:last-child {
+  padding-bottom: 12px;
 }
 .subnav-list a.has-subnav {
   background-image: url(/assets/arrow-list-o10.png);
