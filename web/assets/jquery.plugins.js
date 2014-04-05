@@ -287,7 +287,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
       var itemPos = item.offset();
       var itemWidth = item.outerWidth();
       var subnavWidth = subnav.outerWidth();
-      //var itemParentTop = item.parents('.main-nav-subnav:first').offset().top;
       if (jqd(subnav,'level') == 1) {
         var itemPosTop = itemPos.top + conf.subnavL1offsetTop; var itemPosLeft = itemPos.left + conf.subnavL1offsetLeft;
       } else {
@@ -295,9 +294,10 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if ( (itemPosLeft + subnavWidth) > (contentBoundryRight()) ) {
           itemPosLeft = itemPos.left - subnavWidth - conf.subnavsOffsetLeft;
         }
-        //if (itemPosTop < itemParentTop)
-        //  itemPosTop = itemParentTop;
-        console.log('pstop',item.parents('.main-nav-subnav:first').offset(),itemPosTop);
+
+        var itemParentTop = item.parents('.main-nav-subnav:first').offset().top
+        if (itemPosTop < itemParentTop)
+          itemPosTop = itemParentTop
       }
       subnav.css({ top: itemPosTop, left: itemPosLeft });
     }
