@@ -16,10 +16,11 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   bottom: 19px;
 }
 .main-nav-subnav {
-  padding: 4px 0;
+  padding: 0;
 }
 .subnav-list {
   border-top: none;
+  line-height: 1.1em;
 }
 .subnav-list li {
   border-bottom: none;
