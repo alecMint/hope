@@ -128,6 +128,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
 
+      var itemSet = [];
       if (!topItems.length)
         levelItems.addClass('top-menu-item');
 
@@ -136,6 +137,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
 
         if (item.hasClass('top-menu-item'))
           topItems.push(item);
+        itemSet.push(item);
         
         itemIndex++;
         var itemUID = 'item_'+itemIndex;
@@ -167,12 +169,12 @@ jQuery.fn.pragmaNavigation = function(conf) {
           initializeSubnav(item,subnav)
           itemAddMouseEvents(item,subnav);
           subnavAddMouseEvents(subnav);
-          item.nextLevelItems = makeDropDowns(subnav);
+          item.subset = makeDropDowns(subnav);
           
           level = level__tmp; parentSubnavUIDs = parentSubnavUIDs__tmp; parentItemUIDs = parentItemUIDs__tmp;
         }
       });
-      return levelItems;
+      return itemSet;
     }
 
     function hideSubNavs(item){
