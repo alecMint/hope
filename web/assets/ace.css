@@ -29,8 +29,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   padding: 9px 10px;
 }
 .subnav-list .menu-item:first-child a {
-  margin-top: 4px;
-  padding-top: 10px;
+  padding-top: 13px;
 }
 .subnav-list .menu-item:last-child a {
   padding-bottom: 14px;
