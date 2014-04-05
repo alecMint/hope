@@ -192,7 +192,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
         var itemTimeoutKey = jqd(item,'UID');
         if (item.hasClass('top-menu-item')) {
           $.each(topItems,function(i,v){
-            console.log(v == item);
+            console.log(v == item,+new Date);
             if (v != item)
               hideSubNavs(v);
           });
