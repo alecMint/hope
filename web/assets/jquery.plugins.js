@@ -124,11 +124,11 @@ jQuery.fn.pragmaNavigation = function(conf) {
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
     
     makeDropDowns(nav);
-    console.log(topItems.html());
+
     function makeDropDowns (navLevel) {
       var levelItems = navLevel.children('ul').children('li');
       if (!topItems)
-        topItems = levelItems;
+        topItems = levelItems.addClass;
       levelItems.each(function(i){
         var item = jQuery(this);
         
@@ -162,10 +162,11 @@ jQuery.fn.pragmaNavigation = function(conf) {
           initializeSubnav(item,subnav)
           itemAddMouseEvents(item,subnav);
           subnavAddMouseEvents(subnav);
-          makeDropDowns(subnav);
+          item.subnavs = makeDropDowns(subnav);
           
           level = level__tmp; parentSubnavUIDs = parentSubnavUIDs__tmp; parentItemUIDs = parentItemUIDs__tmp;
         }
+        return levelItems;
       });
     }
     
@@ -176,6 +177,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
           topItems.removeClass('item-hover');
+          console.log(item.hasClass('main-nav-list-item'),item.outerHTML); // main-nav-list-item
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
