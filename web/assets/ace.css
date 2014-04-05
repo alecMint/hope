@@ -15,6 +15,9 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 #header .text-logo {
   bottom: 19px;
 }
+#top-nav {
+  top: 16px;
+}
 .main-nav-subnav {
   padding: 0;
 }

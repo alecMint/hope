@@ -11,6 +11,7 @@ jQuery(document).ready(function(){
     jQuery('#main-nav').pragmaNavigation({
         subnavsOffsetLeft: 0
         ,subnavsOffsetTop: -15
+        ,eventTimeoutTime: 1000
     });
     
     /* Front page slider */
