@@ -294,7 +294,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if ( (itemPosLeft + subnavWidth) > (contentBoundryRight()) ) {
           itemPosLeft = itemPos.left - subnavWidth - conf.subnavsOffsetLeft;
         }
-
         var itemParentTop = item.parents('.main-nav-subnav:first').offset().top
         if (itemPosTop < itemParentTop)
           itemPosTop = itemParentTop
