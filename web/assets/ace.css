@@ -19,7 +19,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   padding: 4px 0;
 }
 .subnav-list {
-  border-bottom: none;
+  border-top: none;
 }
 .subnav-list li {
   border-bottom: none;
