@@ -172,16 +172,16 @@ jQuery.fn.pragmaNavigation = function(conf) {
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
-          $.each(items,function(i,v){
-            if (item != v)
-              v.css('display','none');
-          });
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
         if (timeouts[subnavTimeoutKey]) {
           clearTimeout(timeouts[subnavTimeoutKey]);
         } else {
+          $.each(subnavs,function(i,v){
+            if (subnav != v)
+              v.css('display','none');
+          });
           positionSubnav(item,subnav);
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
         }
