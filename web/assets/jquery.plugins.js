@@ -190,16 +190,16 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
         var itemTimeoutKey = jqd(item,'UID');
+        if (item.hasClass('top-menu-item')) {
+          $.each(topItems,function(i,v){
+            console.log(v == item);
+            if (v != item)
+              hideSubNavs(v);
+          });
+        }
         if (timeouts[itemTimeoutKey]) {
           clearTimeout(timeouts[itemTimeoutKey]);
         } else {
-          if (item.hasClass('top-menu-item')) {
-            $.each(topItems,function(i,v){
-              console.log(v == item);
-              if (v != item)
-                hideSubNavs(v);
-            });
-          }
           item.addClass('item-hover');
         }
         var subnavTimeoutKey = jqd(subnav,'UID');
