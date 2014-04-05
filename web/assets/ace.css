@@ -25,6 +25,10 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list li:last-child {
   border-bottom: none;
 }
+.subnav-list a {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
 /* END theme overrides */
 
 
