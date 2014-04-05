@@ -28,7 +28,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   padding: 6px 10px;
 }
 .subnav-list a.has-subnav {
-  background-position: right 15px;
+  background: url(/assets/arrow-list.png) no-repeat right 15px;
 }
 /* END theme overrides */
 
