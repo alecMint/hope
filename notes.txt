@@ -61,7 +61,7 @@ open ./web/wp-content/themes/ecclesia/template-parts/mod-footer-scripts.php
 --- To Do ---
 
 - Add real logo to
-    - site (bg?)
+    - site (bg or title)
     - social sites (instagram / soundcloud / twitter /etc)
 - Bulletin uploader
     - https://github.com/mattcg/node-tika
