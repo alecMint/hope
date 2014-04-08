@@ -1,6 +1,6 @@
 /*
 1078488011
-$('#front-slider').after('<script type="text/ace-instagram">{num:10,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+$('#front-slider').after('<script type="text/ace-instagram">{num:10,query:"users/227962011/media/recent"}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 
 hopechapel_lb
 $('.grid-4.widgets-container').html('<div>').find('div').widgetize('twitter',{
@@ -412,7 +412,7 @@ ace.ui.register('instagram',{
     clientId: 'a26e3cd4b7b24a50857f54f78f051b63'
     ,url: 'https://api.instagram.com/v1/'
     ,type: 'squares med'
-    ,num: 12
+    ,num: 10
     ,hoverFadeIn: true
     ,shadbox: true
   }
