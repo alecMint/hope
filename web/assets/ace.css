@@ -43,7 +43,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .subnav-list a.has-subnav {
   background-image: url(/assets/arrow-list-o10.png);
   background-repeat: no-repeat;
-  background-position: right 12px;
+  background-position: right 13px;
 }
 /* END theme overrides */
 
