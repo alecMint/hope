@@ -5,7 +5,7 @@
 }</script>
 
 hopechapel_lb
-<script type="text/twitter">{
+<script type="text/ace-twitter">{
   screenName: 'jewelmint'
   ,numGet: 10
   ,numShow: 3
