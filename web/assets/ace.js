@@ -1,6 +1,6 @@
 /*
 1078488011
-$('body').html('<script type="text/ace-instagram">{num:9,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+$('#front-slider').after('<script type="text/ace-instagram">{num:10,query:"users/227962011/media/recent",width:125}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
 
 hopechapel_lb
 $('.grid-4.widgets-container').html('<div>').find('div').widgetize('twitter',{
@@ -445,7 +445,7 @@ ace.ui.register('instagram',{
       var jImg = $('<div class="'+x+'-img">'
         + '<img class="'+x+'-img-img" src="'+m.images.low_resolution.url+'" xdata-img="'+m.images.standard_resolution.url+'" />'
       + '</div>');
-      jImg.attr('alt',m.caption.text);
+      jImg.find('img.'+x+'-img-img').attr('alt',m.caption.text);
       z.$.cont.append(jImg);
     });
     z.$.cont.append('<div class="clear">&nbsp;</div>');
