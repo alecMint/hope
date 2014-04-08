@@ -413,6 +413,7 @@ ace.ui.register('instagram',{
     ,url: 'https://api.instagram.com/v1/'
     ,type: 'squares med'
     ,num: 12
+    ,hoverFadeIn: true
     ,shadbox: true
   }
   ,init: function(){
