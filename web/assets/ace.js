@@ -1,12 +1,17 @@
 /*
 1078488011
-$('#front-slider').after('<script type="text/ace-instagram">{num:10,query:"users/227962011/media/recent"}</script>'); $.getScript('http://local.hopechapellongbeach.com/assets/ace.js');
+<script type="text/ace-instagram">{
+  query: 'users/227962011/media/recent'
+}</script>
 
 hopechapel_lb
-$('.grid-4.widgets-container').html('<div>').find('div').widgetize('twitter',{
-  type: ''
-  ,screenName: 'jewelmint'
-});
+<script type="text/twitter">{
+  screenName: 'jewelmint'
+  ,numGet: 10
+  ,numShow: 3
+  ,scroll: 'y'
+  ,type: 'sidebar'
+}</script>
 */
 
 
@@ -796,7 +801,7 @@ ace.ui.register('twitter',{
     ,scroll: 'x'
     ,scrollDelay: 8000
     ,scrollSpeed: 1000
-    ,classes: ''
+    ,type: ''
   }
   ,init: function(){
     var z = this;
@@ -832,7 +837,7 @@ ace.ui.register('twitter',{
     z.$.cont.addClass('has-num-'+z.opts.numShow);
     if (z.opts.scroll)
       z.$.cont.addClass('is-scroll-'+z.opts.scroll);
-    $.each(z.opts.type.split('-'),function(i,v){
+    $.each(z.opts.type.split(' '),function(i,v){
       z.$.cont.addClass('type-'+v);
     });
     z.$.cont.html('<div class="'+x+'-wrap"><div class="'+x+'-wrap2">'
