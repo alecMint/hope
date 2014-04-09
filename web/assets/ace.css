@@ -14,6 +14,14 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 }
 #header .text-logo {
   bottom: 19px;
+
+  display: block;
+  background: url(/assets/logo01.png);
+  width: 205px;
+  height: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
 }
 #top-nav {
   top: 16px;
