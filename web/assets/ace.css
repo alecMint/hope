@@ -12,9 +12,13 @@ div.clear {
 input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
   padding-bottom: 4px;
 }
+#header .inner {
+  height: 70px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
 #header .text-logo {
-  bottom: 19px;
-
+  bottom: 0;
   display: block;
   background: url(/assets/logo01.png);
   width: 205px;
@@ -24,7 +28,10 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   text-indent: 100%;
 }
 #top-nav {
-  top: 16px;
+  bottom: 40px;
+}
+#main-nav {
+  bottom: 0;
 }
 .main-nav-subnav {
   padding: 0;
