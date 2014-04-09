@@ -15,7 +15,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 #header .inner {
   height: 70px;
   padding-bottom: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 #header .text-logo {
   bottom: 0;
