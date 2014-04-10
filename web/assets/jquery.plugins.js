@@ -181,8 +181,10 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
         var isTopItem = item.hasClass('top-menu-item')
-        if (isTopItem)
-          topItems.not(item).removeClass('item-hover')
+        if (isTopItem) {
+          topItems.removeClass('item-hover')
+          item.addClass('item-hover');
+        }
         $.each(subnavs,function(k,v){
           if (isTopItem || v.tier >= subnav.tier) {
             v.parentItem.removeClass('item-hover');
