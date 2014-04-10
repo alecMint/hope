@@ -125,6 +125,15 @@ jQuery.fn.pragmaNavigation = function(conf) {
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
     
     makeDropDowns(nav);
+    topItems.bind('mouseover',function(){
+      topItems.removeClass('item-hover')
+      $.each(subnavs,function(k,v){
+        v.parentItem.removeClass('item-hover');
+        v.stop().css('display','none');
+        clearTimeout(timeouts[ jqd(v,'UID') ])
+        delete timeouts[ jqd(v,'UID') ]
+      });
+    });
 
     function makeDropDowns (navLevel,tier) {
       var levelItems = navLevel.children('ul').children('li');
@@ -181,10 +190,8 @@ jQuery.fn.pragmaNavigation = function(conf) {
     function itemAddMouseEvents(item,subnav) {
       item.mouseenter(function(){
         var isTopItem = item.hasClass('top-menu-item')
-        if (isTopItem) {
+        if (isTopItem)
           topItems.removeClass('item-hover')
-          item.addClass('item-hover');
-        }
         $.each(subnavs,function(k,v){
           if (isTopItem || v.tier >= subnav.tier) {
             v.parentItem.removeClass('item-hover');
