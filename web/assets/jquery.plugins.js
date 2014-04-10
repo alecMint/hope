@@ -136,8 +136,20 @@ jQuery.fn.pragmaNavigation = function(conf) {
       levelItems.each(function(i){
         var item = jQuery(this);
 
-        if (item.hasClass('top-menu-item'))
+        if (item.hasClass('top-menu-item')) {
           topItems = topItems.add(item);
+          item.bind('mousenter',function(){
+            topItems.removeClass('item-hover')
+            $.each(subnavs,function(k,v){
+              if (isTopItem || v.tier >= subnav.tier) {
+                v.parentItem.removeClass('item-hover');
+                v.stop().css('display','none');
+                clearTimeout(timeouts[ jqd(v,'UID') ])
+                delete timeouts[ jqd(v,'UID') ]
+              }
+            });
+          });
+        }
         
         itemIndex++;
         var itemUID = 'item_'+itemIndex;
