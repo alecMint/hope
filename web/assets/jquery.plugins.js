@@ -179,7 +179,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
     }
 
     function itemAddMouseEvents(item,subnav) {
-      item.mouseover(function(){
+      item.mouseenter(function(){
         var isTopItem = item.hasClass('top-menu-item')
         if (isTopItem)
           topItems.removeClass('item-hover')
@@ -205,7 +205,7 @@ jQuery.fn.pragmaNavigation = function(conf) {
           subnav.animate({height: "show"}, conf.slideDownSpeed, conf.slideDownEffect);
           positionSubnav(item,subnav);
         }
-      }).mouseout(function(){
+      }).mouseleave(function(){
         var itemTimeout = setItemTimeout(item);
         var subnavTimeout = setSubnavTimeout(subnav);
         timeouts[ jqd(item,'UID') ] = itemTimeout;
