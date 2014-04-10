@@ -125,15 +125,6 @@ jQuery.fn.pragmaNavigation = function(conf) {
     nav.find('ul.level-n').wrap('<div class="main-nav-subnav level-n"></div>');
     
     makeDropDowns(nav);
-    topItems.bind('mouseover',function(){
-      topItems.removeClass('item-hover')
-      $.each(subnavs,function(k,v){
-        v.parentItem.removeClass('item-hover');
-        v.stop().css('display','none');
-        clearTimeout(timeouts[ jqd(v,'UID') ])
-        delete timeouts[ jqd(v,'UID') ]
-      });
-    });
 
     function makeDropDowns (navLevel,tier) {
       var levelItems = navLevel.children('ul').children('li');
