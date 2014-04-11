@@ -81,6 +81,13 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 }
 
 
+.staffprofile {
+  margin-bottom: 20px;
+}
+.staffprofile .ace-carousel {
+}
+
+
 .sidebysideimgs {
 }
 .sidebysideimgs img {
