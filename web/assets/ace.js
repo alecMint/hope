@@ -324,7 +324,7 @@ ace = {
 
       var window_w2h = windowSize[0]/windowSize[1],
         img_w2h = imgSize[0]/imgSize[1],
-        offsetX = offsetY = 0,
+        offsetX = 0, offsetY = 0,
         newWidth,newHeight,fit;
 
       if (window_w2h > img_w2h) {
