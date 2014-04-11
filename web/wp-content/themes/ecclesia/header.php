@@ -2,7 +2,7 @@
 
 <?php get_template_part('template-parts/mod-document-head'); ?>
 
-<body class="page-<?php echo preg_replace('/[^a-zA-Z0-9_\-]/','',bloginfo('name')); ?>">
+<body class="page-<?php echo preg_replace('/[^a-z0-9_\-]/','',strtolower(bloginfo('name'))); ?>">
 
 <div class="page-wrap" id="page-wrap">
 
