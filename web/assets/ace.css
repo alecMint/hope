@@ -65,6 +65,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 
 .ace-verse {
   font-style: italic;
+  margin: 0.2em 1em;
 }
 .ace-verse-ref {
 }
