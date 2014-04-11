@@ -1,9 +1,10 @@
 
 --- Deploying New Server ---
 
-# clean up old server
+# back up
 node /root/sire/_common/s3dl/bin/baksql.js -d wordpress -b sire-hope/sql
 node /root/sire/_common/s3dl/bin/shuv.js -d /var/www/hope/web/wp-content/uploads -b sire-hope/wp-content/uploads
+# clean up old server
 crontab -r
 killall node
 
@@ -64,6 +65,8 @@ open ./web/wp-content/themes/ecclesia/header.php
 
 - Improve styling on all pages
     - images, verses, etc
+
+- Paypal donate button
 
 - Bulletin uploader
     - https://github.com/mattcg/node-tika
