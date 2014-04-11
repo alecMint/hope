@@ -76,7 +76,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .ace-verse-ref {
 }
 .ace-verse-ref:before {
-  padding-left: 0.2em;
+  padding-left: 0.5em;
   content: '- ';
 }
 
