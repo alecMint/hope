@@ -88,9 +88,11 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   float: left;
   width: 206px;
   height: 160px;
+  margin: 0 20px 0 0;
 }
 .staffprofile:nth-child(even) .ace-carousel {
   float: right;
+  margin: 0 0 0 20px;
 }
 
 
