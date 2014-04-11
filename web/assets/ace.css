@@ -66,8 +66,9 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 .ace-verse {
   font-family: georgia,serif;
   font-style: italic;
-  font-size: 1.2em;
+  font-size: 1.05em;
   letter-spacing: 0.05em;
+  line-height: 1.7em;
   margin: 0.2em 1em;
 }
 .ace-verse-body {
