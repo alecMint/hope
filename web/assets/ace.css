@@ -82,9 +82,10 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 
 
 .staffprofile {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .staffprofile .ace-carousel {
+  margin-bottom: 14px;
 }
 
 
