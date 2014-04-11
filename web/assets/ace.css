@@ -89,7 +89,7 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   width: 206px;
   height: 160px;
 }
-.staffprofile.nth-child(even) .ace-carousel {
+.staffprofile:nth-child(even) .ace-carousel {
   float: right;
 }
 
