@@ -60,6 +60,9 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   background-repeat: no-repeat;
   background-position: right 13px;
 }
+ul li, .arrow-list li {
+  background-position: 3px 0.6em;
+}
 /* END theme overrides */
 
 
