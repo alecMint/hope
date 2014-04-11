@@ -60,7 +60,8 @@ open ./web/wp-content/themes/ecclesia/template-parts/mod-footer-scripts.php
 
 --- To Do ---
 
-- Add <address> to homepage for google smart result
+- Improve styling on all pages
+    - images, verses, etc
 
 - Bulletin uploader
     - https://github.com/mattcg/node-tika
