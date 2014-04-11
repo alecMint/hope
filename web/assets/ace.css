@@ -63,6 +63,16 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
 /* END theme overrides */
 
 
+.ace-verse {
+  font-style: italic;
+}
+.ace-verse-ref {
+}
+.ace-verse-ref:before {
+  content: '-&nbsp;';
+}
+
+
 .sidebysideimgs {
 }
 .sidebysideimgs img {
