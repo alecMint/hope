@@ -67,6 +67,8 @@ input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .cu
   font-style: italic;
   margin: 0.2em 1em;
 }
+.ace-verse-body {
+}
 .ace-verse-ref {
 }
 .ace-verse-ref:before {
