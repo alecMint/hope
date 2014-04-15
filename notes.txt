@@ -67,6 +67,8 @@ open ./web/wp-content/themes/ecclesia/header.php
     - images, verses, etc
 
 - Paypal donate button
+    - Make sure we are getting discounted 2.2%+$0.3 charity discount rate
+    - Also get us to show up on the charity search
 
 - Bulletin uploader
     - https://github.com/mattcg/node-tika
