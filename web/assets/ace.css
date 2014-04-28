@@ -67,6 +67,7 @@ ul li, .arrow-list li {
 
 
 .page- .donate {
+  display: none;
   text-align: center;
 }
 
