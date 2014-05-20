@@ -15,6 +15,82 @@ hopechapel_lb
 */
 
 
+AceBase = function(){
+	this._evts = {};
+}
+AceBase.prototype.on = function(key,cb){
+	var evt = this._getEvt(key)
+	evt.subs.push({
+		cb: cb
+	});
+}
+AceBase.prototype.ready = function(key,cb){
+	var evt = this._getEvt(key);
+	if (evt.firedOnce) {
+		cb(evt.error,evt.data);
+	} else {
+		evt.subs.push({
+			cb: cb,
+			typeReady: true
+		});
+	}
+}
+AceBase.prototype.off = function(key,cb){
+	var z = this
+		,evt
+	;
+	if (!z._evts[key]) return;
+	evt = z._getEvt(key);
+	if (typeof(cb) == 'undefined') {
+		evt.subs = [];
+	} else {
+		$.each(evt.subs,function(i,sub){
+			// checking !sub in case this is called in callback inside fireSubs
+			if (!sub || sub.cb == cb)
+				evt.subs[i] = null;
+		});
+		ace.util.arrayFilter(evt.subs,function(sub){
+			return sub !== null;
+		});
+	}
+}
+AceBase.prototype.trigger = function(key,error,data){
+	var evt = this._getEvt(key);
+	evt.firedOnce = true;
+	evt.error = error;
+	evt.data = data;
+	this._fireSubs(key);
+}
+AceBase.prototype._getEvt = function(key){
+	if (typeof(this._evts[key]) == 'undefined') {
+		this._evts[key] = {
+			subs: []
+		};
+	}
+	return this._evts[key];
+}
+AceBase.prototype._fireSubs = function(key){
+	var evt = this._getEvt(key);
+	$.each(evt.subs.slice(0),function(i,sub){
+		sub.cb(evt.error,evt.data);
+	});
+	$.each(evt.subs,function(i,sub){
+		if (sub.typeReady)
+			evt.subs[i] = null;
+	});
+	ace.util.arrayFilter(evt.subs,function(sub){
+		return sub !== null;
+	});
+}
+AceBase.prototype.log = function(){
+	var args = [this.key||'anonymous AceBase'];
+	$.each(arguments,function(i,v){
+		args.push(v);
+	});
+	console.log.apply(console,args);
+}
+
+
 ace = {
 
 	config: {
@@ -55,28 +131,20 @@ ace = {
 		_modules: {}
 
 		,register: function(key,proto){
-			var z = this
-			,module;
+			var z = this;
 			if (z.getModule(key))
 				return console.log(key+' already registered');
 			ace.ready(function(){
-				module = z._modules[key] = new Function();
+				var module = z._modules[key] = new AceBase;
 				$.extend(true,module.prototype,{
 					init: function(){}
 					,opts: {}
 				},proto,{
 					key: key
 					,cssKey: 'ace-'+key
-					,log: function(){
-						var args = [this.key];
-						$.each(arguments,function(i,v){
-							args.push(v);
-						});
-						console.log.apply(console,args);
-					}
 				});
 				module.instances = [];
-				ace.evt.trigger(key+':registered');
+				ace.bus.trigger(key+':registered');
 			});
 		}
 
@@ -86,18 +154,18 @@ ace = {
 
 		,moduleReady: function(moduleKey,cb){
 			var z = this;
-			ace.evt.ready(moduleKey+':registered',function(){
+			ace.bus.ready(moduleKey+':registered',function(){
 				ace.ready(cb);
 				/* these are silly
 				var module = z.getModule(moduleKey)
-				,i = 0
-				,deps
+					,i = 0
+					,deps
 				;
 				if (!(module.config && module.config.dependencies && module.config.dependencies instanceof Array && module.config.dependencies.length))
 					return depsRdy();
 				deps = module.config.dependencies;
 				(function next(){
-					ace.evt.ready(deps[i]+':registered',function(){
+					ace.bus.ready(deps[i]+':registered',function(){
 						if (++i == deps.length)
 							return depsRdy();
 						next();
@@ -115,8 +183,8 @@ ace = {
 			$(function(){
 				(jCont || $('body')).find('script[type^="text/ace-"]').each(function(){
 					var $script = $(this)
-					,key = $script.attr('type').replace('text/ace-','')
-					,opts
+						,key = $script.attr('type').replace('text/ace-','')
+						,opts
 					;
 					try {
 						opts = eval('('+$.trim($script[0].innerHTML)+')');
@@ -132,8 +200,8 @@ ace = {
 			var z = this;
 			z.moduleReady(key,function(){
 				var $elm = $('<div class="ace-'+key+'"></div>')
-				,module = z.getModule(key)
-				,instance = new module();
+					,module = z.getModule(key)
+					,instance = new module();
 				;
 				$cont.replaceWith($elm);
 				instance.opts = $.extend(true,{},module.prototype.opts,opts);
@@ -149,79 +217,7 @@ ace = {
 
 	}
 
-	,evt: {
-		_evts: {}
-
-		,on: function(key,cb){
-			var evt = this._getEvt(key)
-			evt.subs.push({
-				cb: cb
-			});
-		}
-
-		,ready: function(key,cb){
-			var evt = this._getEvt(key);
-			if (evt.fired_once) {
-				cb(evt.error,evt.data);
-			} else {
-				evt.subs.push({
-					cb: cb,
-					type_ready: true
-				});
-			}
-		}
-
-		,off: function(key,cb){
-			var z = this
-				,evt;
-			if (!z._evts[key]) return;
-			evt = z._getEvt(key);
-			if (typeof(cb) == 'undefined') {
-				evt.subs = [];
-			} else {
-				$.each(evt.subs,function(i,sub){
-					// checking !sub in case this is called in callback inside fireSubs
-					if (!sub || sub.cb == cb)
-						evt.subs[i] = null;
-				});
-				ace.util.arrayFilter(evt.subs,function(sub){
-					return sub !== null;
-				});
-			}
-		}
-
-		,trigger: function(key,error,data){
-			var evt = this._getEvt(key);
-			evt.fired_once = true;
-			evt.error = error;
-			evt.data = data;
-			this._fireSubs(key);
-		}
-
-		,_getEvt: function(key){
-			if (typeof(this._evts[key]) == 'undefined') {
-				this._evts[key] = {
-					subs: []
-				};
-			}
-			return this._evts[key];
-		}
-
-		,_fireSubs: function(key){
-			var evt = this._getEvt(key);
-			$.each(evt.subs.slice(0),function(i,sub){
-				sub.cb(evt.error,evt.data);
-			});
-			$.each(evt.subs,function(i,sub){
-				if (sub.type_ready)
-					evt.subs[i] = null;
-			});
-			ace.util.arrayFilter(evt.subs,function(sub){
-				return sub !== null;
-			});
-		}
-
-	}
+	,bus: new AceBase
 
 	,util: {
 		strToClass: function(str){
@@ -234,7 +230,8 @@ ace = {
 
 		,capitalize: function(str){
 			var words = str.split(' ')
-				i,c;
+				i,c
+			;
 			for (i=0,c=words.length;i<c;++i) {
 				if (words[i])
 					words[i] = words[i].charAt(0).toUpperCase() + words[i].substr(1);
@@ -265,7 +262,8 @@ ace = {
 
 		,formatInteger: function(num){
 			var pieces = (num+'').match(/^(\-?)([0-9]+)(.*)/)
-				,chars,i,c;				
+				,chars,i,c
+			;				
 			if (!pieces || !pieces[2])
 				return num;
 			chars = pieces[2].split('');
@@ -280,10 +278,11 @@ ace = {
 
 		,trueDim: function(jelm,includeMargin){
 			var nre = /[^0-9\-.]/g
-			,d = {
-				w: jelm.width()
-				,h: jelm.height()
-			},add,i,c
+				,d = {
+					w: jelm.width()
+					,h: jelm.height()
+				}
+				,add,i,c
 			;
 			add = ['border-left-width','padding-left','padding-right','border-right-width'];
 			if (includeMargin)
@@ -325,7 +324,8 @@ ace = {
 			var window_w2h = windowSize[0]/windowSize[1],
 				img_w2h = imgSize[0]/imgSize[1],
 				offsetX = 0, offsetY = 0,
-				newWidth,newHeight,fit;
+				newWidth,newHeight,fit
+			;
 
 			if (window_w2h > img_w2h) {
 				newWidth = windowSize[0];
@@ -442,7 +442,7 @@ ace.ui.register('instagram',{
 	}
 	,build: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 		$.each(z.opts.type.split(' '),function(i,t){
 			z.$.cont.addClass('type-'+t);
@@ -460,7 +460,7 @@ ace.ui.register('instagram',{
 	}
 	,functionalize: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 
 		if (z.opts.hoverFadeIn) {
@@ -493,7 +493,7 @@ ace.ui.register('carousel',{
 	}
 	,init: function(){
 		var z = this
-		,d = z.opts.dims.split('x')
+			,d = z.opts.dims.split('x')
 		;
 		z.slideQueue = [];
 		z.imgWidth = +d[0];
@@ -511,7 +511,7 @@ ace.ui.register('carousel',{
 	}
 	,build: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 		z.$.cont.html('<div class="'+x+'-mask">'
 				+ '<div class="'+x+'-slide_cont"></div>'
@@ -527,8 +527,9 @@ ace.ui.register('carousel',{
 	}
 	,calcDims: function(){
 		var z = this
-		,x = z.cssKey
-		,td = ace.util.trueDim(z.$.slides.eq(0).find('div.'+x+'-img').eq(0),true);
+			,x = z.cssKey
+			,td = ace.util.trueDim(z.$.slides.eq(0).find('div.'+x+'-img').eq(0),true)
+		;
 		z.itemWidth = td.w;
 		z.itemHeight = td.h;
 		z.slideWidth = z.opts.imgs.length*z.itemWidth;
@@ -537,8 +538,8 @@ ace.ui.register('carousel',{
 	}
 	,createSlide: function(){
 		var z = this
-		,x = z.cssKey
-		,jSlide
+			,x = z.cssKey
+			,jSlide
 		;
 		if (z.$.slides && z.$.slides.length)
 			return z.$.slides.eq(0).clone(true);
@@ -554,8 +555,8 @@ ace.ui.register('carousel',{
 	}
 	,position: function(){
 		var z = this
-		,x = z.cssKey
-		,jSlide
+			,x = z.cssKey
+			,jSlide
 		;
 		z.$.mask.css('height',z.itemHeight+'px');
 
@@ -573,7 +574,8 @@ ace.ui.register('carousel',{
 			z.$.slides.eq(i).find('div.'+x+'-img').each(function(n){
 				$(this).css('left',(n*z.itemWidth)+'px').imagesLoaded(function(){
 					var jImg = $(this)
-					,jImgImg = jImg.find('img.'+x+'-img-img');
+						,jImgImg = jImg.find('img.'+x+'-img-img')
+					;
 					jImg.removeClass('is-loading');
 					jImgImg.css(
 						ace.util.getImageToWindowFit([z.imgWidth,z.imgHeight],[jImgImg[0].width,jImgImg[0].height]).css
@@ -586,7 +588,7 @@ ace.ui.register('carousel',{
 	}
 	,functionalize: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 
 		z.$.arrows.bind('click',function(){
@@ -646,8 +648,8 @@ ace.ui.register('carousel',{
 
 ace.shadbox = function(src,opts,cb){
 	var z = ace.shadbox
-	,opts_ = $.extend({},typeof(opts)=='object'?opts:{},z.config.defaults)
-	,cb_ = cb ? cb : (opts instanceof Function ? opts : null)
+		,opts_ = $.extend({},typeof(opts)=='object'?opts:{},z.config.defaults)
+		,cb_ = cb ? cb : (opts instanceof Function ? opts : null)
 	;
 
 	z.close();
@@ -725,8 +727,8 @@ ace.shadbox.open = function(src,opts,cb){
 	img = new Image;
 	$(img).bind('load',function(){
 		var viewWidth = viewportWidth-paddingX
-		,viewHeight = viewportHeight-paddingY
-		,imgRatio,viewRatio,targetWidth,targetHeight,targetX,targetY
+			,viewHeight = viewportHeight-paddingY
+			,imgRatio,viewRatio,targetWidth,targetHeight,targetX,targetY
 		;
 		if (img.width > viewWidth || img.height > viewHeight) {
 			imgRatio = img.width/img.height;
@@ -832,7 +834,7 @@ ace.ui.register('twitter',{
 	}
 	,build: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 		z.$.cont.addClass('has-num-'+z.opts.numShow);
 		if (z.opts.scroll)
@@ -864,14 +866,14 @@ ace.ui.register('twitter',{
 	}
 	,functionalize: function(){
 		var z = this
-		,x = z.cssKey
+			,x = z.cssKey
 		;
 		z.setUpScroll();
 	}
 	,formatText: function(tweet){
 		var text = tweet.text
-		,escapeRegEx = /[-[\]{}()*+?.,\\^$|#\s]/g // adds slashes to regex control chars
-		,match = {}
+			,escapeRegEx = /[-[\]{}()*+?.,\\^$|#\s]/g // adds slashes to regex control chars
+			,match = {}
 		;
 		$.each(tweet.entities.urls,function(i,item){
 			var url = item.url;
@@ -892,15 +894,15 @@ ace.ui.register('twitter',{
 	}
 	,formatTime: function(tweet){
 		var date = new Date(tweet.created_at)
-		,now = Math.round(+new Date/1000)
-		,intervals = [
-			['year',31536000]
-			,['month',2628000]
-			,['week',604800]
-			,['day',86400]
-			,['hour',3600]
-			,['minute',60]
-		],secs,str
+			,now = Math.round(+new Date/1000)
+			,intervals = [
+				['year',31536000]
+				,['month',2628000]
+				,['week',604800]
+				,['day',86400]
+				,['hour',3600]
+				,['minute',60]
+			],secs,str
 		;
 		if (!date.getTime) {
 			z.log('unexpected timestamp format',createdAt);
@@ -928,8 +930,8 @@ ace.ui.register('twitter',{
 		setTimeout(scroll,z.opts.scrollDelay);
 		function scroll(){
 			var outgoingTweet = z.tweets[z.topIndex]
-			,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
-			,outgoingAnim,incomingAnim,autoValue
+				,incomingTweet = z.tweets[(z.topIndex+z.opts.numShow)%z.tweets.length]
+				,outgoingAnim,incomingAnim,autoValue
 			;
 
 			if (z.opts.scroll == 'x') {
