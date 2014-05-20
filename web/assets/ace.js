@@ -1136,21 +1136,12 @@ ace.ui.register('twitter',{
 	ace.tooltip = function($el,opts){
 		return new Tooltip($el,opts);
 	}
-	ace.tooltip.init = function(){
-		var z = this;
-		if (z.inited)
-			return false;
-		z.inited = true;
-		ace.bus.trigger(Tooltip.prototype.config.key+':loaded');
-		return true;
-	}
 	ace.tooltip.hideAll = function(except){
 		Tooltip.prototype.hideAll(except);
 	}
 	ace.tooltip.get = function(id){
 		return Tooltip.prototype.tooltips[id] ? Tooltip.prototype.tooltips[id] : null;
 	}
-	ace.tooltip.init();
 
 }());
 
