@@ -201,7 +201,7 @@ ace = {
 			z.moduleReady(key,function(){
 				var $elm = $('<div class="ace-'+key+'"></div>')
 					,module = z.getModule(key)
-					,instance = new module();
+					,instance = new module()
 				;
 				$cont.replaceWith($elm);
 				instance.opts = $.extend(true,{},module.prototype.opts,opts);
