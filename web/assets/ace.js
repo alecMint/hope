@@ -135,7 +135,7 @@ ace = {
 			if (z.getModule(key))
 				return console.log(key+' already registered');
 			ace.ready(function(){
-				var module = z._modules[key] = new AceBase();
+				var module = z._modules[key] = new Function();
 				$.extend(true,module.prototype,{
 					init: function(){}
 					,opts: {}
