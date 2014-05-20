@@ -1,4 +1,9 @@
 /*
+	To Do
+		- shadbox behaves funny on chrome
+			- could just be if console is open
+
+
 1078488011
 <script type="text/ace-instagram">{
 	query: 'users/227962011/media/recent'
@@ -135,7 +140,12 @@ ace = {
 			if (z.getModule(key))
 				return console.log(key+' already registered');
 			ace.ready(function(){
-				var module = z._modules[key] = new Function;
+				//var module = z._modules[key] = new Function;
+				var module = z._modules[key] = function(){
+					AceBase.call(this);
+				}
+				module.prototype = new AceBase;
+				module.prototype.constructor = module;
 				$.extend(true,module.prototype,{
 					init: function(){}
 					,opts: {}
