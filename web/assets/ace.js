@@ -1141,7 +1141,7 @@ ace.ui.register('twitter',{
 		if (z.inited)
 			return false;
 		z.inited = true;
-		ace.evt.trigger(Tooltip.prototype.config.key+':loaded');
+		ace.bus.trigger(Tooltip.prototype.config.key+':loaded');
 		return true;
 	}
 	ace.tooltip.hideAll = function(except){
