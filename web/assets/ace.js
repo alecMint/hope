@@ -1018,6 +1018,7 @@ ace.ui.register('twitter',{
 	};
 	Tooltip.prototype.config = {
 		key: 'tooltip'
+		,cssKey: 'ace-tooltip'
 		,defaults: {
 			content: ''
 			,offset: null // null = width of arrow
@@ -1034,7 +1035,7 @@ ace.ui.register('twitter',{
 	}
 	Tooltip.prototype.build = function(){
 		var z = this
-			,x = ace.getCssKey(z)
+			,x = z.config.cssKey
 			,pos = z.opts.fixed ? 'fixed' : 'absolute'
 		;
 		if (z.built)
