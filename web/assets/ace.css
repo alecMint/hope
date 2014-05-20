@@ -1,158 +1,158 @@
 
 /* BEGIN globals */
 div.clear {
-  clear: both;
-  height: 0;
-  width: auto;
-  overflow: hidden;
+	clear: both;
+	height: 0;
+	width: auto;
+	overflow: hidden;
 }
 /* END globals */
 
 /* BEGIN theme overrides */
 input.submit, input.reset, .link-btn, .more-link, .pagination a, .pagination .current, #cancel-comment-reply-link, .comment-reply-link, #older-comments a, #newer-comments a {
-  padding-bottom: 4px;
+	padding-bottom: 4px;
 }
 #header .inner {
-  height: 70px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+	height: 70px;
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 #header .text-logo {
-  bottom: 0;
-  display: block;
-  background: url(/assets/logo01.png);
-  width: 205px;
-  height: 70px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 100%;
+	bottom: 0;
+	display: block;
+	background: url(/assets/logo01.png);
+	width: 205px;
+	height: 70px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 100%;
 }
 #top-nav {
-  bottom: 40px;
+	bottom: 40px;
 }
 #main-nav {
-  bottom: 0;
+	bottom: 0;
 }
 .main-nav-subnav {
-  padding: 0;
+	padding: 0;
 }
 .subnav-list {
-  border-top: none;
-  line-height: 1.15em;
+	border-top: none;
+	line-height: 1.15em;
 }
 .subnav-list li {
-  border-bottom: none;
+	border-bottom: none;
 }
 .subnav-list a {
-  padding: 9px 10px;
+	padding: 9px 10px;
 }
 .subnav-list .menu-item:first-child a {
-  padding-top: 13px;
+	padding-top: 13px;
 }
 .subnav-list .menu-item:last-child a {
-  padding-bottom: 14px;
+	padding-bottom: 14px;
 }
 .subnav-list a:hover, .subnav-list a:active, .subnav-list > .item-hover a {
-  background-color: #5c7b99;
+	background-color: #5c7b99;
 }
 .subnav-list a.has-subnav {
-  background-image: url(/assets/arrow-list-o10.png);
-  background-repeat: no-repeat;
-  background-position: right 13px;
+	background-image: url(/assets/arrow-list-o10.png);
+	background-repeat: no-repeat;
+	background-position: right 13px;
 }
 ul li, .arrow-list li {
-  background-position: 3px 0.6em;
+	background-position: 3px 0.6em;
 }
 /* END theme overrides */
 
 
 .page- .donate {
-  display: none;
-  text-align: center;
+	display: none;
+	text-align: center;
 }
 
 
 .ace-verse {
-  font-family: georgia,serif;
-  font-style: italic;
-  font-size: 1.05em;
-  letter-spacing: 0.05em;
-  line-height: 1.7em;
-  margin: 0.2em 1em;
+	font-family: georgia,serif;
+	font-style: italic;
+	font-size: 1.05em;
+	letter-spacing: 0.05em;
+	line-height: 1.7em;
+	margin: 0.2em 1em;
 }
 .ace-verse-body {
 }
 .ace-verse-ref {
 }
 .ace-verse-ref:before {
-  padding-left: 0.5em;
-  content: '- ';
+	padding-left: 0.5em;
+	content: '- ';
 }
 
 
 .staffprofile {
-  margin-bottom: 60px;
+	margin-bottom: 60px;
 }
 .staffprofile .ace-carousel {
-  float: left;
-  width: 208px;
-  height: 160px;
-  margin: 0 20px 0 0;
+	float: left;
+	width: 208px;
+	height: 160px;
+	margin: 0 20px 0 0;
 }
 .staffprofile:nth-child(even) .ace-carousel {
-  float: right;
-  margin: 0 0 0 20px;
+	float: right;
+	margin: 0 0 0 20px;
 }
 
 
 .sidebysideimgs {
 }
 .sidebysideimgs img {
-  display: block;
-  background: #fff;
-  border: 1px solid #d6d6d6;
-  padding: 4px;
-  float: left;
+	display: block;
+	background: #fff;
+	border: 1px solid #d6d6d6;
+	padding: 4px;
+	float: left;
 }
 .grid-2 .sidebysideimgs img {
-  /* 300 */
-  width: 136px;
+	/* 300 */
+	width: 136px;
 }
 .grid-2 .sidebysideimgs img:nth-child(1) {
-  margin-right: 8px;
+	margin-right: 8px;
 }
 .grid-3 .sidebysideimgs img {
-  /* 461 */
-  width: 212px;
+	/* 461 */
+	width: 212px;
 }
 .grid-3 .sidebysideimgs img:nth-child(1) {
-  margin-right: 16px;
+	margin-right: 16px;
 }
 .grid-4 .sidebysideimgs img {
-  /* 622 */
-  width: 290px;
+	/* 622 */
+	width: 290px;
 }
 .grid-4 .sidebysideimgs img:nth-child(1) {
-  margin-right: 22px;
+	margin-right: 22px;
 }
 .grid-5 .sidebysideimgs img {
-  /* 783 */
-  width: 370px;
+	/* 783 */
+	width: 370px;
 }
 .grid-5 .sidebysideimgs img:nth-child(1) {
-  margin-right: 22px;
+	margin-right: 22px;
 }
 .grid-6 .sidebysideimgs img {
-  /* 944 */
-  width: 451px;
+	/* 944 */
+	width: 451px;
 }
 .grid-6 .sidebysideimgs img:nth-child(1) {
-  margin-right: 22px;
+	margin-right: 22px;
 }
 
 
 .mw-widget-follow a.instagram {
-  background: url(/assets/icon-instagram-32.png) no-repeat;
+	background: url(/assets/icon-instagram-32.png) no-repeat;
 }
 
 
@@ -162,89 +162,89 @@ ul li, .arrow-list li {
 }
 .ace-instagram-img
 ,.ace-instagram-img-img {
-  display: block;
-  margin: 0;
-  padding: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 .ace-instagram.shadbox_enabled .ace-instagram-img-img {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .ace-instagram.type-squares .ace-instagram-img {
-  float: left;
+	float: left;
 }
 .ace-instagram.type-med .ace-instagram-img
 ,.ace-instagram.type-med .ace-instagram-img-img {
-  width: 124px;
-  height: 124px;
+	width: 124px;
+	height: 124px;
 }
 
 
 
 .ace-carousel {
-  position: relative;
+	position: relative;
 }
 .ace-carousel-mask {
-  overflow: hidden;
-  position: relative;
+	overflow: hidden;
+	position: relative;
 }
 .ace-carousel-slide_cont {
-  position: relative;
+	position: relative;
 }
 .ace-carousel-slide {
-  position: absolute;
-  left: 0;
-  top: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 .ace-carousel-arr {
-  position: absolute;
-  top: 0;
-  width: 54px;
-  height: 100%;
-  background: url(/assets/car_arrows.png) no-repeat;
-  cursor: pointer;
+	position: absolute;
+	top: 0;
+	width: 54px;
+	height: 100%;
+	background: url(/assets/car_arrows.png) no-repeat;
+	cursor: pointer;
 }
 .ace-carousel-arr-left {
-  left: 0;
-  background-position: 1px center;
+	left: 0;
+	background-position: 1px center;
 }
 .ace-carousel-arr-right {
-  right: 0;
-  background-position: -58px center;
+	right: 0;
+	background-position: -58px center;
 }
 .ace-carousel-arr-left:hover {
-  background-position: -119px center;
+	background-position: -119px center;
 }
 .ace-carousel-arr-right:hover {
-  background-position: -178px center;
+	background-position: -178px center;
 }
 .ace-carousel-img {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  background: #fff;
-  border: 1px solid #d6d6d6;
-  padding: 4px;
-  margin: 0 1px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	background: #fff;
+	border: 1px solid #d6d6d6;
+	padding: 4px;
+	margin: 0 1px;
 }
 .ace-carousel-img.is-loading {
-  background: url(/assets/loader02.gif) no-repeat center center;
+	background: url(/assets/loader02.gif) no-repeat center center;
 }
 .ace-carousel-img-wrap {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 .ace-carousel-img-img {
-  position: absolute;
-  display: block;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
+	position: absolute;
+	display: block;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
 }
 .ace-carousel.shadbox_enabled .ace-carousel-img-img {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 
@@ -252,129 +252,129 @@ ul li, .arrow-list li {
 
 
 .ace-shadbox {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 9999; /* menu items also at 999 :/ */
-  cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9999; /* menu items also at 999 :/ */
+	cursor: pointer;
 }
 .ace-shadbox-bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-  -moz-opacity: 0.6;
-  -khtml-opacity: 0.6;
-  opacity: 0.6;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
 }
 .ace-shadbox-content {
-  position: fixed;
-  width: 100px;
-  height: 100px;
-  background: #000 no-repeat center center;
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	background: #000 no-repeat center center;
 }
 .ace-shadbox-content.loading {
-  background-image: url(/assets/shadbox-loading.gif);
+	background-image: url(/assets/shadbox-loading.gif);
 }
 .ace-shadbox-content.error {
-  width: 58px;
-  height: 58px;
-  background-image: url(/assets/shadbox-error.png);
+	width: 58px;
+	height: 58px;
+	background-image: url(/assets/shadbox-error.png);
 }
 .ace-shadbox-content img {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 .ace-shadbox-close {
-  position: absolute;
-  right: -16px;
-  top: -16px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url(/assets/shadbox-close.png) no-repeat center center;
+	position: absolute;
+	right: -16px;
+	top: -16px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: url(/assets/shadbox-close.png) no-repeat center center;
 }
 
 
 .ace-twitter {
 }
 .ace-twitter-tweets_cont {
-  overflow: hidden;
-  position: relative;
+	overflow: hidden;
+	position: relative;
 }
 .ace-twitter-tweet {
-  font-size: 12px;
-  line-height: 1.6;
-  overflow: hidden;
-  /* use wrap-inner2 for styling */
-  margin: 0 !important;
-  padding: 0 !important;
-  float: left;
+	font-size: 12px;
+	line-height: 1.6;
+	overflow: hidden;
+	/* use wrap-inner2 for styling */
+	margin: 0 !important;
+	padding: 0 !important;
+	float: left;
 }
 .ace-twitter-tweet-wrap {
-  /* use wrap-inner2 for styling */
-  margin: 0 !important;
-  padding: 0 !important;
+	/* use wrap-inner2 for styling */
+	margin: 0 !important;
+	padding: 0 !important;
 }
 .ace-twitter-tweet-wrap-inner {
 }
 .ace-twitter-tweet-text {
-  display: inline;
+	display: inline;
 }
 .ace-twitter-tweet-time {
-  display: inline;
-  padding-left: 1em;
-  color: #888;
+	display: inline;
+	padding-left: 1em;
+	color: #888;
 }
 
 .ace-twitter.is-scroll-x .ace-twitter-tweets_cont {
-  margin-left: -30px;
+	margin-left: -30px;
 }
 .ace-twitter.is-scroll-x .ace-twitter-tweet-wrap-inner {
-  margin-left: 30px;
+	margin-left: 30px;
 }
 
 .ace-twitter.is-scroll-y .ace-twitter-tweet-wrap-inner {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .ace-twitter.type-featured {
-  height: 60px;
-  max-height: 60px;
-  border: 1px solid #dbd8c5;
-  background: #e8e5d1;
-  margin-bottom: 20px;
+	height: 60px;
+	max-height: 60px;
+	border: 1px solid #dbd8c5;
+	background: #e8e5d1;
+	margin-bottom: 20px;
 }
 .ace-twitter.type-featured .ace-twitter-wrap {
-  height: 100%;
-  background: url(/assets/twitterbird-bg2.png) no-repeat;
-  background-position:  595px 38px;
+	height: 100%;
+	background: url(/assets/twitterbird-bg2.png) no-repeat;
+	background-position:	595px 38px;
 }
 .ace-twitter.type-featured .ace-twitter-wrap2 {
-  padding: 9px 10px 10px 10px;
+	padding: 9px 10px 10px 10px;
 }
 
 .ace-twitter.type-sidebar {
-  border: 1px solid #dbd8c5;
-  background: #e8e5d1;
+	border: 1px solid #dbd8c5;
+	background: #e8e5d1;
 }
 .ace-twitter.type-sidebar .ace-twitter-wrap {
-  height: 100%;
-  background: url(/assets/twitterbird-bg1.png) no-repeat;
+	height: 100%;
+	background: url(/assets/twitterbird-bg1.png) no-repeat;
 }
 .ace-twitter.type-sidebar .ace-twitter-wrap2 {
-  padding: 10px;
+	padding: 10px;
 }
 .ace-twitter.type-sidebar.has-num-3 {
-  height: 250px;
-  max-height: 250px;
-  overflow: hidden;
+	height: 250px;
+	max-height: 250px;
+	overflow: hidden;
 }
 .ace-twitter.type-sidebar.has-num-3 .ace-twitter-wrap {
-  background-position:  252px 212px;
+	background-position:	252px 212px;
 }
 
