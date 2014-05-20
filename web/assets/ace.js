@@ -19,7 +19,7 @@ AceBase = function(){
 	this._evts = {};
 }
 AceBase.prototype.on = function(key,cb){
-	var evt = this._getEvt(key)
+	var evt = this._getEvt(key);
 	evt.subs.push({
 		cb: cb
 	});
@@ -321,15 +321,15 @@ ace = {
 			if (!center) center = [null,null];
 			center = [center[0] === null ? null : +center[0],center[1] === null ? null : +center[1]];
 
-			var window_w2h = windowSize[0]/windowSize[1],
-				img_w2h = imgSize[0]/imgSize[1],
-				offsetX = 0, offsetY = 0,
-				newWidth,newHeight,fit
+			var windowW2H = windowSize[0]/windowSize[1]
+				,imgW2H = imgSize[0]/imgSize[1]
+				,offsetX = 0, offsetY = 0
+				,newWidth,newHeight,fit
 			;
 
-			if (window_w2h > img_w2h) {
+			if (windowW2H > imgW2H) {
 				newWidth = windowSize[0];
-				newHeight = newWidth/img_w2h;
+				newHeight = newWidth/imgW2H;
 				if (newHeight < windowSize[1]) newHeight = windowSize[1];
 				offsetY = -1 * (newHeight-windowSize[1])/2;
 				if (center[1] !== null) offsetY += (.5-center[1])*newHeight;
@@ -337,7 +337,7 @@ ace = {
 				else if (offsetY < windowSize[1]-newHeight) offsetY = windowSize[1]-newHeight;
 			} else {
 				newHeight = windowSize[1];
-				newWidth = newHeight*img_w2h;
+				newWidth = newHeight*imgW2H;
 				if (newWidth < windowSize[0]) newWidth = windowSize[0];
 				offsetX = -1*(newWidth-windowSize[0])/2;
 				if (center[0] !== null) offsetX += (.5-center[0])*newWidth;
@@ -346,19 +346,19 @@ ace = {
 			}
 
 			fit = {
-				width: newWidth,
-				height: newHeight,
-				offset: {
-					x: offsetX,
-					y: offsetY
+				width: newWidth
+				,height: newHeight
+				,offset: {
+					x: offsetX
+					,y: offsetY
 				}
 			};
 			fit.style = 'width:'+fit.width+'px;height:'+fit.height+'px;left:'+fit.offset.x+'px;top:'+fit.offset.y+'px;';
 			fit.css = {
-				width: fit.width+'px',
-				height: fit.height+'px',
-				left: fit.offset.x+'px',
-				top: fit.offset.y+'px'
+				width: fit.width+'px'
+				,height: fit.height+'px'
+				,left: fit.offset.x+'px'
+				,top: fit.offset.y+'px'
 			};
 			return fit;
 		}
