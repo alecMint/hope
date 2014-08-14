@@ -449,7 +449,7 @@ ace.ui.register('instagram',{
 			,count: z.opts.num
 		},function(data){
 			if (!(data && data.data))
-				return z.log('instagram api error');
+				return z.log('api error');
 			z.media = data.data;
 			cb();
 		});
@@ -919,7 +919,7 @@ ace.ui.register('twitter',{
 			],secs,str
 		;
 		if (!date.getTime) {
-			z.log('unexpected timestamp format',createdAt);
+			z.log('unexpected timestamp format',tweet.created_at);
 			return '';
 		}
 		secs = now - Math.round(date.getTime()/1000);
