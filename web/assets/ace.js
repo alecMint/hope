@@ -282,6 +282,41 @@ ace = {
 			return pieces[1] + chars.join('') + (pieces[3] ? pieces[3] : '');
 		}
 
+		,formatTimeAgo: function(timestamp,now){
+			if (typeof timestamp == 'string' && isNaN(timestamp))
+				timestamp = new Date(timestamp);
+			if (timestamp instanceof Date)
+				timestamp = Math.round(+timestamp/1000);
+			if (typeof now == 'string' && isNaN(now))
+				now = new Date(now);
+			if (now instanceof Date)
+				now = +now;
+			now = typeof now == 'undefined' ? Math.round(+new Date/1000) : now;
+			var secs = now - timestamp
+				,intervals = [
+					['year',31536000]
+					,['month',2628000]
+					,['week',604800]
+					,['day',86400]
+					,['hour',3600]
+					,['minute',60]
+				],recent = 'just now'
+				,secs,str
+			;
+			if (secs < 0)
+				secs = 0;
+			$.each(intervals,function(i,interval){
+				var ago = Math.floor(secs/interval[1]);
+				if (ago > 0) {
+					str = ago+' '+interval[0]+(ago==1?'':'s')+' ago'
+					return false;
+				}
+			});
+			if (typeof str == 'undefined')
+				str = recent;
+			return str;
+		}
+
 		,getViewportScrollY: function(){
 			return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 		}
@@ -868,7 +903,7 @@ ace.ui.register('twitter',{
 			};
 			item.$.cont = $('<div class="'+x+'-tweet" style="display:none;"><div class="'+x+'-tweet-wrap"><div class="'+x+'-tweet-wrap-inner">'
 				+ '<div class="'+x+'-tweet-text">'+z.formatText(tweet)+'</div>'
-				+ '<div class="'+x+'-tweet-time">'+z.formatTime(tweet)+'</div>'
+				+ '<div class="'+x+'-tweet-time">'+ace.util.formatTimeAgo(tweet.created_at)+'</div>'
 			+ '</div></div></div>');
 			item.$.wrap = item.$.cont.find('div.'+x+'-tweet-wrap')
 			item.$.wrapInner = item.$.cont.find('div.'+x+'-tweet-wrap-inner')
@@ -905,34 +940,6 @@ ace.ui.register('twitter',{
 			text = text.replace(new RegExp('#('+item.text+')','g'),'<a href="https://twitter.com/search?q=%23$1&src=hash" target="_blank">#$1</a>');
 		});
 		return text;
-	}
-	,formatTime: function(tweet){
-		var date = new Date(tweet.created_at)
-			,now = Math.round(+new Date/1000)
-			,intervals = [
-				['year',31536000]
-				,['month',2628000]
-				,['week',604800]
-				,['day',86400]
-				,['hour',3600]
-				,['minute',60]
-			],secs,str
-		;
-		if (!date.getTime) {
-			z.log('unexpected timestamp format',tweet.created_at);
-			return '';
-		}
-		secs = now - Math.round(date.getTime()/1000);
-		if (secs < 0)
-			secs = 0;
-		$.each(intervals,function(i,interval){
-			var ago = Math.floor(secs/interval[1]);
-			if (ago > 0) {
-				str = ago+' '+interval[0]+(ago==1?'':'s')+' ago';
-				return false;
-			}
-		});
-		return str;
 	}
 	,setUpScroll: function(){
 		var z = this;
