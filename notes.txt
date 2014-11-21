@@ -63,6 +63,9 @@ open ./web/wp-content/themes/ecclesia/header.php
 
 --- To Do ---
 
+- Fix shadbox cutoff issue
+	- scroll down on homepage
+
 - Improve styling on all pages
     - images, verses, etc
 
