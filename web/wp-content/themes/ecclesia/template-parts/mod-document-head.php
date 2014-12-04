@@ -73,7 +73,7 @@ wp_head();
 </style>
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/wp-content/themes/ecclesia/style.css'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/wp-content/uploads/x/style.css'); ?>" />
 
 <link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/assets/ace.css'); ?>" />
 <script src="<?php \ace\Ace::vres('/assets/ace.js'); ?>"></script>

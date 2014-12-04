@@ -35,7 +35,9 @@ Symlink for style.css needs to be created
 
 
 May need to add the stylesheet href to header.php or mod-document.head.php
-    <link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/wp-content/themes/[theme]/style.css'); ?>" />
+    OLD [BAD]: <link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/wp-content/themes/[theme]/style.css'); ?>" />
+    Note: my file watch does not work on symlinks, we need to include the actual file
+    NEW [GOOD]: <link rel="stylesheet" type="text/css" href="<?php \ace\Ace::vres('/wp-content/uploads/x/style.css'); ?>" />
 
 
 Add assets to header.php or [theme]/template-parts/mod-document-head.php
