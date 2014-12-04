@@ -50,7 +50,9 @@
 <!-- Load font from Google Fonts API -->
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" />
 
+<!-- Alec: this doesnt exist...
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/css/prettyPhoto.css" />
+-->
 
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
