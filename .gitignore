@@ -1,9 +1,10 @@
+~*
 *~
 .DS_Store
 node_modules
-workspace
-hooky.json
 npm-debug.log
+hooky.json
 web/wp-content/uploads*
 web/wp-content/tmp_uploads*
+workspace
 config.override.php
