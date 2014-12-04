@@ -18,6 +18,8 @@ cd /root/sire
 
 --- Post Theme Install ---
 
+Note: These are all part of the repo. Only need to follow these rules if moving to a new theme.
+
 Add following to top of index.php
     include dirname(__FILE__).'/bootshell.php';
 
