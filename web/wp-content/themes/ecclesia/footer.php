@@ -45,5 +45,7 @@
     <?php echo mw_theme_option('tracking_code'); ?>
 <?php endif; ?>
 
+<?php include WEBROOT.'/google-analytics.php'; ?>
+
 </body>
 </html>
