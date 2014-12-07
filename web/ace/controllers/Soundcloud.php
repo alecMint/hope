@@ -22,13 +22,13 @@ class Soundcloud extends ControllerAbstract {
     $url .= '?'.http_build_query(array_merge(array(
     	'client_id' => Ace::getConfig('soundcloudClientId')
     ),$params['p']));
-    if (!empty($_GET['debug'])) echo json_encode($url)."\n<br />";
+    //if (!empty($_GET['debug'])) echo $url."\n<br />";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL, $url);
     $r = json_decode(curl_exec($ch), true);
-    if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
+    //if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
     if (!is_array($r))
       throw new \Exception('unexpected response from soundcloud');
     if (isset($r->error))
