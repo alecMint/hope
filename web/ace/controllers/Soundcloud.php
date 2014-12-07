@@ -20,7 +20,6 @@ class Soundcloud extends ControllerAbstract {
 
     $url = 'https://http://api.soundcloud.com/'.$params['route'].'.json';
     $url .= '?'.http_build_query($params['p']);
-    $creds = $this->getAppToken();
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
