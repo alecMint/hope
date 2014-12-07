@@ -25,7 +25,7 @@ class Soundcloud extends ControllerAbstract {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL, $url);
     $r = json_decode(curl_exec($ch), true);
-    //echo json_encode($r)."<br />";
+    echo json_encode($r)."<br />";
     if (!is_array($r))
       throw new \Exception('unexpected response from soundcloud');
     if (isset($r->error))
