@@ -10,7 +10,7 @@ class Api {
   private static $routes = array(
     'twitter/token/app' => 'Twitter::getAppToken',
     'twitter/get' => 'Twitter::get',
-    'soundcloud/get' => 'Soundcloud::get',
+    //'soundcloud/get' => 'Soundcloud::get',
   );
   
   public static function request($route){

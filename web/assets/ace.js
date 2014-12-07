@@ -17,6 +17,11 @@ hopechapel_lb
 	,scroll: 'y'
 	,type: 'sidebar'
 }</script>
+
+<script type="text/ace-soundcloud-playlist">{
+	playlistId: '29344655'
+	,numShow: 3
+}</script>
 */
 
 
@@ -528,6 +533,56 @@ ace.ui.register('instagram',{
 			z.$.cont.find('img.'+x+'-img-img').bind('click',function(){
 				ace.shadbox($(this).attr('xdata-img'));
 			});
+		}
+	}
+});
+
+
+ace.ui.register('soundcloud-playlist',{
+	opts: {
+		clientId: 'YOUR_CLIENT_ID'
+		,url: 'http://api.soundcloud.com/playlists/'
+		,playlistId: null
+		,numShow: 3
+	}
+	,init: function(){
+		var z = this;
+		z.getData(function(){
+			z.build();
+			//z.functionalize();
+		});
+	}
+	,getData: function(cb){
+		var z = this;
+		$.getJSON(z.opts.url+z.opts.playlistId+'?callback=?',{
+			client_id: z.opts.clientId
+			,count: z.opts.num
+		},function(data){
+			if (!(data && data.tracks))
+				return z.log('api error');
+			z.data = data;
+			cb();
+		});
+	}
+	,build: function(){
+		var z = this
+			,x = z.cssKey
+			,track,i
+		;
+		if (z.opts.type)
+			$.each(z.opts.type.split(' '),function(i,t){
+				z.$.cont.addClass('type-'+t);
+			});
+		for (i=0;i<z.data.tracks.length&&i<z.opts.numShow;++i) {
+			track = z.data.tracks[i];
+			z.$.cont.append(
+				'<object height="18" width="100%">'
+					+ '<param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color=ff5500&amp;auto_play=false&amp;player_type=tiny"></param>'
+					+ '<param name="allowscriptaccess" value="always"></param>'
+					+ '<param name="wmode" value="transparent"></param>'
+					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color=ff5500&amp;auto_play=false&amp;player_type=tiny"></embed>'
+				+ '</object>'
+			);
 		}
 	}
 });
