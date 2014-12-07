@@ -554,7 +554,7 @@ ace.ui.register('soundcloud-playlist',{
 	}
 	,getData: function(cb){
 		var z = this;
-		$.getJSON(z.opts.url+z.opts.playlistId+'?callback=?',{
+		$.getJSON(z.opts.url+z.opts.playlistId+'.json?callback=?',{
 			client_id: z.opts.clientId
 			,count: z.opts.num
 		},function(data){
