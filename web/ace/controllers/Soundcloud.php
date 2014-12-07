@@ -19,7 +19,9 @@ class Soundcloud extends ControllerAbstract {
       $params['p'] = array();
 
     $url = 'http://api.soundcloud.com/'.$params['route'].'.json';
-    $url .= '?'.http_build_query($params['p']);
+    $url .= '?'.http_build_query(array_merge(array(
+    	'client_id' => Ace::getConfig('soundcloudClientId')
+    ),$params['p']));
     if (!empty($_GET['debug'])) echo json_encode($url)."\n<br />";
 
     $ch = curl_init();
