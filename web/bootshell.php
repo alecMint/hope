@@ -10,6 +10,6 @@ define('APP_PATH',WEBROOT.'/ace');
 
 include APP_PATH.'/autoload.php';
 
-\ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.local.php', WEBROOT.'/config.override.php' );
+\ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.local.php' );
 
 include APP_PATH.'/router.php';
