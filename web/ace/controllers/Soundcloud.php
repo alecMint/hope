@@ -18,7 +18,7 @@ class Soundcloud extends ControllerAbstract {
     if (!is_array($params['p']))
       $params['p'] = array();
 
-    $url = 'https://http://api.soundcloud.com/'.$params['route'].'.json';
+    $url = 'http://api.soundcloud.com/'.$params['route'].'.json';
     $url .= '?'.http_build_query($params['p']);
     if (!empty($_GET['debug'])) echo json_encode($url)."\n<br />";
 
