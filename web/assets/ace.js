@@ -582,10 +582,10 @@ ace.ui.register('soundcloud-playlist',{
 			color = z.opts.colors[i%z.opts.colors.length];
 			z.$.cont.append(
 				'<object height="18" width="100%">'
-					+ '<param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color=ff5500&amp;auto_play=false&amp;player_type=tiny"></param>'
+					+ '<param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;player_type=tiny"></param>'
 					+ '<param name="allowscriptaccess" value="always"></param>'
 					+ '<param name="wmode" value="transparent"></param>'
-					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color=ff5500&amp;auto_play=false&amp;player_type=tiny"></embed>'
+					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;player_type=tiny"></embed>'
 				+ '</object>'
 			);
 		}
