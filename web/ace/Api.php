@@ -23,6 +23,7 @@ class Api {
 
   private static function _request($route){
     $route = Ace::g(self::$routes,$route);
+    if (!empty($_GET['debug']) echo "$route\n";
     if (!$route)
       throw new \Exception('route not found');
 

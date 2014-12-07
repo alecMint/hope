@@ -1,6 +1,7 @@
 <?php
 /*
 http://api.soundcloud.com/playlists/29344655.json?client_id=YOUR_CLIENT_ID
+https://developers.soundcloud.com/docs/api/reference#tracks
 */
 
 namespace ace\controllers;
