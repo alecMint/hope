@@ -544,6 +544,10 @@ ace.ui.register('soundcloud-playlist',{
 		,url: 'http://api.soundcloud.com/playlists/'
 		,playlistId: null
 		,numShow: 3
+		,colors: [
+			'ff5500'
+			,'00a8ff'
+		]
 	}
 	,init: function(){
 		var z = this;
@@ -575,6 +579,7 @@ ace.ui.register('soundcloud-playlist',{
 			});
 		for (i=0;i<z.data.tracks.length&&i<z.opts.numShow;++i) {
 			track = z.data.tracks[i];
+			color = z.opts.colors[i%z.opts.colors.length];
 			z.$.cont.append(
 				'<object height="18" width="100%">'
 					+ '<param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color=ff5500&amp;auto_play=false&amp;player_type=tiny"></param>'
