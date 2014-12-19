@@ -33,14 +33,14 @@ class Twitter extends ControllerAbstract {
 		if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
 		if (!is_array($r))
 			throw new \Exception('unexpected response from twitter');
-		if (isset($r->errors)) {
-			if (isset($r->errors[0]['message']))
+		if (isset($r['errors'])) {
+			if (isset($r['errors'][0]['message']))
 				throw new \Exception($r->errors[0]['message']);
 			throw new \Exception(json_encode($r->errors));
 		}
-		if (!isset($r->access_token))
+		if (!isset($r['access_token']))
 			throw new \Exception('missing access_token');
-		return $r->access_token;
+		return $r['access_token'];
 	}
 
 	public function get(){
@@ -65,12 +65,12 @@ class Twitter extends ControllerAbstract {
 		//if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
 		if (!is_object($r) && !is_array($r))
 			throw new \Exception('unexpected response from twitter');
-		if (isset($r->error))
-			throw new \Exception($r->error);
-		if (isset($r->errors)) {
-			if (isset($r->errors[0]['message']))
-				throw new \Exception($r->errors[0]['message']);
-			throw new \Exception(json_encode($r->errors));
+		if (isset($r['error']))
+			throw new \Exception($r['error']);
+		if (isset($r['errors'])) {
+			if (isset($r['errors'][0]['message']))
+				throw new \Exception($r['errors'][0]['message']);
+			throw new \Exception(json_encode($r['errors']));
 		}
 		return $r;
 	}
