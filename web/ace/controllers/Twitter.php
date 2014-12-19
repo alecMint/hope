@@ -20,6 +20,7 @@ class Twitter extends ControllerAbstract {
 		$key = Ace::getConfig('hopeTwitterAppKey');
 		$secret = Ace::getConfig('hopeTwitterAppSecret');
 		$creds = base64_encode(rawurlencode($key).':'.rawurlencode($secret));
+		if (!empty($_GET['debug'])) echo json_encode($creds)."\n<br />";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_POST, true);
