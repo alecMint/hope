@@ -29,7 +29,7 @@ class Twitter extends ControllerAbstract {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			"Authorization: Basic $creds",
 		));
-		$r = json_decode(curl_exec($ch));
+		$r = json_decode(curl_exec($ch), true);
 		if (!is_object($r))
 			throw new \Exception('unexpected response from twitter');
 		if (isset($r->errors)) {
