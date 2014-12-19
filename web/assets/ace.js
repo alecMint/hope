@@ -917,9 +917,11 @@ ace.ui.register('twitter',{
 	,init: function(){
 		var z = this;
 		z.tweets = [];
+console.log('ONE');
 		z.getData(function(){
 			z.build();
 			z.functionalize();
+console.log('TWO');
 		});
 	}
 	,getData: function(cb){
