@@ -35,8 +35,8 @@ class Twitter extends ControllerAbstract {
 			throw new \Exception('unexpected response from twitter');
 		if (isset($r['errors'])) {
 			if (isset($r['errors'][0]['message']))
-				throw new \Exception($r->errors[0]['message']);
-			throw new \Exception(json_encode($r->errors));
+				throw new \Exception($r['errors'][0]['message']);
+			throw new \Exception(json_encode($r['errors']));
 		}
 		if (!isset($r['access_token']))
 			throw new \Exception('missing access_token');
