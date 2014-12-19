@@ -926,6 +926,7 @@ console.log('TWO');
 	}
 	,getData: function(cb){
 		var z = this;
+console.log('getData');
 		$.getJSON('/ace/api/twitter/get',{
 			route: 'statuses/user_timeline'
 			,p: {
@@ -933,6 +934,7 @@ console.log('TWO');
 				,count: z.opts.numGet
 			}
 		},function(data){
+console.log('gotData',data);
 			if (data.error)
 				return z.log(data.error);
 			if (!(data.data instanceof Array))
