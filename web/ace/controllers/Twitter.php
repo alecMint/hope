@@ -20,9 +20,6 @@ class Twitter extends ControllerAbstract {
 		$key = Ace::getConfig('hopeTwitterAppKey');
 		$secret = Ace::getConfig('hopeTwitterAppSecret');
 		$creds = base64_encode(rawurlencode($key).':'.rawurlencode($secret));
-		if (!empty($_GET['debug'])) echo json_encode($key)."\n<br />";
-		if (!empty($_GET['debug'])) echo json_encode($secret)."\n<br />";
-		if (!empty($_GET['debug'])) echo json_encode($creds)."\n<br />";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_POST, true);
@@ -33,7 +30,7 @@ class Twitter extends ControllerAbstract {
 			"Authorization: Basic $creds",
 		));
 		$r = json_decode(curl_exec($ch), true);
-		if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
+		//if (!empty($_GET['debug'])) echo json_encode($r)."\n<br />";
 		if (!is_array($r))
 			throw new \Exception('unexpected response from twitter');
 		if (isset($r['errors'])) {
