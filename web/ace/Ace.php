@@ -219,11 +219,11 @@ class Ace {
 		return curl_exec($ch);
 	}
 
-	public static function curlPost($url, $params=array(), $curlOpts=array(), $urlEncoded=false) {
+	public static function curlPost($url, $params=array(), $curlOpts=array(), $urlEncodedParams=false) {
 		$args = func_get_args();
 		for ($i=1,$c=count($args);$i<$c;$i++)
 			if ($args[$i] === true)
-				$urlEncoded = true;
+				$urlEncodedParams = true;
 
 		$ch = curl_init();
 		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -231,7 +231,7 @@ class Ace {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, true);
 
-		if ($urlEncoded) // application/x-www-form-urlencoded
+		if ($urlEncodedParams) // application/x-www-form-urlencoded
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 		else // multipart/form-data
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
