@@ -68,11 +68,12 @@ open ./web/wp-content/themes/ecclesia/header.php
 --- To Do ---
 
 - Sermons Teaser on Homepage
-	- show the most recent 3 (see if soundcloud has an api)
 	- link to /listen "show all"
 
 - Fix shadbox cutoff issue
 	- scroll down on homepage
+
+- Favicon
 
 - Improve styling on all pages
     - images, verses, etc
