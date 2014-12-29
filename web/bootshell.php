@@ -7,9 +7,12 @@ if (!empty($_GET['debug'])) {
 
 define('WEBROOT',dirname(__FILE__));
 define('APP_PATH',WEBROOT.'/ace');
-
 include APP_PATH.'/autoload.php';
+use \ace\Ace;
+define('REQUEST_PATH', rtrim( Ace::g($_SERVER, array('DOCUMENT_URI','REDIRECT_URL'), ''), '/' ));
 
-\ace\Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.local.php' );
+Ace::loadConfig( WEBROOT.'/config.php', WEBROOT.'/config.local.php' );
 
-include APP_PATH.'/router.php';
+use \ace\Router;
+Router::route(REQUEST_PATH);
+
