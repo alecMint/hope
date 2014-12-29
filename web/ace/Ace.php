@@ -5,6 +5,7 @@ namespace ace;
 class Ace {
 
   public static $config = array();
+  public static $cache = array();
 
   private function __clone(){}
   private function __construct(){}
