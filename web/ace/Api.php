@@ -39,6 +39,16 @@ class Api {
 
   private static function setData($error,$data=null){
     $r = $error ? array('error'=>$error) : array('data'=>$data);
+		header('Cache-Control: no-cache, must-revalidate');
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+		if (isset($_GET['callback'])) {
+			$r = $_GET['callback'].'('.$r.');';
+			header('Content-Type: text/javascript');
+		} else {
+			// #breaks iframe posting
+			if (Ace::g($_SERVER,'REQUEST_METHOD') == 'GET')
+				header('Content-Type: application/json');
+		}
     exit(json_encode($r));
   }
 
