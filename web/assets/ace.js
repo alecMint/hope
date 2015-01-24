@@ -1240,6 +1240,7 @@ ace.ui.register('insert',{
 			,find: null
 			,prepend: false
 		}
+		,action: 'append' // append, prepend, replace
 		,what: {
 			content: null
 		}
@@ -1252,14 +1253,17 @@ ace.ui.register('insert',{
 	}
 	,insert: function(){
 		var z = this
-			,$el
+			,$el,action
 		;
 		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
 		if (z.opts.where.find)
 			$el = $el.find(z.opts.where.find);
-		console.log('WEF',$el, z.opts.prepend);
-		window.$el = $el;
-		z.opts.where.prepend ? $el.prepend(z.opts.what.content) : $el.append(z.opts.what.content);
+		switch (z.opts.action) {
+			case 'prepend': action = 'prepend'; break;
+			case 'replace': action = 'html'; break;
+			default: action = 'append';
+		}
+		$el[action](z.opts.what.content);
 	}
 });
 
