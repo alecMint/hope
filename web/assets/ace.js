@@ -1253,10 +1253,8 @@ ace.ui.register('insert',{
 		var z = this
 			,$el
 		;
-		if (z.opts.where.closest) {
-			$el = z.$.cont.closest(z.opts.where.closest);
-			console.log(z.$.cont, $el);
-		}
+		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
+		console.log(z.$.cont, $el);
 	}
 });
 
