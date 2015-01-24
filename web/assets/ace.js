@@ -1254,11 +1254,10 @@ ace.ui.register('insert',{
 			,$el
 		;
 		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
+		if (z.opts.where.find)
+			$el = $el.find(z.opts.where.find);
 		console.log('WEF',$el, z.opts.where.find);
 		window.$el = $el;
-		if (z.opts.where.find)
-			$el = $el.find(z.opts.find);
-
 		$el.append(z.opts.what.content);
 	}
 });
