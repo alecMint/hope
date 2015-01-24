@@ -1259,7 +1259,7 @@ ace.ui.register('insert',{
 			$el = $el.find(z.opts.where.find);
 		console.log('WEF',$el, z.opts.prepend);
 		window.$el = $el;
-		z.opts.prepend ? $el.prepend(z.opts.what.content) : $el.append(z.opts.what.content);
+		z.opts.where.prepend ? $el.prepend(z.opts.what.content) : $el.append(z.opts.what.content);
 	}
 });
 
