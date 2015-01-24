@@ -1257,7 +1257,7 @@ ace.ui.register('insert',{
 		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
 		if (z.opts.where.find)
 			$el = $el.find(z.opts.where.find);
-		console.log('WEF',$el, z.opts.where.find);
+		console.log('WEF',$el, z.opts.prepend);
 		window.$el = $el;
 		z.opts.prepend ? $el.prepend(z.opts.what.content) : $el.append(z.opts.what.content);
 	}
