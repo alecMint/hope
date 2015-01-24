@@ -28,8 +28,9 @@ hopechapel_lb
 		closest: '.widget'
 		,find: '.widget-head'
 	}
+	,action: 'prepend'
 	,what: {
-		content: '<div class="widget-head-rightflow"><a href="#">View all</a></div>'
+		content: '<div class="widget-head-rightflow"><a href="/listen">View all</a></div>'
 	}
 }</script>
 */
