@@ -428,6 +428,7 @@ ul li, .arrow-list li {
   border-width: 5px 5px 5px 0;
 }
 
+
 /* BEGIN ace-insert */
 .ace-insert .widget-head-rightflow
 ,.ace-insert div.widget-head-rightflow:first-child {
@@ -436,4 +437,15 @@ ul li, .arrow-list li {
 }
 /* END ace-insert */
 
+
+/* BEGIN donate */
+.donate-opt {
+	margin-left: 1rem;
+}
+.donate-val {
+	margin-left: 1rem;
+}
+.donate-opt address {
+}
+/* END donate */
 
