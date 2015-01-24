@@ -429,7 +429,8 @@ ul li, .arrow-list li {
 }
 
 /* BEGIN ace-insert */
-.ace-insert .widget-head-rightflow {
+.ace-insert .widget-head-rightflow
+,.ace-insert div.widget-head-rightflow:first-child {
 	float: right;
 	margin-top: 5px;
 }
