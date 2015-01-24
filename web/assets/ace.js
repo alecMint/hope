@@ -1246,7 +1246,18 @@ ace.ui.register('insert',{
 	,init: function(){
 		var z = this;
 		console.log('WEFEWFWEFWE', z.opts);
-		window._z = z;
+
+		z.gather();
+		z.$.cont.remove();
+	}
+	,gather: function(){
+		var z = this
+			,$el
+		;
+		if (z.opts.where.closest) {
+			$el = z.$.cont.closest(z.opts.where.closest);
+			console.log(z.$.cont, $el);
+		}
 	}
 });
 
