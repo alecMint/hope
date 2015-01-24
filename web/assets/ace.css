@@ -440,12 +440,14 @@ ul li, .arrow-list li {
 
 /* BEGIN donate */
 .donate-opt {
-	margin-left: 1rem;
+	margin: 0 0 1rem 1rem;
 }
 .donate-val {
-	margin-left: 1rem;
+	margin: 0 0 0 2rem;
 }
 .donate-opt address {
+}
+.donate-note {
 }
 /* END donate */
 
