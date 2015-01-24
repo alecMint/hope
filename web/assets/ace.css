@@ -448,7 +448,7 @@ ul li, .arrow-list li {
 .donate-opt address {
 }
 .donate-note {
-	margin: -1em 0 16px 0;
+	margin: -1em 0 16px 2rem;
 	font-size: 0.8em;
 	line-height: 1.3em;
 	color: #666;
