@@ -427,3 +427,12 @@ ul li, .arrow-list li {
   border-left-color: transparent;
   border-width: 5px 5px 5px 0;
 }
+
+/* BEGIN ace-insert */
+.widget-head-rightflow {
+	float: right;
+	margin-top: 5px;
+}
+/* END ace-insert */
+
+
