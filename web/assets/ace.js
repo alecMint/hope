@@ -1254,7 +1254,7 @@ ace.ui.register('insert',{
 			,$el
 		;
 		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
-		console.log(z.$.cont, $el);
+		console.log('wEF',z.$.cont, $el);
 	}
 });
 
