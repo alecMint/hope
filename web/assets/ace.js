@@ -22,6 +22,16 @@ hopechapel_lb
 	playlistId: '29344655'
 	,numShow: 3
 }</script>
+
+<script type="text/ace-insert">{
+	where: {
+		closest: '.widget'
+		,find: '.widget-head'
+	}
+	,what: {
+		content: '<div class="widget-head-rightflow"><a href="#">View all</a></div>'
+	}
+}</script>
 */
 
 
@@ -1222,6 +1232,23 @@ ace.ui.register('twitter',{
 	}
 
 }());
+
+ace.ui.register('insert',{
+	opts: {
+		where: {
+			closest: null
+			,find: null
+		}
+		,what: {
+			content: null
+		}
+	}
+	,init: function(){
+		var z = this;
+		console.log('WEFEWFWEFWE', z);
+		window._z = z;
+	}
+});
 
 
 ace.init();
