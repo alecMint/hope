@@ -448,6 +448,10 @@ ul li, .arrow-list li {
 .donate-opt address {
 }
 .donate-note {
+	margin-top: -1em;
+	font-size: 0.8em;
+	line-height: 1.3em;
+	color: #666;
 }
 /* END donate */
 
