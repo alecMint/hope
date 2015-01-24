@@ -1265,7 +1265,7 @@ ace.ui.register('insert',{
 			case 'replace': action = 'html'; break;
 			default: return z.log('invalid action', z.opts.action);
 		}
-		$el[action](z.opts.what.content);
+		$el[action].addClass(z.cssKey).(z.opts.what.content);
 	}
 });
 
