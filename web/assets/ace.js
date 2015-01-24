@@ -1248,6 +1248,7 @@ ace.ui.register('insert',{
 		console.log('WEFEWFWEFWE', z);
 		window._z = z;
 	}
+
 });
 
 
