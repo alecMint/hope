@@ -1259,9 +1259,10 @@ ace.ui.register('insert',{
 		if (z.opts.where.find)
 			$el = $el.find(z.opts.where.find);
 		switch (z.opts.action) {
+			case 'append': action = 'append'; break;
 			case 'prepend': action = 'prepend'; break;
 			case 'replace': action = 'html'; break;
-			default: action = 'append';
+			default: return z.log('invalid action', z.opts.action);
 		}
 		$el[action](z.opts.what.content);
 	}
