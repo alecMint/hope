@@ -1245,10 +1245,9 @@ ace.ui.register('insert',{
 	}
 	,init: function(){
 		var z = this;
-		console.log('WEFEWFWEFWE', z);
+		console.log('WEFEWFWEFWE', z.opts);
 		window._z = z;
 	}
-
 });
 
 
