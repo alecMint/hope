@@ -1246,18 +1246,17 @@ ace.ui.register('insert',{
 	,init: function(){
 		var z = this;
 
-		z.gather();
+		z.insert();
 		z.$.cont.remove();
 	}
-	,gather: function(){
+	,insert: function(){
 		var z = this
 			,$el
 		;
 		$el = z.opts.where.closest ? z.$.cont.closest(z.opts.where.closest) : $('body');
-		console.log('wEF', $el);
 		if (z.opts.where.find)
 			$el = $el.find(z.opts.find);
-		console.log('wEF', $el);
+		$el.append(z.opts.what.content);
 	}
 });
 
