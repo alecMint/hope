@@ -345,7 +345,6 @@ function parseCookies(cookie){
 		if (key != '')
 			res[key] = val;
 	});
-	console.log(cookies);
 	return res;
 }
 function getCookie1(key,val,opts){
@@ -380,14 +379,14 @@ function getCookie2(key,value,options){
 function prog1(){
 	var vals = [];
 	window.cookiesToTest.forEach(function(v){
-		vals.push(getCookie1(v));
+		vals.push(getCookie1(v[0]));
 	});
 	return vals;
 }
 function prog2(){
 	var vals = [];
 	window.cookiesToTest.forEach(function(v){
-		vals.push(getCookie2(v));
+		vals.push(getCookie2(v[0]));
 	});
 	return vals;
 }
