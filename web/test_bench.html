@@ -449,12 +449,22 @@ $(function(){
 		runTest(function(){
 			if (--runTestNTimes)
 				return gamut();
-			var best;
+			var best
+				$winnerBox = $('<div class="winner box"></div>')
+			;
 			Object.keys(stats).forEach(function(k){
 				if (!best || stats[k].wins > best.wins)
 					best = stats[k];
 			});
-			$b.prepend('<div class="winner box"><div><span>Winner:</span><span>'+best.k+'</span><span>Wins: '+best.wins+'/'+best.ms.length+'</span><span>Avg ms: '+(best.ms.reduce(function(a,b){return a+b})/best.ms.length).toFixed(2)+'</span></div></div>');
+			$winnerBox.append('<div><span>Winner:</span><span>'+best.k+'</span><span>Wins: '+best.wins+'/'+best.ms.length+'</span><span>Avg ms: '+(best.ms.reduce(function(a,b){return a+b})/best.ms.length).toFixed(2)+'</span></div>');
+			$b.prepend($winnerBox);
+
+			var $winnerBox = $b.find('.winner.box');
+			Object.keys(stats).forEach(function(k){
+				$winnerBox.append('<div>'
+					+ '<div></div>'
+				+ '</div>');
+			});
 		});
 	})();
 
