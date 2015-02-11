@@ -298,14 +298,14 @@ function prog2(){
 window.runNum = 2;
 function preProg(){
 	window.cookiesToTest = [
-		['key_wfwefwefwe','val_'+ +new Date],
+		['key_wfwefwefwe','val_one'],
 		['key_jkldfj040','val_djfjfddfjkf'],
 		['key_'+ +new Date,'{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}'],
 		['key_'+ +new Date,'val_'+ +new Date],
-		['key_wfwefwefwe2','val_'+ +new Date,{expires:6000}],
-		['key_jkldfj0402','val_djfjfddfjkf',{expires:6000}],
-		['key_2'+ +new Date + '2','{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}',{expires:6000}],
-		['key_2'+ +new Date + '2','val_'+ +new Date,{expires:6000}],
+		['key2_wfwefwefwe','val_one',{expires:6000}],
+		['key2_jkldfj040','val_djfjfddfjkf',{expires:6000}],
+		['key_2'+ +new Date,'{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}',{expires:6000}],
+		['key_2'+ +new Date,'val_'+ +new Date,{expires:6000}],
 	];
 	window.cookiesToTest.forEach(function(v){
 		setCookie(v[0],v[1],v[2]);
