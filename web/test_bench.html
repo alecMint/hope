@@ -301,11 +301,11 @@ function preProg(){
 		['key_wfwefwefwe','val_one'],
 		['key_jkldfj040','val_djfjfddfjkf'],
 		['key_ffffffff','{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}'],
-		['key_gggggggg'+ +new Date,'val_'+ +new Date],
+		['key_gggggggg','val_'+ +new Date],
 		['key2_wfwefwefwe','val_one',{expires:6000}],
 		['key2_jkldfj040','val_djfjfddfjkf',{expires:6000}],
-		['key2_ffffffff'+ +new Date,'{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}',{expires:6000}],
-		['key2_gggggggg'+ +new Date,'val_'+ +new Date,{expires:6000}],
+		['key2_ffffffff','{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}',{expires:6000}],
+		['key2_gggggggg','val_'+ +new Date,{expires:6000}],
 	];
 	window.cookiesToTest.forEach(function(v){
 		setCookie(v[0],v[1],v[2]);
