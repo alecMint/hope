@@ -463,10 +463,10 @@ $(function(){
 			Object.keys(stats).forEach(function(k){
 				var prog = stats[k];
 				$winnerBox.append('<div>'
-					+ '<span></span>'
+					+ '<span style="color:transparent;">Winner:</span>'
 					+ '<span>'+prog.k+'</span>'
-					+ '<span>'+prog.wins+'/'+prog.ms.length+'</span>'
-					+ '<span>'+(prog.ms.reduce(function(a,b){return a+b})/prog.ms.length).toFixed(2)+'</span>'
+					+ '<span>Wins: '+prog.wins+'/'+prog.ms.length+'</span>'
+					+ '<span>Avg ms: '+(prog.ms.reduce(function(a,b){return a+b})/prog.ms.length).toFixed(2)+'</span>'
 				+ '</div>');
 			});
 		});
