@@ -1,0 +1,468 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<style type="text/css">
+body {
+	font-family: monospace;
+	counter-reset: test;
+}
+.box {
+	margin: 0.5em;
+	padding: 0.5em 0.8em;
+	border: 1px solid #ddd;
+	min-height: 1em;
+	min-width: 10em;
+	clear: both;
+	float: left;
+	position: relative;	
+}
+.box div {
+	padding: 0.5em;
+	white-space: nowrap;
+}
+.box div span {
+	color: #ccc;
+	margin-left: 1.2em;
+}
+.box div span:nth-child(1) {
+	margin-left: 0;
+	color: #000;
+}
+.box div.victory span {
+	color: #2c2;
+}
+.test::before {
+	counter-increment: test;
+	content: counter(test);
+	position: absolute;
+	right: 2px;
+	bottom: 1px;
+	display: block;
+	font-size: 1em;
+	line-height: 1;
+	color: rgba(0,0,0,0.1);
+}
+.winner {
+	clear: none;
+}
+</style>
+<script>
+
+
+util = {
+	rand: function(min,max){
+		return min+Math.round(Math.random()*(max-min));
+	}
+}
+
+/*
+function preProg(){
+	var undef;
+	window.vals = [Math.random(), 'brfoerf', (Math.random()*1000)+'', null, undef, {}, []];
+	console.log(window.vals);
+}
+function prog1() {
+	var v = [], i;
+	for (i=0;i<vals.length;++i)
+		v[i] = Number(vals[i]);
+	return v;
+}
+function prog2() {
+	var v = [], i;
+	for (i=0;i<vals.length;++i)
+		v[i] = vals[i]*1;
+	return v;
+} 
+function prog3() {
+	var v = [], i;
+	for (i=0;i<vals.length;++i)
+		v[i] = +vals[i];
+	return v;
+}
+function prog4() {
+	var v = [], i;
+	for (i=0;i<vals.length;++i)
+		v[i] = parseFloat(vals[i]);
+	return v;
+}
+function prog5() {
+	var v = [], i;
+	for (i=0;i<vals.length;++i)
+		v[i] = parseInt(vals[i]);
+	return v;
+}
+*/
+
+/*
+function prog1(){
+	var a = eval(Array(100).join('3*')+'3')
+}
+function prog2(){
+	var a = 3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3*3
+}
+function prog3(){
+	var a = Math.pow(3,100)
+}
+*/
+
+/*function prog1(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = test[i] instanceof Array;
+	}
+}
+function prog2(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = Array.isArray(test[i]);
+	}
+}
+function prog3(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = test[i].constructor === Array;
+	}
+}*/
+
+/*
+function prog1(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = test[i] instanceof Object;
+	}
+}
+function prog2(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = typeof test[i] == 'object' && test[i] !== null;
+	}
+}
+function prog3(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		var res = typeof test[i] === 'object' && test[i] !== null;
+	}
+}
+function prog4(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		toString.call(test[i]) != '[object Object]';
+	}
+}
+function prog5(){
+	var test = [
+		{1:1, 2:2, 3:'wefwef'}
+		,[1,2,'wefwef']
+	];
+	for (var i=0;i<test.length;++i) {
+		toString.call(test[i]) !== '[object Object]';
+	}
+}
+*/
+
+/*
+function hasSuffiecentCharacters1(newspaperClipping, ransomLetter) {
+	var i, k, char, ransomChars = {}
+		,clipping = newspaperClipping.toLowerCase().replace(/\s/g,'').split('')
+		,letter = ransomLetter.toLowerCase().replace(/\s/g,'').split('')
+	if (!ransomLetter.length)
+		return true
+	for (i=0;i<letter.length;++i)
+		ransomChars[char = letter[i]] = ransomChars[char] ? ransomChars[char]+1 : 1
+	for (i=0;i<clipping.length;++i) {
+		if (ransomChars[char = clipping[i]] && --ransomChars[char] == 0) {
+			delete ransomChars[char], k = null
+			for (k in ransomChars) break
+			if (!k) return true
+		}
+	}
+	//if (Math.random()<0.1) return true;
+	return false
+}
+function hasSuffiecentCharacters2(newspaperClipping, ransomLetter) {
+	var i, k, char, ransomChars = {}
+		,clipping = newspaperClipping.toLowerCase().split('')
+		,letter = ransomLetter.toLowerCase().split('')
+	if (!ransomLetter.length)
+		return true
+	for (i=0;i<letter.length;++i)
+		if (letter[i] != ' ')
+			ransomChars[char = letter[i]] = ransomChars[char] ? ransomChars[char]+1 : 1
+	for (i=0;i<clipping.length;++i) {
+		if (ransomChars[char = clipping[i]] && --ransomChars[char] == 0) {
+			delete ransomChars[char], k = null
+			for (k in ransomChars) break
+			if (!k) return true
+		}
+	}
+	//if (Math.random()<0.1) return true;
+	return false
+}
+function hasSuffiecentCharacters3(newspaperClipping, ransomLetter) {
+	var index,i
+	newspaperClipping = newspaperClipping.toLowerCase()
+	ransomLetter = ransomLetter.toLowerCase()
+	for (i=0;i<ransomLetter.length;++i) {
+		if (ransomLetter[i] == ' ') continue;
+		if ((index = newspaperClipping.indexOf(ransomLetter[i])) == -1)
+			return false
+		newspaperClipping = newspaperClipping.substr(0,index)+newspaperClipping.substr(index+1)
+	}
+	return true
+}
+function hasSuffiecentCharacters4(newspaperClipping, ransomLetter) {
+	var i
+	newspaperClipping = newspaperClipping.toLowerCase()
+	ransomLetter = ransomLetter.toLowerCase()
+	for (i=0;i<ransomLetter.length;++i)
+		if (ransomLetter[i] != ' ' && newspaperClipping.length == (newspaperClipping = newspaperClipping.replace(ransomLetter[i],'')).length)
+			return false
+	return true
+}
+function preProg(){
+	var abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-', i;
+	window.str0 = window.str1 = '';
+	for (i=0;i<util.rand(200,2000);++i)
+		window.str0 += Math.random()<0.15 ? ' ' : abc[util.rand(0,abc.length-1)];
+	for (i=0;i<util.rand(50,500);++i)
+		window.str1 += Math.random()<0.15 ? ' ' : abc[util.rand(0,abc.length-1)];
+	console.log(window.str0);
+	console.log(window.str1);
+}
+function prog1(i){
+	//return hasSuffiecentCharacters('Churchill had a very distant relationship with this father. Often people with depression don’t have a close relationship with their father, predisposing them to anger or anger turned inward – depression. His first major episode with depression was in 1910, aged 35. Some days he described himself as almost unable to get out of bed, a sign of deep clinical depression. He would also fantasize about jumping in front of an oncoming train when on a  platform. “I don’t like standing near the edge of a platform when an express train is passing through,” he told his doctor. “I like to stand right back and if possible get a pillar between me and the train. I don’t like to stand by the side of a ship and look down into the water. A second’s action would end everything. A few drops of desperation.”', 'I have your code, please give me github access to get it back');
+	return hasSuffiecentCharacters1(window.str0, window.str1);
+}
+function prog2(i){
+	//return hasSuffiecentCharacters2('Churchill had a very distant relationship with this father. Often people with depression don’t have a close relationship with their father, predisposing them to anger or anger turned inward – depression. His first major episode with depression was in 1910, aged 35. Some days he described himself as almost unable to get out of bed, a sign of deep clinical depression. He would also fantasize about jumping in front of an oncoming train when on a  platform. “I don’t like standing near the edge of a platform when an express train is passing through,” he told his doctor. “I like to stand right back and if possible get a pillar between me and the train. I don’t like to stand by the side of a ship and look down into the water. A second’s action would end everything. A few drops of desperation.”', 'I have your code, please give me github access to get it back');
+	return hasSuffiecentCharacters2(window.str0, window.str1);
+}
+function prog3(i){
+	//return hasSuffiecentCharacters3('Churchill had a very distant relationship with this father. Often people with depression don’t have a close relationship with their father, predisposing them to anger or anger turned inward – depression. His first major episode with depression was in 1910, aged 35. Some days he described himself as almost unable to get out of bed, a sign of deep clinical depression. He would also fantasize about jumping in front of an oncoming train when on a  platform. “I don’t like standing near the edge of a platform when an express train is passing through,” he told his doctor. “I like to stand right back and if possible get a pillar between me and the train. I don’t like to stand by the side of a ship and look down into the water. A second’s action would end everything. A few drops of desperation.”', 'I have your code, please give me github access to get it back');
+	return hasSuffiecentCharacters3(window.str0, window.str1);
+}
+function prog4(i){
+	//return hasSuffiecentCharacters4('Churchill had a very distant relationship with this father. Often people with depression don’t have a close relationship with their father, predisposing them to anger or anger turned inward – depression. His first major episode with depression was in 1910, aged 35. Some days he described himself as almost unable to get out of bed, a sign of deep clinical depression. He would also fantasize about jumping in front of an oncoming train when on a  platform. “I don’t like standing near the edge of a platform when an express train is passing through,” he told his doctor. “I like to stand right back and if possible get a pillar between me and the train. I don’t like to stand by the side of a ship and look down into the water. A second’s action would end everything. A few drops of desperation.”', 'I have your code, please give me github access to get it back');
+	return hasSuffiecentCharacters4(window.str0, window.str1);
+}
+*/
+
+/*
+function preProg(){
+	window.absoluteUrlRe = /^(https?:)?\/\//;
+	window.urlsToTest = [
+		'http://wefwefew.com/wefwef/wefew',
+		'https://wefwefew.com/wefwef/wefew',
+		'//wefwefew.com/wefwef/wefew',
+		'/wefwef/wefew',
+		'wefwef/wefew/ewewweew/',
+	];
+}
+function prog1(){
+	var vals = [];
+	window.urlsToTest.forEach(function(v){
+		vals.push( window.absoluteUrlRe.test(v) );
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	window.urlsToTest.forEach(function(v){
+		vals.push(!!( v.indexOf('http://') == 0 || v.indexOf('https://') == 0 || v.indexOf('//') == 0 ));
+	});
+	return vals;
+}
+*/
+
+window.runNum = 2;
+function preProg(){
+	window.cookiesToTest = [
+		['key_wfwefwefwe','val_'+ +new Date],
+		['key_wfwefwefwe','val_djfjfddfjkf'],
+		['key_'+ +new Date,'{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}'],
+		['key_'+ +new Date,'val_'+ +new Date],
+		['key_wfwefwefwe','val_'+ +new Date,{expires:6000}],
+		['key_wfwefwefwe','val_djfjfddfjkf',{expires:6000}],
+		['key_'+ +new Date,'{"val":"ewfeworjergjreogijreogj233233232","val2":"[1,2,3,4]"}',{expires:6000}],
+		['key_'+ +new Date,'val_'+ +new Date,{expires:6000}],
+	];
+	window.cookiesToTest.forEach(function(v){
+		setCookie(v[0],v[1],v[2]);
+	});
+}
+function setCookie(key,val,opts){
+	var undef,expires,set;
+	opts = (opts && typeof opts == 'object') ? opts : {};
+	if (val === null)
+		opts.expires = -1;
+	if (typeof opts.expires == 'number') {
+		expires = new Date;
+		expires.setMilliseconds(expires.getMilliseconds()+opts.expires);
+		expires = expires.toUTCString();
+	} else if (typeof opts.expires == 'string') {
+		expires = opts.expires;
+	}
+	set = (document.cookie = [
+		escape(key),'=',val
+		,expires == undef ? '' : '; expires='+expires
+		,opts.path == undef ? '; path=/' : '; path='+opts.path
+		,opts.domain == undef ? '' : '; domain='+opts.domain
+		,opts.secure ? ';secure' : ''
+	].join(''));
+	return document.cookie = set;
+}
+function parseCookies(cookie){
+	cookie = cookie || document.cookie;
+	var cookies = cookie.split(';')
+		,res = {}
+	;
+	$.each(cookies,function(i,v){
+		var split = v.split('=')
+			,key = unescape(split[0][0] == ' ' ? split[0].substr(1) : split[0])
+			,val = unescape(split[1]||'')
+		;
+		if (key != '')
+			res[key] = val;
+	});
+	return res;
+}
+function getCookie1(key,val,opts){
+	return parseCookies()[key];
+}
+function getCookie2(key,value,options){
+	if (arguments.length > 1 && String(value) !== "[object Object]") {
+		options = $.extend({}, options);
+		if (value === null || value === undefined) {
+			options.expires = -1;
+		}
+		if (typeof options.expires === 'number') {
+			var days = options.expires, t = options.expires = new Date();
+			t.setDate(t.getDate() + days);
+		}
+		value = String(value);
+		return (document.cookie = [
+			encodeURIComponent(key), '=',
+			options.raw ? value : escape(value),
+			options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+			options.path ? '; path=' + options.path : '; path=/',
+			options.domain ? '; domain=' + options.domain : '',
+			options.secure ? '; secure' : ''
+		].join(''));
+	}
+	options = value || {};
+	var decode = options.raw ? function (s) { return s; } : unescape
+	  , result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)
+	;
+	return result && result[1] && result[1] !== "null" ? decode(result[1]) : null;
+}
+function prog1(){
+	var vals = [];
+	window.cookiesToTest.forEach(function(v){
+		vals.push(getCookie1(v));
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	window.cookiesToTest.forEach(function(v){
+		vals.push(getCookie2(v));
+	});
+	return vals;
+}
+
+
+
+function arrange($test) {
+	$test.children().sort(function(a,b){
+		return a.getElementsByTagName('span')[1].innerHTML > b.getElementsByTagName('span')[1].innerHTML ? 1 : -1;
+	}).appendTo($test);
+}
+
+$(function(){
+	var $b = $('body')
+		,runNum = window.runNum || 100000
+		,wait = 1000
+		,run = []
+		,runTestNTimes = window.runTestNTimes || 5
+		,stats = {}
+	;
+
+	function runTest(cb){
+		Object.keys(window).forEach(function(k){
+			if (/^prog([0-9]+)$/.test(k) && window[k] instanceof Function)
+				run.push(k);
+		});
+		run.sort(function(){return Math.random()-0.5;});
+		console.log('run',run);
+
+		var $test = $('<div class="test box"></div>').appendTo($b), best;
+		function runNext(){
+			var k
+				,prog = window[k=run.shift()]
+				,d0 = new Date
+				,ms,i,$score
+			;
+			d1 = new Date();
+			for (i=0;i<runNum;++i)
+				prog(i);
+			ms = +new Date - +d0;
+			$test.append($score=$('<div><span>'+ms+'</span><span>('+k+')</span><span>'+prog()+'</span></div>'));
+			if (!stats[k])
+				stats[k] = {k:k, ms:[], wins:0};
+			stats[k].ms.push(ms);
+			if (!best || ms < best.ms)
+				best = {k:k, ms:ms, $:$score};
+			if (run[0])
+				return setTimeout(runNext,wait);
+			++stats[best.k].wins;
+			best.$.addClass('victory');
+			arrange($test);
+			cb();
+		}
+		if (window.preProg)
+			window.preProg();
+		setTimeout(runNext,wait);
+	}
+
+	(function gamut(){
+		runTest(function(){
+			if (--runTestNTimes)
+				return gamut();
+			var best;
+			Object.keys(stats).forEach(function(k){
+				if (!best || stats[k].wins > best.wins)
+					best = stats[k];
+			});
+			$b.prepend('<div class="winner box"><div><span>Winner:</span><span>'+best.k+'</span><span>Wins: '+best.wins+'/'+best.ms.length+'</span><span>Avg ms: '+(best.ms.reduce(function(a,b){return a+b})/best.ms.length).toFixed(2)+'</span></div></div>');
+		});
+	})();
+
+});
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
