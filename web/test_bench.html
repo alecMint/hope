@@ -330,6 +330,7 @@ function setCookie(key,val,opts){
 		,opts.domain == undef ? '' : '; domain='+opts.domain
 		,opts.secure ? ';secure' : ''
 	].join(''));
+	console.log('set',set);
 	return document.cookie = set;
 }
 function parseCookies(cookie){
