@@ -376,6 +376,13 @@ function getCookie2(key,value,options){
 	;
 	return result && result[1] && result[1] !== "null" ? decode(result[1]) : null;
 }
+function getCookie3(key){
+	var k = escape(key).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") // adds slashes to regex control chars
+		,m = (document.cookie||'').match(new RegExp('(^|(; ))'+k+'=([^;]+)'))
+		,undef
+	;
+	return m ? m[3] : undef;
+}
 function prog1(){
 	var vals = [];
 	window.cookiesToTest.forEach(function(v){
@@ -387,6 +394,13 @@ function prog2(){
 	var vals = [];
 	window.cookiesToTest.forEach(function(v){
 		vals.push(getCookie2(v[0]));
+	});
+	return vals;
+}
+function prog3(){
+	var vals = [];
+	window.cookiesToTest.forEach(function(v){
+		vals.push(getCookie3(v[0]));
 	});
 	return vals;
 }
