@@ -20,7 +20,7 @@ cd /root/sire
 
 Note: These are all part of the repo. Only need to follow these rules if moving to a new theme.
 
-Add following to top of index.php
+Add following to top of index.php (and a require_once in wp-config)
     include dirname(__FILE__).'/bootshell.php';
 
 
