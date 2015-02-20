@@ -4,8 +4,12 @@
 node_modules
 npm-debug.log
 hooky.json
+config.local.php
+config.local.json
+out/*
+web/public-out/*
+web/ace.js
+web/ace.css
 web/wp-content/uploads*
 web/wp-content/tmp_uploads*
-workspace
-config.local.php
 !.g
