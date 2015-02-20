@@ -14,6 +14,9 @@
  * @package WordPress
  */
 
+require_once dirname(__FILE__).'/bootshell.php';
+use \ace\Ace;
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress');
