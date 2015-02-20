@@ -12,7 +12,7 @@
 require( dirname(__FILE__) . '/wp-load.php' );
 
 use \ace\helpers\Protect;
-Protect::preventBruteForce(1, true); // 1 call per second
+Protect::preventBruteForce(4, 4, true); // cap 4 calls over 4 seconds
 
 // Redirect to https login if forced to use SSL
 if ( force_ssl_admin() && ! is_ssl() ) {
