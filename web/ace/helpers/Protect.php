@@ -8,7 +8,6 @@ use \ace\HelperAbstract;
 class Protect extends HelperAbstract {
 
 	public static function preventBruteForce($cap=1, $usePath=true, $bank=50){
-		exit('wefw');
 		try {
 			$key = md5($usePath ? REQUEST_PATH : $_SERVER['REQUEST_URI']);
 			$fn = WEBROOT."/public-out/protect.preventBruteForce.$key";
