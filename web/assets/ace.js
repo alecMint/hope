@@ -282,6 +282,11 @@ ace = {
 			return str;
 		}
 
+		,escapeRegEx: function(str){
+			// adds slashes to regex control chars
+			return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+		}
+
 		,formatPlace: function(num){
 			var numPos = Math.abs(num)
 				,lastChar = (num+'').split('').pop()
@@ -927,6 +932,7 @@ ace.shadbox.close = function(){
 
 
 ace.ui.register('twitter',{
+	// http://wp.fabfitfun.com/ace/api/twitter/get?route=statuses/user_timeline&p[screen_name]=alecisawesome&p[count]=10
 	opts: {
 		numGet: 10
 		,numShow: 1
@@ -1002,24 +1008,30 @@ ace.ui.register('twitter',{
 	}
 	,formatText: function(tweet){
 		var text = tweet.text
-			,escapeRegEx = /[-[\]{}()*+?.,\\^$|#\s]/g // adds slashes to regex control chars
 			,match = {}
 		;
-		$.each(tweet.entities.urls,function(i,item){
-			var url = item.url;
-			if (match[url])
-				return true;
-			match[url] = true;
-			url = url.replace(escapeRegEx, "\\$&");
-			text = text.replace(new RegExp('('+url+')','g'),'<a href="$&" target="_blank">$&</a>');
-		});
+		if (tweet.entities.urls)
+			$.each(tweet.entities.urls,function(i,item){
+				if (match[item.url])
+					return true;
+				match[item.url] = true;
+				text = text.replace(new RegExp(ace.util.escapeRegEx(item.url),'g'),'<a href="'+item.url+'" target="_blank">'+(item.display_url||item.url)+'</a>');
+			});
+		if (tweet.entities.media)
+			$.each(tweet.entities.media,function(i,item){
+				if (match[item.url])
+					return true;
+				match[item.url] = true;
+				text = text.replace(new RegExp(ace.util.escapeRegEx(item.url),'g'),'<a href="'+item.url+'" target="_blank">'+(item.display_url||item.url)+'</a>');
+			});
 		match = {};
-		$.each(tweet.entities.hashtags,function(i,item){
-			if (match[item.text])
-				return true;
-			match[item.text] = true;
-			text = text.replace(new RegExp('#('+item.text+')','g'),'<a href="https://twitter.com/search?q=%23$1&src=hash" target="_blank">#$1</a>');
-		});
+		if (tweet.entities.hashtags)
+			$.each(tweet.entities.hashtags,function(i,item){
+				if (match[item.text])
+					return true;
+				match[item.text] = true;
+				text = text.replace(new RegExp('#'+ace.util.escapeRegEx(item.text),'g'),'<a href="https://twitter.com/search?q=%23'+encodeURIComponent(item.text)+'&src=hash" target="_blank">#'+item.text+'</a>');
+			});
 		return text;
 	}
 	,setUpScroll: function(){
