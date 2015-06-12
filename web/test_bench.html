@@ -182,6 +182,7 @@ function prog5(){
 */
 
 /*
+window.runNum = 10000;
 function hasSuffiecentCharacters1(newspaperClipping, ransomLetter) {
 	var i, k, char, ransomChars = {}
 		,clipping = newspaperClipping.toLowerCase().replace(/\s/g,'').split('')
@@ -295,7 +296,8 @@ function prog2(){
 }
 */
 
-window.runNum = 2;
+
+window.runNum = 1000;
 function preProg(){
 	window.cookiesToTest = [
 		['key_wfwefwefwe','val_one'],
@@ -308,7 +310,7 @@ function preProg(){
 		['key2_gggggggg','val_'+ +new Date,{expires:6000}],
 	];
 	window.cookiesToTest.forEach(function(v){
-		setCookie(v[0],v[1],v[2]);
+		console.log( setCookie(v[0],v[1],v[2]) );
 	});
 }
 function setCookie(key,val,opts){
@@ -406,6 +408,379 @@ function prog3(){
 }
 
 
+/*
+// 1st, 2nd, 3rd, etc
+// winner: prog3 by 1:2
+window.runNum = 10000;
+function preProg(){
+	window.numsToTest = [];
+	for (var i=0;i<30;++i) {
+		window.numsToTest.push(i);
+		window.numsToTest.push(-i);
+		window.numsToTest.push(''+i);
+	}
+}
+function formatPlace1(num){
+	var numPos = Math.abs(num)
+		,lastChar = (num+'').split('').pop()
+		,suffix
+	;
+	if (num == 0) return '0th';
+	if (numPos > 10 && numPos < 20) suffix = 'th';
+	else if (lastChar == 1) suffix = 'st';
+	else if (lastChar == 2) suffix = 'nd';
+	else if (lastChar == 3) suffix = 'rd';
+	else suffix = 'th';
+	return num+suffix;
+}
+function formatPlace2(num){
+	var numPos = Math.abs(num)
+		,lastChar = (num+'').split('').pop()
+		,suffix
+	;
+	switch (true) {
+		case num == 0: return '0th';
+		case numPos > 10 && numPos < 20: suffix = 'th'; break;
+		case lastChar == 1: suffix = 'st'; break;
+		case lastChar == 2: suffix = 'nd'; break;
+		case lastChar == 3: suffix = 'rd'; break;
+		default: suffix = 'th';
+	}
+	return num+suffix;
+}
+function formatPlace3(num){
+	var numPos = Math.abs(num)
+		,lastChar = (num+'').substr(-1)
+		,suffix
+	;
+	if (num == 0) return '0th';
+	if (numPos > 10 && numPos < 20) suffix = 'th';
+	else if (lastChar == 1) suffix = 'st';
+	else if (lastChar == 2) suffix = 'nd';
+	else if (lastChar == 3) suffix = 'rd';
+	else suffix = 'th';
+	return num+suffix;
+}
+function prog1(){
+	var vals = [];
+	window.numsToTest.forEach(function(v){
+		vals.push(formatPlace1(v));
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	window.numsToTest.forEach(function(v){
+		vals.push(formatPlace2(v));
+	});
+	return vals;
+}
+function prog3(){
+	var vals = [];
+	window.numsToTest.forEach(function(v){
+		vals.push(formatPlace3(v));
+	});
+	return vals;
+}
+*/
+
+
+/*
+// count # occurrences of char in string
+// winner: prog1 by 40:470
+window.runNum = 10000;
+function preProg(){
+	window.strings = [];
+	for (var i=0;i<10;++i) {
+		strings[i] = {
+			val: ''
+			,charToCount: String.fromCharCode(util.rand(0,255))
+		};
+		for (var n=0;n<util.rand(10,100000);++n)
+			strings[i].val += String.fromCharCode(util.rand(0,255));
+	}
+	console.log('strings to test',strings);
+}
+function prog1(){
+	var vals = [];
+	strings.forEach(function(s){
+		vals.push(s.val.split('M').length-1);
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	strings.forEach(function(s){
+		vals.push(s.val.replace(/[^M]/g,'').length);
+	});
+	return vals;
+}
+*/
+
+
+/*
+// get byte length of string (untested against node's Buffer('').length)
+// winner: prog1 by 11:34
+window.runNum = 1000;
+function preProg(){
+	window.strings = [];
+	for (var i=0;i<10;++i) {
+		strings[i] = '';
+		for (var n=0;n<util.rand(10,10000);++n)
+			strings[i] += String.fromCharCode(util.rand(0,10175));
+	}
+	console.log('strings to test',strings);
+}
+function getByteLen1(normalVal) {
+	normalVal = String(normalVal);
+	var byteLen = 0, i, c;
+	for (i=0; i<normalVal.length; ++i) {
+		c = normalVal.charCodeAt(i);
+		byteLen += c < (1 << 7) ? 1 :
+			c < (1 << 11) ? 2 :
+			c < (1 << 16) ? 3 :
+			c < (1 << 21) ? 4 :
+			c < (1 << 26) ? 5 :
+			c < (1 << 31) ? 6 :
+			Number.NaN;
+	}
+	//if (normalVal.length != byteLen) console.log('sup',normalVal.length,byteLen);
+	return byteLen;
+}
+function getByteLen2(normalVal) {
+	normalVal = String(normalVal);
+	var byteLen = 0, i, c;
+	for (i=0; i<normalVal.length; ++i) {
+		c = normalVal.charCodeAt(i);
+		switch (true) {
+			case c < (1 << 7): byteLen += 1; break;
+			case c < (1 << 11): byteLen += 2; break;
+			case c < (1 << 16): byteLen += 3; break;
+			case c < (1 << 21): byteLen += 4; break;
+			case c < (1 << 26): byteLen += 5; break;
+			case c < (1 << 31): byteLen += 6; break;
+			default: byteLen = Number.NaN;
+		}
+	}
+	//if (normalVal.length != byteLen) console.log('sup',normalVal.length,byteLen);
+	return byteLen;
+}
+function prog1(){
+	var vals = [];
+	strings.forEach(function(s){
+		vals.push(getByteLen1(s));
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	strings.forEach(function(s){
+		vals.push(getByteLen2(s));
+	});
+	return vals;
+}
+*/
+
+
+/*
+// winner: prog2
+window.runNum = 1000;
+function preProg(){
+	var r = function(numChars){
+		var abc = 'rstlneaiou',tiles = '';
+		for (var i=0;i<numChars;++i)
+			tiles += abc[ util.rand(0,abc.length-1) ];
+		return tiles;
+	}
+	window.dict = ['aah','abate','abbey','abbreviate','aberrance','ably','abnegate','abnegated','abnegates','abnegating','abnegation','abnegations','abnegator','abnegators','abnormalities','abnormality','abnormally','abnormals','aboded','abodes','aboding','aboil','abolishable','abolished','abolisher','abolishers','abolishes','abolishing','abolishment','abolitionary','abolitionism','abolitionist','abolitionists','indulges','indulging','indurate','indurated','indurates','indurating','induration','indurations','indurative','industrialist','industrialists','industrialization','industrialize','industrialized','industrializes','industrializing','industrially','industrials','industries','industriously','industriousness','industrys','indwelling','indwells','indwelt','inearthed','inebriant','inebriate','inebriated','inebriates','inebriating','inebriation','inebriety','inebrious','inedible','inedited','ineducability','ineffably','ineffaceable','ineffectively','ineffectiveness','ineffectually','ineffectualness','inefficacious','inefficaciously','inefficiencies','inefficiency','inefficiently','inelasticity','inelegance','inelegantly','ineligibility','ineligibles','ineligibly','ineloquent','ineloquently','ineluctably','ineptitude','ineptly','ineptness','inequable','inequalities','inequitableness','inequitably','inequities','inerrant','inertias','inertly','inertness','inerts','inescapably','inessential','inestimably','inevitabilities','inevitability','inevitableness','inevitably','inexactitude','inexactly','inexactness','inexcusability','inexcusableness','inexcusably','inexecutable','inexecution','inexhaustibly','inexorably','inexpensively','inexpensiveness','inexperienced','inexpertly','inexplicably','inexpressibilities','inexpressibility','inexpressibly','inexpressive','inexpressiveness','inextinguishables','inextinguishably','inextricability','inextricably','infallibility','infallibleness','infallibly','infamies','infamously','infancies','infanticidal','infanticide','infanticides','infantilism','infantility','infantries','infants','infarcted','infarction','infarctions','infarcts','infatuated','infatuates','infatuating','infatuation','infatuations','infected','infecter','infecters','infecting','infection','infections','infectiously','infectiousness','infective','infector','infectors','infects','infecund','infeoffed','inferable','inferences','inferentially','inferiorities','inferiority','inferiors','infernally','infernos','inferrer','inferrers','inferrible','infers','infertilely','infertility','infestations','infested','infester','infesters','infesting','infests','infidelities','infidelity','infidels','infielder','infielders','infields','infighter','infighters','infiltrated','infiltrates','infiltrating','infiltration','infiltrations','infiltrator','infiltrators','infinitely','infiniteness','infinites','infinitesimally','infinitesimals','infinities','infinitives','infirmable','infirmaries','infirmed','infirming','infirmities','infirmity','infirmly','infirmness','infirms','infixed','infixes','inflamed','inflamer','inflamers','inflames','inflaming','inflammabilities','inflammability','inflammations','inflammative','inflammatorily','inflatable','inflated','inflaters','inflates','inflating','inflation','inflationism','inflationist','inflationists','inflations','inflator','inflators','inflected','inflecting','inflection','inflectional','inflections','inflects','inflexed','inflexibility','inflexibleness','inflexibly','inflictable','inflicted','inflicting','infliction','inflictions','inflictive','inflictor','inflicts','inflight','inflorescence','inflows','influenceabilities','influenceability','influenceable','influenced','influencer','influences','influencing','influents','influenzas','influxes','infold','infolded','infolder','infolders','infolding','infolds','informalities','informality','informally','informants','informational','informatively','informativeness','informed','informer','informers','informing','informs','infos','infracted','infraction','infractions','infractor','infrangible','infrareds','infrasonic','infrastructures','infrequence','infrequency','infrequently','infringed','infringement','infringements','infringer','infringers','infringes','infringing','infundibula','infundibular','infundibuliform','infundibulum','infuriated','infuriates','infuriating','infuriatingly','infuriation','infused','infuser','infusers','infuses','infusibility','infusing','infusions','infusive','infusoria','ingate','ingathered','ingathers','ingeniously','ingeniousness','ingenue','ingenues','ingenuously','ingenuousness','ingestant','ingested','ingesting','ingestive','ingests','ingle','ingles','ingloriously','ingloriousness','ingoing','ingots','ingraft','ingrafted','ingrafting','ingrain','ingrained','ingraining','ingrains','ingrates','ingratiated','ingratiates','ingratiating','ingratiation','ingredients','ingress','ingresses','ingression','ingressive','ingroup','ingroups','ingrowing','ingrowths','inguinal','ingulf','ingulfing','ingulfs','inhabitability','inhabitable','inhabitance','inhabitancies','inhabitancy','inhabitants','inhabited','inhabiter','inhabiting','inhabitress','inhabits','inhalant','inhalants','inhalations','inhalator','inhalators','inhaled','inhaler','inhalers','inhales','inhaling','inharmonic','inhaul','inhaulers','inhered','inherence','inherently','inheres','inhering','inheritabilities','inheritability','inheritable','inheritably','inheritances','inherited','inheriting','inheritors','inheritress','inherits','inhesions','inhibited','inhibiter','inhibiting','inhibitions','inhibitive','inhibitors','inhibits','inhomogeneities','inhospitably','inhospitality','inhumanely','inhumanities','inhumanity','inhumanly','inhume','inhumed','inhumer','inhumes','inimicability','inimically','inimitably','iniquities','iniquitously','initialed','initialing','initialization','initialize','initialized','initializing','initialled','initialling','initially','initials','initiated','initiates','initiating','initiation','initiations','initiative','initiatives','initiator','initiators','initiatory','injectant','injected','injecting','injection','injections','injector','injectors','injects','injudiciously','injudiciousness','injunctions','injured','injurer','injurers','injures','injuries','injuring','injuriously','injuriousness','injustices','inkblot','inkblots','inked','inker','inkers','inkhorn','inkhorns','inkier'];
+	window.tileSets = ['atheyab','xoexzfw','eaebsangt'];
+	for (var i=0;i<10;++i)
+		window.tileSets.push(r(util.rand(5,15)));
+	console.log('tileSets to test', window.tileSets);
+}
+copy = function(o){var c={}; for (var k in o) c[k] = o[k]; return c;}
+function getMax1(myLetters, dictionary){
+	var max = null
+		,myTiles = {}
+		,tiles,word,i,n
+	;
+	for (i=0;i<myLetters.length;++i)
+		myTiles[myLetters[i]] = (myTiles[myLetters[i]] || 0) + 1;
+	for (i in dictionary) {
+		word = dictionary[i];
+		if (word.length > myLetters.length) continue; // dont bother
+		if (max && word.length <= max.length) continue; // dont bother
+		tiles = copy(myTiles);
+		for (n=0;n<word.length;++n) {
+			if (!tiles[word[n]]--) break; // out of tiles for this letter
+			if (n == word.length-1)
+				max = word;
+		}
+	}
+	return max;
+}
+function getMax2(myLetters, dictionary){
+	var max = null
+		,tiles,word,i,n
+	;
+	for (i in dictionary) {
+		word = dictionary[i];
+		if (word.length > myLetters.length) continue; // dont bother
+		if (max && word.length <= max.length) continue; // dont bother
+		tiles = myLetters;
+		for (n=0;n<word.length;++n) {
+			if (tiles.length == (tiles = tiles.replace(word[n],'')).length) // letter not found in word
+				break;
+			if (n == word.length-1)
+				max = word;
+		}
+	}
+	return max;
+}
+function prog1(){
+	var vals = [];
+	tileSets.forEach(function(tileSet){
+		vals.push( getMax1(tileSet, dict) );
+	});
+	return vals;
+}
+function prog2(){
+	var vals = [];
+	tileSets.forEach(function(tileSet){
+		vals.push( getMax2(tileSet, dict) );
+	});
+	return vals;
+}
+*/
+
+
+/*
+// winner: prog4, prog2 close but not accurate
+window.runNum = 20000;
+//window.noTest = true;
+function preProg(){
+	window.nums = [];
+	for (var i=0;i<10;++i) {
+		var n = Math.random()*Math.pow(10,i);
+		window.nums.push(n);
+		window.nums.push(''+n);
+		window.nums.push('-'+n);
+		//window.nums.push('$'+n);
+		//window.nums.push('$'+n+'s');
+		window.nums.push('1,000,000.0000'); // already formatted
+		window.nums.push('$'+n+'swefwefwefwef4433434');
+		window.nums.push('wefwefwefwef4433434$'+n+'s');
+		window.nums.push('wefwefwefwefwefwefwefewf$s'); // no numbers
+	}
+	console.log('nums', window.nums);
+}
+function format1(num){
+	var pieces = (num+'').match(/^([^0-9\-]*)(\-?)([0-9]+)(.*)/)
+		,chars,i,c
+	;				
+	if (!pieces || !pieces[3])
+		return num;
+	chars = pieces[3].split('');
+	for (i=3,c=chars.length;i<c;i=i+3)
+		chars[c-i-1] += ',';
+	return pieces[1] + pieces[2] + chars.join('') + (pieces[4] || '');
+}
+function format2(num){
+	return (num+'').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+function format3(num){
+	var num = num+'', numNums = 0, numStart, i
+	for (i=0;i<num.length;++i) {
+		if (isNaN(num[i])) {
+			if (num[i] == ',') num = num.slice(0,i)+num.slice(i--+1);
+			else if (numNums) break;
+		} else if (++numNums == 1)
+			numStart = i;
+	}
+	if (numNums > 3) {
+		var n;
+		for (i=3;i<numNums;i=i+3) {
+			n = numStart+numNums-i;
+			num = num.slice(0,n)+','+num.slice(n);
+		}
+	}
+	return num;
+}
+function format4(num){
+	var num = num+'', numNums = 0, numStart, i
+	for (i=0;i<num.length;++i) {
+		if (isNaN(num[i])) {
+			if (num[i] == ',') num = num.substr(0,i)+num.substr(i--+1);
+			else if (numNums) break;
+		} else if (++numNums == 1)
+			numStart = i;
+	}
+	if (numNums > 3) {
+		var n;
+		for (i=3;i<numNums;i=i+3) {
+			n = numStart+numNums-i;
+			num = num.slice(0,n)+','+num.slice(n);
+		}
+	}
+	return num;
+}
+function format5(num){
+	var num = num+'', numNums = 0, numStart, i
+	for (i=0;i<num.length;++i) {
+		if (isNaN(num[i])) {
+			if (num[i] == ',') num = num.substring(0,i)+num.substring(i--+1);
+			else if (numNums) break;
+		} else if (++numNums == 1)
+			numStart = i;
+	}
+	if (numNums > 3) {
+		var n;
+		for (i=3;i<numNums;i=i+3) {
+			n = numStart+numNums-i;
+			num = num.slice(0,n)+','+num.slice(n);
+		}
+	}
+	return num;
+}
+function prog1(){
+	var vals = [];
+	nums.forEach(function(num){
+		vals.push( format1(num) );
+	});
+	return vals.join(', ');
+}
+function prog2(){
+	var vals = [];
+	nums.forEach(function(num){
+		vals.push( format2(num) );
+	});
+	return vals.join(', ');
+}
+function prog3(){
+	var vals = [];
+	nums.forEach(function(num){
+		vals.push( format3(num) );
+	});
+	return vals.join(', ');
+}
+function prog4(){
+	var vals = [];
+	nums.forEach(function(num){
+		vals.push( format4(num) );
+	});
+	return vals.join(', ');
+}
+function prog5(){
+	var vals = [];
+	nums.forEach(function(num){
+		vals.push( format5(num) );
+	});
+	return vals.join(', ');
+}
+*/
+
+
+
 
 function arrange($test) {
 	$test.children().sort(function(a,b){
@@ -421,6 +796,7 @@ $(function(){
 		,runTestNTimes = window.runTestNTimes || 5
 		,stats = {}
 	;
+	if (window.noTest) return;
 
 	function runTest(cb){
 		Object.keys(window).forEach(function(k){
@@ -470,7 +846,7 @@ $(function(){
 				if (!best || stats[k].wins > best.wins)
 					best = stats[k];
 			});
-			$winnerBox.append('<div><span>Winner:</span><span>'+best.k+'</span><span>Wins: '+best.wins+'/'+best.ms.length+'</span><span>Avg ms: '+(best.ms.reduce(function(a,b){return a+b})/best.ms.length).toFixed(2)+'</span></div>');
+			$winnerBox.append('<div class="victory"><span>Winner:</span><span>'+best.k+'</span><span>Wins: '+best.wins+'/'+best.ms.length+'</span><span>Avg ms: '+(best.ms.reduce(function(a,b){return a+b})/best.ms.length).toFixed(2)+'</span></div>');
 			$b.prepend($winnerBox);
 
 			var $winnerBox = $b.find('.winner.box');
