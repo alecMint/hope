@@ -6,6 +6,10 @@ div.clear {
 	width: auto;
 	overflow: hidden;
 }
+span.mer {
+	text-transform: uppercase;
+	font-size: 80%;
+}
 /* END globals */
 
 /* BEGIN theme overrides */
@@ -457,4 +461,30 @@ ul li, .arrow-list li {
 	color: #666;
 }
 /* END donate */
+
+
+
+/* BEGIN services-calendar */
+.services-calendar {
+}
+.services-calendar-day {
+}
+.services-calendar-day-title {
+	width: 80px;
+	float: left;
+}
+.services-calendar-events {
+	width: 160px;
+	float: left;
+}
+.services-calendar-event {
+}
+.services-calendar-event-title {
+}
+.services-calendar-event-time {
+}
+.services-calendar-event-loc {
+}
+/* END services-calendar */
+
 
