@@ -488,9 +488,11 @@ ul li, .arrow-list li {
 }
 .services-calendar-event-time {
 	display: block;
+	color: #777;
 }
 .services-calendar-event-loc {
 	display: block;
+	color: #777;
 }
 /* END services-calendar */
 
