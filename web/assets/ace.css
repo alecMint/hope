@@ -9,6 +9,7 @@ div.clear {
 span.mer {
 	text-transform: uppercase;
 	font-size: 80%;
+	margin-left: 0.1em;
 }
 /* END globals */
 
@@ -478,12 +479,16 @@ ul li, .arrow-list li {
 	float: left;
 }
 .services-calendar-event {
+	margin-bottom: 0.2em;
 }
 .services-calendar-event-title {
+	display: block;
 }
 .services-calendar-event-time {
+	display: block;
 }
 .services-calendar-event-loc {
+	display: block;
 }
 /* END services-calendar */
 
