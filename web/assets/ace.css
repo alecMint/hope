@@ -469,6 +469,7 @@ ul li, .arrow-list li {
 .services-calendar {
 }
 .services-calendar-day {
+	margin-bottom: 0.2em;
 }
 .services-calendar-day-title {
 	width: 86px;
