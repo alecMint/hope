@@ -566,7 +566,7 @@ ace.ui.register('instagram',{
 
 ace.ui.register('soundcloud-playlist',{
 	opts: {
-		clientId: 'YOUR_CLIENT_ID'
+		clientId: '580b0997c079424f971147f110046ef7'
 		,url: 'http://api.soundcloud.com/playlists/'
 		,playlistId: null
 		,numShow: 3
