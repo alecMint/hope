@@ -597,7 +597,7 @@ ace.ui.register('soundcloud-playlist',{
 	,build: function(){
 		var z = this
 			,x = z.cssKey
-			,track,i
+			,track,url,i
 		;
 		if (z.opts.type)
 			$.each(z.opts.type.split(' '),function(i,t){
@@ -606,12 +606,13 @@ ace.ui.register('soundcloud-playlist',{
 		for (i=0;i<z.data.tracks.length&&i<z.opts.numShow;++i) {
 			track = z.data.tracks[i];
 			color = z.opts.colors[i%z.opts.colors.length];
+			url = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;player_type=tiny';
 			z.$.cont.append(
 				'<object height="18" width="100%">'
-					+ '<param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;player_type=tiny"></param>'
+					+ '<param name="movie" value="'+url+'"></param>'
 					+ '<param name="allowscriptaccess" value="always"></param>'
 					+ '<param name="wmode" value="transparent"></param>'
-					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;player_type=tiny"></embed>'
+					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="'+url+'"></embed>'
 				+ '</object>'
 			);
 		}
