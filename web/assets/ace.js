@@ -608,11 +608,11 @@ ace.ui.register('soundcloud-playlist',{
 			color = z.opts.colors[i%z.opts.colors.length];
 			url = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+track.id+'&amp;color='+color+'&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;player_type=tiny';
 			z.$.cont.append(
-				'<object height="18" width="100%">'
+				'<object height="20" width="100%">'
 					+ '<param name="movie" value="'+url+'"></param>'
 					+ '<param name="allowscriptaccess" value="always"></param>'
 					+ '<param name="wmode" value="transparent"></param>'
-					+ '<embed wmode="transparent" allowscriptaccess="always" height="18" width="100%" src="'+url+'"></embed>'
+					+ '<embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="'+url+'"></embed>'
 				+ '</object>'
 			);
 		}
