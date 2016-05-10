@@ -467,6 +467,7 @@ ul li, .arrow-list li {
 
 /* BEGIN services-calendar */
 .services-calendar {
+	line-height: 1.4;
 }
 .services-calendar-day {
 	margin-bottom: 0.2em;
@@ -480,7 +481,6 @@ ul li, .arrow-list li {
 	float: left;
 }
 .services-calendar-event {
-	line-height: 1.4;
 	margin-bottom: 0.45em;
 }
 .services-calendar-event-title {
